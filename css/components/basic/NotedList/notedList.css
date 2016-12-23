@@ -1,0 +1,127 @@
+
+
+/**
+*   信息列表
+*/
+.notedList{
+    border-bottom: 1px solid #fff;
+    font-family: 'Oswald', sans-serif;
+    background:url('../images/cntnt-bg.jpg') repeat 0px 0px;
+    padding: 1.7em 18px 1.4em 18px;
+    line-height: 1.42857143;
+}
+
+@media (max-width: 320px){
+    .notedList
+    {
+    padding: 1em 15px 0.5em 15px;
+    }
+}
+
+@media (max-width: 768px){
+    .notedList
+    {
+    padding: 1.3em 18px 1em 18px;
+    }
+}
+
+.notedList h3
+{
+    color: #87655B;
+}
+
+.notedList li{
+    display: block;
+    border-top: 1px solid #D3CAB0;
+}
+.notedList li a{
+    color: #A5877D;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.95em;
+    text-decoration: none;
+    padding: 6px 0;
+    display: block;
+    font-weight: 400;
+}
+
+.notedList li a:hover{
+    color:#EB5A41;
+}
+/**
+*   菜单列表
+*/
+
+.menuList{
+    border-bottom: 1px solid #fff;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.42857143;
+}
+
+
+.menuList .nav-header{
+    display: block;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 1px #fff;
+    background: #dddddd;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #ffffff));
+    background: -ms-linear-gradient(bottom, #dddddd, #ffffff);
+    background: -moz-linear-gradient(center bottom, #dddddd 0%, #ffffff 100%);
+    background: -o-linear-gradient(bottom, #dddddd, #ffffff);
+    filter: none;
+    filter: progid:dximagetransform.microsoft.gradient(startColorStr='#444444', EndColorStr='#555555');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff',EndColorStr='#dddddd')";
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -moz-border-radius-topleft: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 3px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-bottom: 1px solid #aaa;
+    font-size: 1em;
+    line-height: 3em;
+    text-transform: none;
+    padding: 0em .75em;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
+}
+
+
+
+.menuList .nav-list
+{
+    border: 1px solid #ccc;
+    background: white;
+}
+.menuList .nav-list.collapse {
+    margin-bottom: 1em;
+}
+
+.menuList .nav-list  > li > a {
+    padding: .5em 1em;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.menuList .nav-list  > li > a:hover {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+
+
+.menuList .nav-list.collapse.in{
+    border-bottom: 1px solid #ccc;
+}
+

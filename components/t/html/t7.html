@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../build/bootstrap/css/bootstrap.css"/>
+
+    <script type="text/javascript" src="../../../build/bootstrap/js/jquery-latest.js"></script>
+    <script src="../../../build/bootstrap/js/bootstrap.js"></script>
+    <script src='../../../build/background-blur/js/background-blur.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('#modal').backgroundBlur({
+                imageURL : '../../../build/images/snow.jpg',
+                blurAmount : 25,
+                imageClass : 'bg-blur'
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div>
+    <div id='modal' style="width:100%;min-height:700px;position:absolute;left:0px;top:0px">
+        dw
+    </div>
+
+</div>
+
+</body>
+</html>

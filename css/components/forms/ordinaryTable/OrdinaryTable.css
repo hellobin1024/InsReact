@@ -1,0 +1,39 @@
+
+.ordinaryTable .center td{
+    text-align:center;
+
+}
+
+.ordinaryTable.highLight td {
+    box-sizing: border-box;
+    /*background-color: #edf7ff;*/
+    text-align:center;
+    border: 1px solid #6EA0FF;
+}
+
+.ordinaryTable.highLight .table thead tr td {
+    border-top: 1px solid #6EA0FF;
+
+}
+
+
+.ordinaryTable.gradient.center td{
+    background: linear-gradient(to top, rgba(0, 102, 179,0.5), rgba(196, 227, 248,0));
+     text-align:center;
+}
+.folding{
+    float:right;
+    margin-right: 20px;
+}
+.col-sm-12.col-md-12{
+
+    padding: 10px;
+}
+.table.table{
+    background-color: transparent;
+}
+div#root{
+   /* background-image:url(../../../../icon/body.gif);*/
+}
+
+

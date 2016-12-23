@@ -1,0 +1,24 @@
+div.list-group.level{
+    width:90%;
+}
+.list-group  li.list-group-item.first{
+    text-align: left;
+    text-indent: 2em;
+    background-color:#7F7F8C;
+    color:#fff;
+    font-family:  Microsoft YaHei,lucida, verdana, arial, sans-serif;
+    font-size:20px;
+}
+.list-group li.list-group-item.first:hover{
+    cursor:pointer;
+    background-color: #55555d;
+    font-weight: bolder;
+}
+.list-group li.list-group-item.second{
+    text-align: left;
+    text-indent: 8em;
+}
+.list-group li.list-group-item.second:hover{
+    cursor:pointer;
+}
+

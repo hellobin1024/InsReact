@@ -1,0 +1,54 @@
+.breadcrumb span.separator
+{
+    padding: 0 5px;
+    color: #ccc;
+}
+
+.breadcrumb span.path-segment
+{
+    padding:0 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+    line-height: 26px;
+}
+
+.crumb_box{
+    overflow: hidden;
+    margin-top: 60px;
+    border-bottom: none;
+    position: relative;
+}
+
+.crumb_title{
+    display: block;
+    width: 1024px;
+    margin: 0 0 0 20px;
+    height: 46px;
+    line-height: 32px;
+    font-size: 30px;
+    overflow: hidden;
+}
+
+.crumb_title_content{
+    display: block;
+    float: left;
+    padding-right: 11px;
+    border-left: 10px solid #c1c1c1;
+    padding-left: 10px;
+    color: #333;
+}
+
+.crumb_detail{
+    width: 308px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 11px;
+    float: left;
+    font-size: 14px;
+    padding-bottom: 21px;
+    color: #fff;
+}
+/*
+.baba{
+    background: url("../../../build/images/background.png")
+}*/

@@ -1,0 +1,166 @@
+
+.sidebar {
+    background: #f2f2f2;
+}
+
+.suspend {
+    width: 40px;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
+    top: 140px;
+    top: 145px!important;
+    right: 0;
+    z-index: 1003;
+    background: #f2f2f2;
+    border-radius: 10px 0 0 10px;
+}
+
+.suspend ul li {
+    width: 140px;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 50px;
+    font-size: 14px;
+    display: block;
+    cursor: pointer;
+}
+
+.suspend ul li.sus_li {
+    border-bottom: 1px #ddd solid;
+}
+
+.suspend ul li.sus_li1 {
+    border-bottom: 1px #ddd solid;
+}
+
+.suspend ul li.sus_li3{
+  border-bottom:1px #ccc solid;
+}
+.suspend ul li.sus_li4{
+   border-bottom:1px #ccc solid;
+}
+
+
+
+
+.shade {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+    -moz-opacity: 0.4;
+    opacity: .40;
+    filter: alpha(opacity=40);
+}
+
+.susp_show {
+    width: 0;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
+    top: 140px;
+    right: 0;
+    z-index: 1002;
+    background: #fff;
+    border-radius: 10px 0 0 10px;
+}
+
+.susp_show .susp_l {
+    float: left;
+    width: 140px;
+    background: #f2f2f2;
+    border-radius: 10px 0 0 10px;
+}
+
+
+.susp_show .susp_l ul {
+    list-style: none;
+}
+
+.susp_show .susp_l ul li {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.susp_show .susp_l ul li.sus_li {
+    border-bottom: 1px #ccc solid;
+    border-top-left-radius: 10px;
+}
+
+
+.susp_show .susp_l ul li.sus_li1 {
+    background: url('/build/images/serviceHobby/ico/y1.png') no-repeat 10px 30px;
+    border-bottom: 1px #ccc solid;
+    border-top-left-radius: 10px;
+}
+
+.susp_show .susp_l ul li.sus_li3 {
+    background: url('/build/images/serviceHobby/ico/y3.png') no-repeat 10px 30px;
+    border-bottom: 1px #ccc solid;
+    border-top-left-radius: 10px;
+}
+
+.susp_show .susp_l ul li.sus_li4 {
+    background: url('/build/images/serviceHobby/ico/y_55.png') no-repeat 10px 30px;
+    border-bottom: 1px #ccc solid;
+    border-top-left-radius: 10px;
+}
+
+.susp_show .susp_l ul li.sus_li5 {
+    background: url('/build/images/serviceHobby/ico/news.png') no-repeat 10px 30px;
+    border-bottom: 1px #ccc solid;
+    border-top-left-radius: 10px;
+}
+.susp_show .susp_l ul li.sus_li6 {
+    background: url('/build/images/serviceHobby/ico/bell.png') no-repeat 10px 30px;
+    border-bottom: 1px #ccc solid;
+    border-top-left-radius: 10px;
+}
+.susp_show ul li.sus_li.hover{
+    background:#fff ;
+    border-bottom:1px #ccc solid;
+}
+
+.susp_show ul li.sus_li1.hover {
+    background: #fff url(/build/images/serviceHobby/ico/y1.png) no-repeat 10px 30px;
+    border-bottom: 1px #ccc solid;
+    -moz-border-top-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.susp_show ul li.sus_li3.hover{
+    background:#fff url(/build/images/serviceHobby/ico/y3.png) no-repeat 10px 30px;
+    border-bottom:1px #ccc solid;
+}
+.susp_show ul li.sus_li4.hover{
+    background:#fff url(/build/images/serviceHobby/ico/y_55.png) no-repeat 10px 30px;
+    border-bottom:1px #ccc solid;
+}
+.susp_show ul li.sus_li5.hover{
+    background:#fff url(/build/images/serviceHobby/ico/news.png) no-repeat 10px 30px;
+    border-bottom-left-radius: 10px;-moz-border-bottom-left-radius: 10px; -webkit-border-bottom-left-radius:10px;
+}
+.susp_show ul li.sus_li6.hover{
+    background:#fff url(/build/images/serviceHobby/ico/bell.png) no-repeat 10px 30px;
+    border-bottom-left-radius: 10px;-moz-border-bottom-left-radius: 10px; -webkit-border-bottom-left-radius:10px;
+}
+
+.susp_show .susp_l ul {
+    list-style: none;
+}
+
+.susp_show .susp_r {
+    width: 850px;
+    height: auto;
+    float: left;
+    position: relative;
+}

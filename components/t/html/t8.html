@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../build/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../../build/fakeLoader/css/fakeLoader.css"/>
+    <link rel="stylesheet" href="../../../build/datetimepicker/css/bootstrap-datetimepicker.css"/>
+
+
+    <script src="../../../build/bootstrap/js/jquery-latest.js"></script>
+    <script src="../../../build/bootstrap/js/bootstrap.js"></script>
+    <script src="../../../build/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script>
+        function showPreview(source) {
+            var file = source.files[0];
+            if(window.FileReader) {
+                var fr = new FileReader();
+                fr.onloadend = function(e) {
+                    document.getElementById("portrait").src = e.target.result;
+                };
+                fr.readAsDataURL(file);
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('input[id=lefile]').change(function() {
+                $('#photoCover').val($(this).val());
+            });
+            $("[data-toggle='tooltip']").tooltip();
+            //添加日历选择的监听回调
+            $('#datetimepicker').datetimepicker('setStartDate', '2016-01-01');
+            $('#datetimepicker').datetimepicker('show').on('changeDate',function(ev) {
+                $("#datetimepicker").children(".span2")[0].value=ev.date;
+                console.log("date====\r\n"+ev.date);
+                $('#datetimepicker').datetimepicker('hide');
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <input id="lefile" type="file" name="file" style="display:none">
+    <div class="input-append">
+        <input id="photoCover" class="input-large" type="text" style="height:30px;">
+        <a class="btn" onclick="$('input[id=lefile]').click();">Browse</a>
+    </div>
+    <hr/>
+    <input type="file" name="file" onchange="showPreview(this)" />
+    <img id="portrait" src="" width="70" height="75">
+
+    <h4>工具提示（Tooltip）插件 - 锚</h4>
+    这是一个 <input type="radio" value="默认的tooltip" data-toggle="tooltip"
+                title="默认的 Tooltip"/>
+    <hr/>
+
+    <!-- calendar -->
+    <div class="input-append date" id="datetimepicker"  data-date-format="yyyy-mm-dd hh:ii">
+        <input class="span2" size="16" type="text"  >
+        <span class="add-on"><i class="icon-th"></i></span>
+    </div>
+</div>
+
+</body>
+</html>

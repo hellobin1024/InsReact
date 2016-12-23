@@ -1,0 +1,72 @@
+.table {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 24px;
+    border-collapse: collapse;
+}
+.table.table-bordered.panel
+{
+    background-color: transparent;
+}
+
+
+.table.table-bordered.panel> thead:first-child > tr:first-child > th{
+    border: 1px solid #ddd;
+}
+
+.table.table-bordered.center.panel thead:first-child tr th {
+    text-align:center;
+    font-family: lucida, verdana, arial, sans-serif;
+    font-size:1.2em;
+
+}
+
+
+.table.table-bordered.center.panel td
+{
+    align:center;
+    vertical-align: inherit;
+}
+.table.table-bordered.center.panel td span{
+margin-right:5%;
+}
+.table.table-bordered.center.panel td button
+{
+    align:center;
+}
+.form.panel{
+    background-color: transparent;
+}
+
+.form.panel.highLight {
+    box-sizing: border-box;
+    background-color: #edf7ff;
+}
+
+.form.panel.highLight table tr td {
+    border: 1px solid #6EA0FF;
+}
+
+.form.panel.highLight table.table-bordered.panel thead tr:first-child td,
+.form.panel.highLight table.table-bordered.panel thead tr:first-child th {
+    border: 1px solid #6EA0FF;
+    color: #6EA0FF;
+}
+
+
+.form.panel.default table tr td {
+    border: 1px solid #0066b3;
+}
+
+.form.panel.default table.table-bordered.panel thead tr:first-child td,
+.form.panel.default table.table-bordered.panel thead tr:first-child th {
+    border: 1px solid #0066b3;
+    color: #0066b3;
+}
+
+
+.form.panel.gradient{
+    background: linear-gradient(to top, rgba(0, 102, 179,0.5), rgba(196, 227, 248,0))
+}

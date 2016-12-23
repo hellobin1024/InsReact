@@ -1,0 +1,314 @@
+/**
+* index_scroll part
+*/
+
+.index_scroll
+{
+    width: 980px;
+    padding-top: 20px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    height: 64px;
+
+}
+
+.index_scroll_left {
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    z-index: 999;
+}
+
+.index_scroll_right {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    z-index: 999;
+}
+
+
+.index_scroll_left, .index_scroll_right, .index_scroll_left a, .index_scroll_right a {
+    width: 21px;
+    height: 27px;
+}
+
+.index_scroll_left a, .index_scroll_right a {
+    display: block;
+}
+
+.index_scroll_left a
+{
+    background: url('../../../build/images/btn_left.png');
+}
+
+.index_scroll_right a {
+    background: url('../../../build/images/btn_right.png') right;
+}
+.index_scroll_left, .index_scroll_right, .index_scroll_left a, .index_scroll_right a {
+    width: 21px;
+    height: 27px;
+}
+
+.index_scroll_left_a_hover a {
+    background: url('../../../build/images/icon_left.png');
+}
+
+.index_scroll_right_a_hover a {
+    background: url('../../../build/images/icon_right.png') right;
+}
+
+
+.index_scroll_box {
+    margin-left:auto;
+    margin-right:auto;
+    width: 972px;
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+}
+
+
+.index_scroll_main {
+    position: absolute;
+    width: 20000px;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+.index_scroll_main ul li {
+    width: 231px;
+    float: left;
+    margin-right: 12px;
+    position: relative;
+}
+
+
+.index_scroll_top {
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.index_scroll_icon {
+    float: left;
+    width: 55px;
+    height: 55px;
+}
+
+.index_scroll_text {
+    float: left;
+    width: 169px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.index_scroll_title {
+    font-size: 18px;
+    line-height: 2.0;
+}
+
+.index_scroll_value {
+    line-height: 14px;
+    width: 170px;
+    overflow: hidden;
+}
+
+
+.index_scroll_bottom {
+    z-index: 12;
+    background: #e9e9e9 url(../../../build/images/up_icon.png) no-repeat 67% center;
+    color: #333;
+    border-radius: 5px;
+    width: 211px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    font-size: 16px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+
+.index_scroll_down {
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+.index_scroll_down {
+    position: absolute;
+    display: none;
+    left: 0px;
+    top: 104px;
+    width: 193px;
+    height: 242px;
+    border: 1px solid #b1b1b1;
+    border-top: 2px #3da4f1 solid;
+    padding: 0 18px;
+    background: #fff;
+    font-size: 14px;
+    z-index: 997;
+}
+
+.index_scroll_down dl dt {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.index_scroll_down dl dd .label_radio {
+    display: block;
+    padding-left: 25px;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+
+.label_radio {
+    padding-left: 40px;
+    background: url(../../../build/images/radio.png) left -41px no-repeat;
+    background: url(../../../build/images/radio.png) left -43px no-repeat!important;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.r_on {
+    background: url(../../../build/images/radio.png) left 2px no-repeat;
+    background: url(../../../build/images/radio.png) left 0px no-repeat!important;
+}
+
+.label_radio input {
+    display: none;
+}
+.index_scroll_down .btn {
+    position: absolute;
+    bottom: 15px;
+}
+
+.index_scroll_down .btn span button {
+    font-size: 14px;
+}
+
+
+/*** .small_tab对应下拉详细的 ***/
+.index_scroll_down .small_tab {
+    margin-top: 15px;
+}
+.small_tab {
+    border-bottom: 2px #1693f1 solid;
+    height: 30px;
+}
+
+.small_tab a {
+    display: inline-block;
+    padding: 0 15px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+
+.btn span {
+    display: inline-block;
+    height: 30px;
+    background: url(../../../build/images/btn.png) 0 -140px no-repeat;
+    padding-left: 3px;
+}
+
+.btn span a {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    background: url(../../../build/images/btn.png) right -140px no-repeat;
+    min-width: 86px;
+    padding: 0 23px 0 20px;
+    margin-right: -3px;
+    overflow: visible;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn span button {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    background: url(../../../build/images/btn.png) right -140px no-repeat;
+    min-width: 114px;
+    padding: 0 23px 0 20px;
+    margin-right: -3px;
+    overflow: visible;
+    outline: none;
+    cursor: pointer;
+}
+
+.tab_radio {
+    margin: 15px 0;
+}
+
+.tab_radio .label_radio {
+    padding-left: 20px;
+    font-size: 14px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.small_tab_box .select_list {
+    margin-bottom: 15px;
+}
+
+.select_list {
+    text-indent: 5px;
+    position: relative;
+}
+
+.select_value {
+    z-index: 1;
+    background: url(../../../build/images/select.png) right 0 no-repeat;
+    cursor: default;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    border-left: 1px solid #0066b3;
+    font-size: 14px;
+    color: #333;
+}
+
+.select_ul {
+    position: absolute;
+    z-index: 15;
+    background: #fff;
+    width: 100%;
+    top: 29px;
+    left: 0;
+    display: none;
+    max-height: 240px;
+    overflow-y: auto;
+    border: 1px solid #999;
+    min-height: 70px;
+}
+
+.index_scroll_main ul li .select_ul li {
+    float: none;
+    width: auto;
+    margin-left: 0;
+}
+.index_scroll_main ul li {
+    width: 231px;
+    float: left;
+    margin-right: 12px;
+    position: relative;
+}
+
+.small_tab_box {
+    display: none;
+}

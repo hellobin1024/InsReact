@@ -1,0 +1,8 @@
+[
+  {"label":"首页","query":"","route":"/"},
+  {"label":"产品中心","query":"","route":"/productCenter"},
+  {"label":"新闻资讯","query":"","route":"/news"},
+  {"label":"个人中心","query":"","route":"/personalCenter"},
+  {"label":"业务咨询","query":"","route":"/consult"},
+  {"label":"关于我们","query":"","route":"/aboutUs"}
+]

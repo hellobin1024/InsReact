@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script></script>
+    <style>
+        .tar
+        {
+
+            left:0%;
+            width:300px;
+            height:300px;
+            transition-property: left;
+            transition-duration: .4s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 0s;
+            /* Firefox 4 */
+            -moz-transition-property:left;
+            -moz-transition-duration:.4s;
+            -moz-transition-timing-function:ease-in-out;
+            -moz-transition-delay:0s;
+            /* Safari 和 Chrome */
+            -webkit-transition-property:left;
+            -webkit-transition-duration:.4s;
+            -webkit-transition-timing-function:ease-in-out;
+            -webkit-transition-delay:0s;
+            /* Opera */
+            -o-transition-property:left;
+            -o-transition-duration:.4s;
+            -o-transition-timing-function:ease-in-out;
+            -o-transition-delay:0s;
+        }
+        .tar:hover{
+            left:-100%;
+
+        }
+    </style>
+    <script type="text/javascript" src="../../../build/bootstrap/js/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+</head>
+<body>
+<div style="position:relative;width:400px">
+    <div style="background-color:#00f;position: absolute;" class="tar">
+    </div>
+
+</div>
+</body>
+</html>

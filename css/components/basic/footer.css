@@ -1,0 +1,11 @@
+.footer {
+     font-size: 12px;
+     font-family: lucida, verdana, arial, sans-serif;
+     height: 42px;
+     line-height: 42px;
+     color: #ffffff;
+     z-index: 99;
+     text-align: center;
+     background-color: #2F8DBC;
+     width: 100%;
+}

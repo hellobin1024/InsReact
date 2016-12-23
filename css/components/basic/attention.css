@@ -1,0 +1,41 @@
+ul.popular-in {
+    padding-top: 2em;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul.popular-in li {
+    list-style: none;
+    border-bottom: 1px solid #BAB6B6;
+}
+
+ul.popular-in li a {
+    color: #848484;
+    text-decoration: none;
+    padding: 0.7em 0;
+    display: block;
+    font-size: 1.3em;
+}
+
+ul.popular-in li a:hover {
+    color: #aa381e;
+    cursor: pointer;
+}
+
+ul.popular-in li a i {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: url('/images/img-sprite.png') no-repeat -184px -22px;
+    vertical-align: sub;
+    margin-right: 0.5em;
+}
+
+@media (max-width: 1024px) {
+    ul.popular-in li a {
+        font-size: 1em;
+    }
+}

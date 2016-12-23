@@ -1,0 +1,115 @@
+.cart-items {
+    padding: 3em 0;
+}
+h3.tittle {
+    color: #252525;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+}
+.cart-header, .cart-header2, .cart-header3 {
+    position: relative;
+    margin-top: 2em;
+}
+.close1, .close2, .close3 {
+    background: url(../../../build/images/close.png) no-repeat 0px 0px;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transition: color 0.2s ease-in-out;
+}
+.cart-sec {
+    margin-bottom: 3em;
+    background-color: #F4F4F4;
+    padding: 20px;
+}
+.cart-item {
+    width: 20%;
+    float: left;
+    margin-right: 5%;
+}
+.cart-item img {
+    width: 100%;
+}
+.cart-item-info {
+    width: 75%;
+    float: left;
+}
+.cart-item-info h3 {
+    font-size: 1em;
+    font-weight: 600;
+}
+.cart-item-info h3 a {
+    color: #252525;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+.cart-item-info h3 span {
+    display: block;
+    font-weight: 400;
+    font-size: 0.85em;
+    margin: 0.7em 0;
+}
+ul.qty {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul.qty li {
+    display: inline-block;
+
+}
+ul.qty li p {
+    font-size: 0.8125em;
+    color: #555;
+}
+p {
+    margin: 0;
+}
+.delivery {
+    margin-top: 3em;
+}
+.delivery p {
+    color: #555;
+    font-size: 1em;
+    font-weight: 400;
+    float: left;
+}
+.delivery span {
+    color: #555;
+    font-size: 1em;
+    font-weight: 400;
+    float: right;
+}
+.buy-field{
+    width: 220px;
+    height: 28px;
+}
+.sect_company{
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+.sum{
+    width: 210px;
+    height: 51px;
+    margin-left: 73%;
+    margin-top: -29px;
+    text-align: center;
+}
+.Input{
+    background: #6fd508;
+    color: #FFFFFF;
+    border: none;
+    width:80px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+}

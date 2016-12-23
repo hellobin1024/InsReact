@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>bootstrap template</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="fakeLoader/css/fakeLoader.css" rel="stylesheet">
+    <link href="font-awesome-3.0.2/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="remodal/remodal-default-theme.css">
+    <link rel="stylesheet" href="remodal/remodal.css">
+    <link href="animate/css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="datetimepicker/css/bootstrap-datetimepicker.css"/>
+    <link rel="stylesheet" href="nivo-slider/css/nivo-slider.css"/>
+    <link rel="stylesheet" href="nivo-slider/themes/default/default.css"/>
+    <link href="css/user.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap-select-1.12.1/dist/css/bootstrap-select.css">
+    <style>
+        table.center > tbody > tr > th {
+            text-align: center border : 1 px solid #336699;
+        }
+        .icon-switcher {
+            background: #F9F7F6 no-repeat;
+            margin-left: 0px;
+            margin-top: -5px;
+            padding: 12px 12px;
+            position: absolute;
+            font-size: 22px;
+        }
+
+        .icon-switcher {
+            color: #3B5998 !important;
+        }
+    </style>
+    <!-- ע��:Respond.js��֧��file:// ��ʽ�ķ��� -->
+    <script type="text/javascript" src="js/ie-hack.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="bootstrap/js/html5shiv.js"></script>
+    <script type="text/javascript" src="bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="bootstrap/js/jquery-latest.js"></script>
+    <script type="text/javascript" src="fakeLoader/js/fakeLoader.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="remodal/remodal.js"></script>
+    <script src="nivo-slider/js/jquery.nivo.slider.js"></script>
+    <script src="bootstrap-select-1.12.1/dist/js/bootstrap-select.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            window.App.remodal.inst=$('[data-remodal-id="re-modal"]').remodal({
+            });
+        });
+    </script>
+</head>
+
+<body style="line-height:2; height:100%; background-size:100%;overflow-x:hidden;">
+<div class="modal fade" id="root_modal" style="display:none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-remodal-id="re-modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+    <div>
+        <h2 id="modal1Title">业务</h2>
+    </div>
+    <br>
+    <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+    <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+</div>
+
+
+<div id="loading"></div>
+<div id="_mustdone"></div>
+<div id="root" style="height:100%"></div>
+<div id="list-render"></div>
+<script src="bundle.js"></script>
+
+</body>
+</html>

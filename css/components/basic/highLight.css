@@ -1,0 +1,96 @@
+.highLight {
+    box-sizing: border-box;
+    background-color: #edf7ff;
+    margin-top: 2px;
+    /*background: linear-gradient(to bottom, rgb(237, 247, 255) ,rgb(255, 255, 255));*/
+}
+
+.highLight .left .component {
+    margin-top: 2px;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highLight .menu {
+    text-align: center;
+    width: 36px;
+    height: 40px;
+    /*background:#6EA0FF;*/
+    background: #6EA0FF;
+    cursor: pointer;
+    position: relative;
+}
+
+.highLight .menu i {
+    display: block;
+    width: 24px;
+    height: 4px;
+    background: #333;
+    position: absolute;
+    left: 8px;
+    transition: 0.3s;
+}
+
+.highLight .menu i:nth-child(1) {
+    top: 10px;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+
+.highLight .menu i:nth-child(2) {
+    top: 17px;
+}
+
+.highLight .menu i:nth-child(3) {
+    top: 25px;
+    -webkit-transform-origin: left top;
+    transform-origin: left top
+}
+
+.highLight .menu.on i:nth-child(1) {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg)
+}
+
+.highLight .menu.on i:nth-child(2) {
+    opacity: 0;
+}
+
+.highLight .menu.on i:nth-child(3) {
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg)
+}
+
+.highLight .component .content {
+    margin-top: 6px;
+    border-top: 1px solid #6EA0FF;
+    border-left: 1px solid #6EA0FF;
+    border-bottom: 1px solid #6EA0FF;
+    font-size: 12px;
+    align: center;
+    line-height: 24px;
+    border-collapse: collapse;
+
+}
+
+.highLight .component .content td {
+    height: 28px;
+    padding-left: 4px;
+    border-right: 1px solid #6EA0FF;
+    border-bottom: 1px solid #6EA0FF;
+    empty-cells: show;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.highLight .component .content td.head {
+    font-size: 14px;
+    color: #6EA0FF;
+    font-weight: bold;
+}
+
+.highLight .component .content td.main {
+    text-align: left;
+}
+

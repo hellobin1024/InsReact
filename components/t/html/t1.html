@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../build/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        #btn_add{
+            background-image:url("../../../icon/add_0.png");
+            background-repeat:no-repeat;
+            height:16px;
+            width:16px;
+        }
+
+        div ul li{
+            list-style: none;
+            display: block;
+            width:100px;
+            background: #0f0f0f;
+            margin:0 0 5px 0;
+            color:#ffffff;
+        }
+    </style>
+    <script type="text/javascript" src="../../../build/bootstrap/js/jquery-latest.js"></script>
+    <script type="text/javascript" src="../../../build/bootstrap/js/bootstrap.js"></script>
+    <script>
+        function checkCb(target)
+        {
+            console.log("checked=" + target.checked);
+        }
+
+        function menu_click(target){
+            var $target=$(target);
+            var display=$target.next("ul").css("display");
+            if(display=="none")
+            {
+                $target.next("ul").css("display","block");
+            }else
+            {
+                $target.next("ul").css("display","none");
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            var obj={
+                name:"sgfjnfus",
+                data:{
+                    age:20,
+                    house:"none",
+                    stagged:true
+                }
+            }
+            for(var item in obj) {
+                console.log("item=" + item);
+                console.log();
+            }
+            var components=[
+                {name:"年级",type:"dropdown"},
+                {name:"查询",type:"query"}
+            ]
+            components.map(function(item,i) {
+                for(var index in item) {
+                    console.log("index="+item[index]);
+                    console.log();
+                }
+            });
+
+
+            var a1=[null,null,null,4,null,6,7,8];
+            for(var i=a1.length-1;i>=0;i--)
+            {
+                if(a1[i]==null)
+                a1.splice(i,1);
+            }
+
+
+            console.log(a1);
+
+
+            var tri="a1|a2|a3";
+            try{
+                var json=eval(tri);
+
+            }catch(e)
+            {
+                console.log('e='+e);
+            }
+            finally{
+                console.log('du');
+            }
+
+
+            var string1="<de>c</de>";
+            var re1=/<(.*)>.*<\/(.*)>/;
+
+        });
+
+    </script>
+</head>
+<body>
+
+<div name="tdive" data-query="{name:'wjj'}"></div>
+<script>
+    var tdive=document.getElementsByName("tdive");
+    console.log();
+</script>
+
+<div class="row" style="width:80%;margin-left:auto;margin-right:auto">
+    <div class="col-md-12" >
+        <table class="table-bordered" style="width:100%">
+            <tbody>
+            <tr>
+                <td>
+                    <div>
+                        <div style="display:inline">
+                            <span style="margin:0px 20px">male</span><input type="radio" name="sex" value="male"/>
+                        </div>
+                        <div style="display:inline">
+                            <span style="margin:0px 20px">female</span><input type="radio" name="sex" value="female"/>
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <span>2015</span><input type="radio" name="grade" value="2015"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><span>20</span><input type="radio" name="age" value="20"/></td>
+                <td><span>21</span><input type="radio" name="age" value="21"/></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <table class="table-bordered" style="width:100%">
+                        <tr>
+                            <td><input type="text"/></td>
+                            <td><input type="text"/></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<input type="text"  id="test-data-query" data-query="{url:'dd'}" />
+
+<ul class="pagination pagination-lg">
+    <li class=""><a role="button" href="">1</a></li>
+    <li class=""><a role="button" href="">2</a></li>
+    <li class=""><a role="button" href="">3</a></li>
+    <li class=""><a role="button" href="">4</a></li>
+    <li class=""><a role="button" href="">5</a></li>
+    <li class=""><a role="button" href="">6</a></li>
+    <li class=""><a role="button" href="">7</a></li>
+    <li class=""><a role="button" href="">8</a></li><li class="active"><a role="button" href="">9</a></li>
+    <li class=""><a role="button" href="">10</a></li>
+</ul>
+<div id="btn_add">
+    <a href=""/>
+</div>
+
+<div>
+    <span>check me</span>
+    <input type="checkbox" onchange="checkCb(this)"/>
+</div>
+<span>dwdwdw</span><input type="checkbox" />
+<div style="height: 300px;">
+    <div style="float:left;height:100%">c</div>
+    <div style="float:left;height:100%;">a</div>
+</div>
+<div id="tab">
+    <ul>
+        <li style="list-style:none;position:relative">
+            <span onclick="menu_click(this)">培养管理2016</span>
+            <ul style="position: absolute;left:100%;top:0%;display:none">
+                <li>
+                    <span>选课与上课</span>
+                    <ul style="position: absolute;left:100%;top: 0%;display:none">
+                        <li >
+                             <span>上课地点查看</span>
+                        </li>
+                        <li >
+                            上课地点查看
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    课程查询
+                </li>
+            </ul>
+        </li>
+        <li>
+            dwd
+        </li>
+        <li>
+            dwd
+        </li>
+        <li>
+            dwd
+        </li>
+        <li>
+            dwd
+        </li>
+    </ul>
+</div>
+</body>
+</html>

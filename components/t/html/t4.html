@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul.popular-in {
+            padding-top: 2em;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.popular-in li {
+            list-style: none;
+            border-bottom: 1px solid #BAB6B6;
+        }
+
+        ul.popular-in li a {
+            color: #848484;
+            text-decoration: none;
+            padding: 0.7em 0;
+            display: block;
+            font-size: 1.3em;
+        }
+
+        ul.popular-in li a:hover{
+            color:#aa381e;
+        }
+        ul.popular-in li a i {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            background: url(../../../build/images/img-sprite.png) no-repeat -184px -22px;
+            vertical-align: sub;
+            margin-right: 0.5em;
+        }
+
+        @media (max-width: 1024px){
+        ul.popular-in li a {
+            font-size: 1em;
+        }}
+
+    </style>
+    <link href="../../../build/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="../../../build/bootstrap/js/jquery-latest.js"></script>
+    <script type="text/javascript" src="../../../build/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<ul class="popular-in">
+    <li><a href="single.html"><i> </i>Lorem ipsum dolor sit amet, consectetur </a></li>
+    <li><a href="single.html"><i> </i>Sed in velit sed felis mollis vulputate vitae </a></li>
+    <li><a href="single.html"><i> </i>Nulla id neque lacus, rutrum euismod ligu</a></li>
+    <li><a href="single.html"><i> </i>Sed lobortis lorem nec orci vulputate</a></li>
+</ul>
+</body>
+</html>

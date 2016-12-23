@@ -1,0 +1,108 @@
+.customMenu {
+    width: 100%;
+    min-width: 1263px;
+    background: linear-gradient(to right bottom, rgba(172, 218, 244, 0), rgba(0, 0, 0, 0));
+}
+
+.customMenu .bottom {
+    width: 1024px;
+    /*height: 150px;*/
+    margin: 0 auto;
+    text-align: center;
+    color: #777;
+    border-top: 1px solid rgba(200, 200, 200, 0.5);
+    background: rgba(87, 104, 144, 0.1);
+    position: relative;
+}
+
+.customMenu .bottom .menu_custom {
+    display: inline-block;
+    text-align: center;
+    color: #ccc;
+    vertical-align: top;
+    padding-top: 10px;
+    position: absolute;
+    left: 12px;
+}
+
+.customMenu .bottom .menu_custom img {
+    max-width: 40px;
+    max-height: 40px;
+
+}
+
+.customMenu .bottom .block {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+    color: #444;
+    vertical-align: top;
+}
+
+.customMenu .bottom .block input[type="checkbox"] {
+    left: -10px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.customMenu .bottom .block.functionalAreas {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.customMenu .bottom .block.one {
+    background: url(../../../build/images/function1.png) no-repeat;
+    height: 84px;
+    width: 84px;
+    margin: 10px 10px 10px 0;
+}
+
+.customMenu .bottom .block.two {
+    background: url(../../../build/images/function2.png) no-repeat;
+    height: 84px;
+    width: 84px;
+    margin: 10px 10px 10px 0;
+}
+
+.customMenu .bottom .block.three {
+    background: url(../../../build/images/function3.png) no-repeat;
+    height: 84px;
+    width: 84px;
+    margin: 10px 10px 10px 0;
+}
+
+.customMenu .bottom .block.four {
+    background: url(../../../build/images/function4.png) no-repeat;
+    height: 84px;
+    width: 84px;
+    margin: 10px 10px 10px 0;
+}
+
+.customMenu .bottom .uncandidate.box {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background: rgba(87, 104, 144, 0.3);
+}
+.customMenu .bottom .candidate.box {
+    text-align: center;
+    width: 100%;
+    padding: 10px
+}
+
+.customMenu .bottom .candidate.box .menu {
+    position: relative;
+    background: url(../../../build/images/function1.png) no-repeat;
+    height: 84px;
+    width: 84px;
+    display: inline-block;
+    margin: 0px 5px 0px 5px;
+}
+
+.customMenu .bottom .candidate.box .menu input[type="checkbox"] {
+    position: absolute;
+    left: -10px;
+    bottom: 0px;
+}

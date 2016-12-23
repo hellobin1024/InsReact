@@ -1,0 +1,72 @@
+/*侧边栏menu样式*/
+
+.sidebar-menu>li:first-of-type {
+    border-top: 1px solid #dbdbdb;
+}
+.sidebar-menu>li {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding:0px 10px 0px 0px;
+}
+li > a {
+    margin-right: 1px;
+}
+li > a > .fa{
+    width:20px;
+}
+li.active > a{
+    color:#222;
+    background:#f9f9f9;
+}
+li > a {
+    padding: 12px 5px 12px 15px;
+    display: block;
+}
+
+.bg-green{
+    background-color:#00a65a;
+}
+
+.bg-aqua {
+    background-color: #00c0ef !important;
+}
+.bg-red {
+    background-color: #f56954 !important;
+}
+.bg-yellow {
+    background-color: #f39c12 !important;
+}
+
+ li > .treeview-menu {
+    margin: 0 1px;
+    background: #f9f9f9;
+}
+ .treeview-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ .treeview-menu > li > a {
+    padding: 5px 5px 5px 15px;
+    display: block;
+    font-size: 14px;
+    margin: 0px 0px;
+}
+
+li > a:hover,
+li.active > a {
+    color: #222;
+    background: #f9f9f9;
+}
+
+.treeview-menu > li > a > .fa
+{
+    width:20px;
+}
+
+
+li >a>span{
+    margin-left:20px;
+}

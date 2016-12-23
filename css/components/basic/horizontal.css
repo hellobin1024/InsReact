@@ -1,0 +1,33 @@
+.horizontal{
+    margin-top:20px;
+}
+
+
+.horizontal .highLight.table.table-bordered thead tr th {
+    border: 1px solid #0066b3;
+}
+
+.horizontal .highLight.table-bordered tbody tr td {
+    border: 1px solid #0066b3;
+    padding:9px;
+}
+
+
+.horizontal.highLight.table.table-bordered thead tr th {
+    border: 1px solid #0066b3;
+}
+
+.horizontal.highLight .table.table-bordered tbody tr td {
+    border: 1px solid #0066b3;
+    padding:9px;
+    text-align: right;
+}
+
+.horizontal .table-bordered thead th {
+    font-size:1.2em;
+    text-align: center;
+}
+
+.horizontal .table tbody tr td{
+    text-align: center;
+}

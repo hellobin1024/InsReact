@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>bootstrap template</title>
+    <link href="../../../build/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../build/fakeLoader/css/fakeLoader.css" rel="stylesheet">
+    <link href="../../../build/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style>
+        @media (min-width: 992px)
+        {
+            .hidden-xs, .hidden-sm, .hidden-md, .hidden-lg {
+                display: inline-block !important;
+            }
+        }
+        .notifications {
+            display: inline-block;
+            list-style: none;
+            margin: -13px 17px 0 0;
+            padding: 0 8px;
+            vertical-align: middle;
+            height: 62px;
+        }
+        .notifications > li {
+            float: left;
+            margin: 20px 10px 0 0;
+            position: relative;
+        }
+         .notifications li a {
+            color: #c8c8c8;
+        }
+        .notifications > li .notification-icon {
+            background: #FFF;
+            border-radius: 50%;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            height: 30px;
+            position: relative;
+            width: 30px;
+            text-align: center;
+            margin: 0 5px;
+        }
+        .notifications > li > a {
+            border: none;
+            display: inline-block;
+        }
+        a {
+            color: #cccccc;
+        }
+        .notifications > li .notification-icon i {
+            color: #777;
+            line-height: 30px;
+            vertical-align: middle;
+            margin-bottom: 35px;
+        }
+
+         .notifications li a .badge {
+            background: #d9534f;
+            color: #FFF;
+            font-size: 10px;
+            font-weight: normal;
+            height: 16px;
+            padding: 3px 5px 3px 5px;
+            position: absolute;
+            right: -10px;
+            top: -3px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../../../build/bootstrap/js/html5shiv.js"></script>
+    <script type="text/javascript" src="../../../build/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../../../build/bootstrap/js/jquery-latest.js"></script>
+    <script type="text/javascript" src="../../../build/fakeLoader/js/fakeLoader.js"></script>
+    <script type="text/javascript" src="../../../build/bootstrap/js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+</head>
+<body style="line-height: 2;height:100%">
+<div>
+    <ul class="notifications hidden-sm hidden-xs">
+        <li>
+            <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                <i class="fa fa-tasks"></i>
+                <span class="badge">10</span>
+            </a>
+            <ul class="dropdown-menu update-menu" role="menu">
+                <li><a href="#"><i class="fa fa-database bk-fg-primary"></i> Database </a></li>
+                <li><a href="#"><i class="fa fa-bar-chart-o bk-fg-primary"></i> Connection </a></li>
+                <li><a href="#"><i class="fa fa-bell bk-fg-primary"></i> Notification </a></li>
+                <li><a href="#"><i class="fa fa-envelope bk-fg-primary"></i> Message </a></li>
+                <li><a href="#"><i class="fa fa-flash bk-fg-primary"></i> Traffic </a></li>
+                <li><a href="#"><i class="fa fa-credit-card bk-fg-primary"></i> Invoices </a></li>
+                <li><a href="#"><i class="fa fa-dollar bk-fg-primary"></i> Finances </a></li>
+                <li><a href="#"><i class="fa fa-thumbs-o-up bk-fg-primary"></i> Orders </a></li>
+                <li><a href="#"><i class="fa fa-folder bk-fg-primary"></i> Directories </a></li>
+                <li><a href="#"><i class="fa fa-users bk-fg-primary"></i> Users </a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                <i class="fa fa-envelope"></i>
+                <span class="badge">5</span>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-menu-header">
+                    <strong>Messages</strong>
+                    <div class="progress progress-xs  progress-striped active">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            60%
+                        </div>
+                    </div>
+                </li>
+                <li class="avatar">
+                    <a href="page-inbox.html">
+                        <img class="avatar" src="assets/img/avatar1.jpg" alt="">
+                        <div><div class="point point-primary point-lg"></div>New message</div>
+                        <span><small>1 minute ago</small></span>
+                    </a>
+                </li>
+                <li class="avatar">
+                    <a href="page-inbox.html">
+                        <img class="avatar" src="assets/img/avatar2.jpg" alt="">
+                        <div><div class="point point-primary point-lg"></div>New message</div>
+                        <span><small>3 minute ago</small></span>
+                    </a>
+                </li>
+                <li class="avatar">
+                    <a href="page-inbox.html">
+                        <img class="avatar" src="assets/img/avatar3.jpg" alt="">
+                        <div><div class="point point-primary point-lg"></div>New message</div>
+                        <span><small>4 minute ago</small></span>
+                    </a>
+                </li>
+                <li class="avatar">
+                    <a href="page-inbox.html">
+                        <img class="avatar" src="assets/img/avatar4.jpg" alt="">
+                        <div><div class="point point-primary point-lg"></div>New message</div>
+                        <span><small>30 minute ago</small></span>
+                    </a>
+                </li>
+                <li class="avatar">
+                    <a href="page-inbox.html">
+                        <img class="avatar" src="assets/img/avatar5.jpg" alt="">
+                        <div><div class="point point-primary point-lg"></div>New message</div>
+                        <span><small>1 hours ago</small></span>
+                    </a>
+                </li>
+                <li class="dropdown-menu-footer text-center">
+                    <a href="page-inbox.html">View all messages</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                <i class="fa fa-bell"></i>
+                <span class="badge">3</span>
+            </a>
+            <ul class="dropdown-menu list-group">
+                <li class="dropdown-menu-header">
+                    <strong>Notifications</strong>
+                    <div class="progress progress-xs  progress-striped active">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            60%
+                        </div>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <a href="page-inbox.html">
+                        <div class="pull-left">
+                            <i class="fa fa-envelope-o bk-fg-primary"></i>
+                        </div>
+                        <div class="media-body clearfix">
+                            <div>Unread Message</div>
+                            <h6>You have 10 unread message</h6>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#">
+                        <div class="pull-left">
+                            <i class="fa fa-cogs bk-fg-primary"></i>
+                        </div>
+                        <div class="media-body clearfix">
+                            <div>New Settings</div>
+                            <h6>There are new settings available</h6>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#">
+                        <div class="pull-left">
+                            <i class="fa fa-fire bk-fg-primary"></i>
+                        </div>
+                        <div class="media-body clearfix">
+                            <div>Update</div>
+                            <h6>There are new updates available</h6>
+                        </div>
+                    </a>
+                </li>
+                <li class="list-item-last">
+                    <a href="#">
+                        <h6>Unread notifications</h6>
+                        <span class="badge">15</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+
+
+</body>
+</html>

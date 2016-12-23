@@ -1,0 +1,10 @@
+div.container{
+/*background-image:url('../../../../icon/body.gif');*/
+height:100%;
+    width:100%;
+}
+div.row>div.container{
+    padding-top:20px;
+    padding-right:20px;
+
+}

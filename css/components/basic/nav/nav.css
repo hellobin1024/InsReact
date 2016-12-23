@@ -1,0 +1,235 @@
+.cell {
+    text-align: left;
+}
+
+.clearfix
+{
+    zoom: 1;
+}
+
+.fl
+{
+    float: left;
+    display: inline;
+}
+
+/**navigation part**/
+#navigation {
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    z-index:10;
+    width: 100%;
+    height: 30px;
+    background:url(../../../../build/images/bg.png) repeat-x 0 0;
+    /*background-color: #0066B3;*/
+    _padding-top:9px;_position:absolute;_top: expression(eval(document.documentElement.scrollTop)+0);
+}
+
+#navigation .center {
+    width: 1263px;
+    height: 30px;
+    margin: 0 auto;
+}
+#navigation .link {
+    /*width: 650px;*/
+    margin-left: 60px;
+    height: 30px;
+    line-height: 30px;
+    color: #eee;
+    float: right;
+}
+#navigation .link .user{
+    width: 80px;
+    text-align: center;
+    float: left;
+}
+#navigation .link li {
+    width: 80px;
+    text-align: center;
+    float: left;
+}
+#navigation .link a {
+    color: #eee;
+    display: block;
+}
+#navigation .link a:hover, #nav .active a {
+    background-color: #0066b3;
+}
+
+
+
+
+
+
+.header_box
+{
+   /* z-index: 11;
+    width: 100%;
+    height: auto;
+    border-bottom:1px solid #ddd;*/
+    width: 100%;
+    height: auto;
+}
+
+.header_
+{
+    /*clear: both;
+    width: 80%;
+    margin: 40px auto;
+    height: 81px;
+    position: relative;
+    margin-bottom: 10px;*/
+    clear: both;
+    width: 100%;
+    margin: 0px auto 0px;
+    height: 90px;
+    border-bottom: 1px solid #4b8ec6;
+    position: relative;
+    z-index: 11;
+}
+.logo {
+    /*float: left;
+    width: 200px;
+    height: 40px;
+    padding-top: 5px;
+    padding-right: 16px;*/
+    float: left;
+    width: 200px;
+    height: 40px;
+    padding-top: 16px;
+    padding-right: 16px;
+}
+
+/*
+.nav {
+    /*float: left;
+    padding-top: 24px;
+    padding-left: 36px;/
+    float: left;
+    padding-top: 44px;
+    padding-left: 500px;
+} */
+
+
+.nav ul li {
+    float: left;
+    font-size: 18px;
+    font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"宋体";
+    display: inline-block;
+    color: #666;
+}
+
+.nav ul li a.nav_a {
+    color: #111;
+    cursor: default;
+    padding: 0 14px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* hover选择器鼠标指针在其上浮动的链接设置样式
+.nav ul li a.nav_a:hover{
+    background: #0066b3;
+    color:#fff;
+    text-decoration: none;
+}*/
+
+.nav .nav_a_hover{ color:#fff; background:#1693f1;}
+.nav .nav_a_hover:hover{ color:#fff; background:#1693f1;}
+
+.mnavL {
+    width: 960px;
+    position: absolute;
+    border-top: 2px #1693f1 solid;
+    -moz-box-shadow: 1px 3px 6px #6c7870;
+    -webkit-box-shadow: 1px 3px 6px #6c7870;
+    box-shadow: 1px 3px 6px #6c7870;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#333232)";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#333232');
+    top: 67px;
+    left: 0;
+    z-index: 99999;
+    background: #f8f8f8;
+    color: #333;
+    cursor: auto;
+    font-size: 14px;
+}
+
+.mnavL_info {
+    position: relative;
+    width: 960px;
+}
+
+.mnavL .mnavL_left {
+    width: 738px;
+    border-right: 1px solid #d8d8d8;
+    min-height: 310px;
+}
+
+.mnavL_left_LL {
+    position: static !important;
+    width: 100%;
+    font-size: 12px;
+    min-height: 310px;
+}
+
+
+.mnavL .cell .tz_td_nav {
+    width: 114px;
+    overflow: hidden;
+}
+
+
+.mnavL .cell .tz_td_cell {
+    width: 100px;
+    overflow: hidden;
+}
+
+.mnavL .cell .tz_td_cell a {
+    text-decoration: none;
+}
+
+.mnavL .cell .tz_td_cell a:hover,
+.mnavL .cell .tz_td_cell a:focus {
+    color: #fff;
+    padding: 5px;
+    background-color: #1693f1
+}
+
+table.cell
+{
+    table-layout: fixed;
+}
+
+.tz_1
+{
+    padding-top: 20px;
+    padding-left: 118px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.tz_2
+{
+    height: 50px;
+    line-height: 50px;
+}
+
+.xian {
+    border-top: 1px solid #ccc;
+    height: 1px;
+    margin-left: 20%;
+    width: 80%;
+}
+
+.topbg {
+    background: url(../../../../build/images/shadow.png) repeat-x left top;
+    height: 40px;
+    position: absolute;
+    top: 101px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}

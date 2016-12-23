@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="content"></div>
+<script>
+    var el = document.createElement("div");
+    el.innerHTML = ' <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <title>titleValue</title> <meta name="description" content="It is a good way to learn science." /> <meta name="keywords" content="Symfony2,Redis,PHP" /> <meta name="author" content="CSDN.NET" /> <meta name="Copyright" content="CSDN.NET" /> </head> <body> hello</body> </html>';
+    var descElements = el.getElementsByTagName("head");
+    document.getElementById("content").innerHTML = descElements.length;
+</script>
+</body>
+</html>

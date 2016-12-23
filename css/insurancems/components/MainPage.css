@@ -1,0 +1,70 @@
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width: 100%;
+    height: 93px;
+    border-bottom: 1px solid #4b8ec6;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.fleft{
+    float: left;
+}
+
+.fright{
+    float: right;
+}
+
+.fright ul li{
+    float: left;
+    font-size: 17px;
+    line-height: 1.2em;
+    padding-left: 32px;
+}
+
+ul li.cursor{
+    cursor: pointer;
+}
+
+.login-container .form-group {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.login-container input.form-control {
+    height: 48px;
+    font-size: 15px;
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid #d6d6d6;
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+}
+
+input[type="text"] {
+    box-shadow: none !important;
+}
+
+.login-container .form-group .icon-right{
+    position: absolute;
+    right: 10%;
+    font-size: 1.7em;
+    top:30%;
+    color:#b4b4b4;
+}
+
+.login-container .form-options {
+    margin: 20px 0 30px;
+}
+
+.login-container .form-options .checkbox {
+    display: inline-block;
+}

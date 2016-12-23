@@ -1,0 +1,13 @@
+
+.embedTable .center td{
+    text-align:center;
+}
+
+.folding{
+    float:right;
+    margin-right: 20px;
+}
+
+.icon{
+    background:url(../../../../build/images/function1.png);
+}

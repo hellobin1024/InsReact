@@ -1,0 +1,4 @@
+{
+  "PanelTable": "../../components/compounds/panelTable/PanelTable.jsx",
+  "EmbedTable": "../../components/forms/EmbedTable.jsx"
+}

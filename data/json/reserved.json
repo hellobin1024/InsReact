@@ -1,0 +1,7 @@
+{
+  "query":true,
+  "input":true,
+  "select":true,
+  "span":true,
+  "textarea":true
+}

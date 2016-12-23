@@ -1,0 +1,181 @@
+.page-container {
+    width: 100%;
+}
+.page-container > .container {
+    padding: 40px 35px;
+    background-color: #fff;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    margin-left: -20px;
+}
+div {
+    display: block;
+}
+article {
+    display: block;
+}
+input.span6, textarea.span6 {
+    width: 446px;
+}
+textarea[class="span"]{
+    float: none;
+    margin-left: 0;
+}
+textarea{
+
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    padding: 4px 6px;
+    margin-bottom: 11px;
+    border-radius: 4px;
+
+}
+/*textarea {*/
+/*font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+/*}*/
+
+
+.page-container h1, h2, h3 {
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
+    color: #3C3C3C;
+    font-size: 35.75px;
+    line-height: 44px;
+    text-rendering: optimizelegibility;
+    font-weight: bold;
+    margin: 11px 0;
+}
+a{
+    color: #337ab7;
+    text-decoration: none;
+}
+p {
+    margin: 0 0 22px;
+    display: block;
+}
+form {
+    margin: 0 0 22px;
+    display: block;
+}
+aside{
+    display: block;
+}
+.support-widget h3 {
+    margin: 0;
+    padding: 0;
+}
+.widget h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+.support-widget {
+    border: 1px solid #e9e6c4;
+    padding: 10px 100px 10px 20px;
+    background: #fefbdc url(../../../build/images/support.png) no-repeat 95% 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+section {
+    display: block;
+}
+.widget div {
+    border-color: #e1e1e1;
+}
+.page-content {
+    margin-bottom: 20px;
+}
+.span8 {
+    width: 620px;
+}
+.span2 {
+    width: 140px;
+}
+.span4 {
+    width: 300px;
+}
+.span6 {
+    width: 460px;
+}
+#contact-form label {
+    font-weight: 700;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 22px;
+    cursor: pointer;
+    padding-left: 21px;
+}
+.span6 input[type="text"]{
+    border: 1px solid #cccccc;
+    padding: 4px 6px;
+    margin-bottom: 11px;
+    border-radius: 4px;
+}
+.input-xlarge {
+    width: 270px;
+}
+
+[class*="span"] {
+    float: left;
+    min-height: 1px;
+
+}
+
+.bm30 {
+    margin-bottom: 30px;
+}
+.offset2 {
+    margin-left: 180px;
+}
+.error-container {
+    color: red;
+}
+#contact-form .error-container label {
+    font-weight: 400;
+}
+textarea.error{
+    border-color: red;
+}
+#message-sent {
+    font-weight: 600;
+    color: #4a4e51;
+}
+input[type="submit"] {
+    color: #ffffff;
+}
+
+.btn-inverse {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(to bottom, #444444, #222222);
+    background-repeat: repeat-x;
+
+}
+.btn {
+
+    line-height: 22px;
+    text-align: center;
+
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    margin-left: -40px;
+    margin-top: 3%;
+}
+.UploadBtn{
+    line-height: 22px;
+    text-align: center;
+
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+}

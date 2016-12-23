@@ -1,0 +1,47 @@
+.page-container {
+    width: 100%;
+}
+.page-container > .container {
+    padding: 40px 35px;
+    background-color: #fff;
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
+    background-color: #fcfcfc;
+    font-size: 12px;
+}
+.hentry .wp-post-image {
+    margin: 0 0 20px;
+}
+
+.pages-nav a {
+    margin-right: 10px;
+}
+
+#pagination .btn {
+    margin-bottom: 5px;
+}
+.faqs {
+    padding-top: 20px;
+}
+.faqs dt {
+    font-weight: bold;
+    background: url(../../../build/images/q.gif) 0 4px no-repeat;
+    padding: 3px 0 15px 30px;
+    position: relative;
+}
+.faqs dd {
+    background: url(../../../build/images/a.gif) 0 2px no-repeat;
+    padding: 0 0 5px 30px;
+    position: relative;
+    color: #333;
+}
+dt {
+    display: block;
+}
+p, dl {
+    font-size: 1.2em;
+    line-height: 170%;
+    margin-bottom: 20px;
+}

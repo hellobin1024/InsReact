@@ -1,0 +1,12 @@
+{
+  "devServer": {
+    "port": 3000,
+    "hot": true,
+    "proxy": {
+      "/insurancems/*.do": {
+        "model": "on",
+        "secure": false
+      }
+    }
+  }
+}
