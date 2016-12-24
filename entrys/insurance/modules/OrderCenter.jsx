@@ -22,14 +22,14 @@ var OrderCenter=React.createClass({
         return slices;
     },
 
-    previousCb:function (index,isChange) { //向前跳页
+    previousCb:function (index,isChange) { //向前跳页,isChange为true(比如5,6,7,8变为1,2,3,4)
         this.setState({pageIndex:index,isChange:isChange});
     },
 
-    pageCb:function(index,isChange) { //进入指定页的列表
+    pageCb:function(index,isChange) { //进入指定页的列表，isChange为false
         this.setState({pageIndex:index,isChange:isChange});
     },
-    nextCb:function(index,isChange){ //向后跳页,isChange为true
+    nextCb:function(index,isChange){ //向后跳页,isChange为true (比如1,2,3,4变为5,6,7,8)
         this.setState({pageIndex:index,isChange:isChange});
     },
 

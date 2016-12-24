@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-
+import Footer from '../component/Footer.jsx';
 
 var App=React.createClass({
     render:function(){
