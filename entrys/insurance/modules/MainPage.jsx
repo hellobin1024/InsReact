@@ -35,9 +35,9 @@ var MainPage=React.createClass({
                                     <h5>车险    意外伤害保险    其他</h5>
                                     <h5>家庭财产损失险</h5>
                                 </div>
-                                <div style={{marginTop:'60px'}}>
+                                <div style={{marginTop:'90px'}}>
                                     <button type="button" className="btn btn-default">
-                                        查看详情
+
                                     </button>
                                 </div>
                             </div>
@@ -54,9 +54,9 @@ var MainPage=React.createClass({
                                     <h5>团体健康险    企业年金</h5>
                                     <h5>团体意外伤害保险</h5>
                                 </div>
-                                <div style={{marginTop:'60px'}}>
+                                <div style={{marginTop:'90px'}}>
                                     <button type="button" className="btn btn-default">
-                                        查看详情
+
                                     </button>
                                 </div>
                             </div>
@@ -70,11 +70,12 @@ var MainPage=React.createClass({
                                 <div style={{marginTop:'20px'}}>
                                     <News
                                         data={[
-                                        {text:'山东大学2016年自主招生初审',date:'2016-05'},
-                                        {text:'关于自主招生初审延期公布',date:'2016-06'},
-                                        {text:'山东大学2016年免试招收',date:'2016-07'},
-                                        {text:'山东大学2016年音乐类专业考试',date:'2016-08'},
-                                        {text:'[政策解读]2016年自主招生',date:'2016-09'}
+                                        {text:'保险新闻1',date:'2016-10'},
+                                        {text:'保险新闻2',date:'2016-10'},
+                                        {text:'保险新闻3',date:'2016-11'},
+                                        {text:'保险新闻4',date:'2016-11'},
+                                        {text:'保险新闻5',date:'2016-12'},
+                                        {text:'保险新闻6',date:'2016-12'}
                                         ]}
                                         />
                                 </div>
