@@ -21,6 +21,9 @@ render((
             <Route path={window.App.getAppRoute()+"/consult"} component={MainSection}/>
             <Route path={window.App.getAppRoute()+"/aboutUs"} component={MainSection}/>
             <Route path={window.App.getAppRoute()+"/personInfo"} component={MainSection}/>
+            <Route path={window.App.getAppRoute()+"/lifeInsurance"} component={MainSection}/>
+
+
         </Route>
     </Router>
 ), document.getElementById('root'))

@@ -1,5 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {Link} from 'react-router';
+
 import '../../../css/insurancems/components/Product.css';
 import LifeInsurance from'../modules/lifeInsurance.jsx';
 import CarInsurance from'../modules/CarInsurance.jsx';
@@ -38,23 +40,27 @@ var Product=React.createClass({
                 container=
                     <div >
 
-                            <div className="container" style={{background: 'url(images/background.png) no-repeat',backgroundSize:'100%'}} >
+                            <div className="container" style={{background: 'url('+App.getResourceDeployPrefix()+'images/background.png) no-repeat',backgroundSize:'100%'}} >
                                 <div className="row" style={{marginTop: '25%'}}>
                                     <div className="col-md-6">
-                                        <a onClick={this.goToOthers.bind(this,'lifeInsurance')} className="featured-grid" style={{border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_6.png)'}}>
-                                            <div className="desc">
-                                                <h3>寿险</h3>
-                                                <span>Web Design</span>
-                                            </div>
-                                        </a>
+                                        <Link to={window.App.getAppRoute()+"/lifeInsurance"}>
+                                            <a onClick={this.goToOthers.bind(this,'lifeInsurance')} className="featured-grid" style={{border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_6.png)'}}>
+                                                <div className="desc">
+                                                    <h3>寿险</h3>
+                                                    <span>Web Design</span>
+                                                </div>
+                                            </a>
+                                        </Link>
                                     </div>
                                     <div className="col-md-6">
-                                        <a onClick={this.goToOthers.bind(this,'carInsurance')} className="featured-grid featured-grid-2" style={{border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_2.png)'}}>
-                                            <div className="desc">
-                                                <h3>车险</h3>
-                                                <span>Application</span>
-                                            </div>
-                                        </a>
+                                        <Link to={window.App.getAppRoute()+"/carInsurance"}>
+                                            <a onClick={this.goToOthers.bind(this,'carInsurance')} className="featured-grid featured-grid-2" style={{border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_2.png)'}}>
+                                                <div className="desc">
+                                                    <h3>车险</h3>
+                                                    <span>Application</span>
+                                                </div>
+                                            </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

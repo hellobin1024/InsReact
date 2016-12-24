@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+
 import App from '../modules/App.jsx';
 import MainPage from '../modules/MainPage.jsx';
 import ProductCenter from '../modules/Product.jsx';
@@ -9,6 +10,7 @@ import Consultation from '../modules/Consultation.jsx'
 import News from '../modules/News.jsx';
 import AboutUs from '../modules/AboutUs.jsx';
 import PersonInfo from '../modules/PersonInfo.jsx';
+import LifeInsurance from '../modules/lifeInsurance.jsx';
 
 var config=require('../../../config.json');
 import '../../../css/insurancems/components/mainSection.css';
@@ -86,6 +88,11 @@ var MainSection = React.createClass({
                     ctrl = <PersonInfo></PersonInfo>;
                     label = "关于我们";
                     break;
+                case window.App.getAppRoute() + "/lifeInsurance":
+                    ctrl = <LifeInsurance></LifeInsurance>;
+                    label = "关于我们";
+                    break;
+
                 default:
                     var reg=/.*\.do.*[\.do|\.jsp]?.*/;
 

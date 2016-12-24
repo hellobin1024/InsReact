@@ -68,8 +68,15 @@ var Consultation=React.createClass({
         );
         return slices;
     },
-    pageCb:function(index) {
-        this.setState({pageIndex: index});
+    previousCb:function (index,isChange) { //向前跳页
+        this.setState({pageIndex:index,isChange:isChange});
+    },
+
+    pageCb:function(index,isChange) { //进入指定页的列表
+        this.setState({pageIndex:index,isChange:isChange});
+    },
+    nextCb:function(index,isChange){ //向后跳页,isChange为true
+        this.setState({pageIndex:index,isChange:isChange});
     },
 
     goToOthers:function(branch){
@@ -91,6 +98,7 @@ var Consultation=React.createClass({
             startData:null,
             endDate:null,
             pageIndex:0,
+            isChange:false,
             value:null,
             session:SyncStore.getNote(),
             dataTg:1
@@ -290,7 +298,12 @@ var Consultation=React.createClass({
                                 </div>
                                 <PageNavigator
                                     capacity={this.state.data.length}
+                                    pageIndex={this.state.pageIndex}
+                                    pageBegin={1}
+                                    previousCb={this.previousCb}
                                     pageCb={this.pageCb}
+                                    nextCb={this.nextCb}
+                                    isChange={this.state.isChange}
                                     paginate={Page}
                                     />
                             </div>
