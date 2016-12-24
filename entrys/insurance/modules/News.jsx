@@ -179,27 +179,27 @@ var News=React.createClass({
 
 
             return (
-                <div className="section clearfix news" ref="news">
-
+                <div>
                     <div className="about-text">
                         <p style={{marginTop:'20px',textAlign:'center',fontSize:'2.5em'}}>
                             新闻资讯
                         </p>
                     </div>
-
-                    <div ref="hideDiv">
-                        {hide}
-                    </div>
-                    <div ref="contentDiv">
-                        <ul className="list">
-                            {uls}
-                        </ul>
-                    </div>
-                    <div ref="pagination">
-                        <li key={0} className="active">
-                            <a href="javascript:void(0);"
-                                >{}</a>
-                        </li>
+                    <div className="section clearfix news" ref="news">
+                        <div ref="hideDiv">
+                            {hide}
+                        </div>
+                        <div ref="contentDiv">
+                            <ul className="list">
+                                {uls}
+                            </ul>
+                        </div>
+                        <div ref="pagination">
+                            <li key={0} className="active">
+                                <a href="javascript:void(0);"
+                                    >{}</a>
+                            </li>
+                        </div>
                     </div>
                 </div>
             );

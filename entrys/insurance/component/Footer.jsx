@@ -13,8 +13,7 @@ var Footer=React.createClass({
 
         return(
             <div className="footer"
-                style={{background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%',
-                        position:'fixed',bottom:'0',width:'100%',height:'7%'}}>
+                style={{width:'100%',height:'15%',background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%'}}>
                 <p className="bottom" style={{color:'#fff',marginTop:'20px',textAlign:'center'}}>
                     欢迎来到捷惠宝
                 </p>
