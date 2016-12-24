@@ -13,6 +13,7 @@ var MainPage=React.createClass({
 
     render:function(){
         return(
+
             <div className='MainPage'>
                 <Nav logo={App.getResourceDeployPrefix()+"/images/logo.png"} data={MENU} splitIntoBranch={this.splitIntoBranch}/>
 
