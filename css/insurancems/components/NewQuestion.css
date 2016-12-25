@@ -42,11 +42,11 @@ textarea{
 .page-container h1, h2, h3 {
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
     color: #3C3C3C;
-    font-size: 35.75px;
+    /*font-size: 35.75px;*/
     line-height: 44px;
     text-rendering: optimizelegibility;
-    font-weight: bold;
-    margin: 11px 0;
+    /*font-weight: bold;*/
+    /*margin: 11px 0;*/
 }
 a{
     color: #337ab7;

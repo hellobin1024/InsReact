@@ -6,15 +6,15 @@
 }
 
 .search-area-wrapper {
-    background-size: 100%;
+    background-size: cover;
     min-height: 279px;
     height: auto !important;
     height: 279px;
-    background: #353b65 url(../../../build/images/main-bg.jpg) center top no-repeat;
+    background: #353b65 url(../../../build/images/qustion1.png) center top no-repeat;
 
 }
 .search-area-wrapper .search-area {
-    padding: 50px 0;
+    padding: 23px 0;
 }
 
 .container {
@@ -57,6 +57,7 @@ form.search-form input.search-term {
     color: #858c91;
     margin-right: 10px;
     margin-bottom: 0;
+    border-radius: 4px;
 }
 form.search-form input.search-term.loading {
     background-repeat: no-repeat;
@@ -120,7 +121,7 @@ form.search-form input.search-btn:hover {
 }
 .detail .what {
     float:left;
-    width:65%;
+    width:60%;
     borderRight:1px solid #aaa;
     textAlign:center;
 }
@@ -132,7 +133,7 @@ form.search-form input.search-btn:hover {
 }
 .detail .when{
     float:left;
-    width:10%;
+    width:15%;
     borderRight:1px solid #aaa;
     textAlign:center;
 }
@@ -147,8 +148,8 @@ form.search-form input.search-btn:hover {
     border-top: 1px solid #f1f1f1;
 }
 .detail .item {
-    padding: 20px 0;
-    border-bottom: 1px solid;
+    padding: 0px 0;
+    border-bottom: 1px solid #f1f1f1;
 }
 .detail .item div {
     float: left;
@@ -162,18 +163,20 @@ form.search-form input.search-btn:hover {
 }
 
 .detail .item .who {
-    font-weight: 700;
-    line-height: 90px;
+
+    line-height: 91px;
     text-align: center;
     color: #999;
+    font-size: 17px;
 }
 .detail .item .when {
-    line-height: 90px;
+    line-height: 91px;
     color: #999;
     text-align: center;
+    font-size: 17px;
 }
 .detail .item .details {
-    line-height: 90px;
+    line-height: 91px;
     color: #999;
     text-align: center;
 }

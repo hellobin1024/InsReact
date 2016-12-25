@@ -11,6 +11,7 @@ var SyncStore = require('../../../components/flux/stores/SyncStore');
 import PageNavigator from './PageNavigator';
 
 var info={};
+var today=new Date().toLocaleDateString().replace("/", "-").replace("/", "-");
 
 var Consultation=React.createClass({
 
@@ -336,30 +337,30 @@ var Consultation=React.createClass({
                                    title="* Please enter a search term!"
                                    onChange={this.onSaveInput.bind(this)}
                                 />
-                            <input className='search-btn' value="搜索"
+                            <input style={{borderRadius: '6px',borderStyle:'outset',borderColor:'grey',cursor: 'pointer'}}className='search-btn' value="搜索"
                                    onClick={this.getLimitQuestion}/>
 
                             <div id="search-error-container"></div>
                             <div style={{width:'150%'}}>
                                 <div className='row-50'
-                                     style={{width:'37%',float:'left',paddingTop:'25px',border:'1px'}}>
-                                    <div className='row-50' style={{float:'left',border:'1px ',  width:'50%' }}>
-                                        <p style={{float:'left',paddingLeft:'31% ' }}>
-                                            时间：
+                                     style={{width:'30%',float:'left',paddingTop:'25px',marginLeft:'7%' }}>
+                                    <div className='row-50' style={{float:'left' }}>
+                                        <p style={{float:'left' }}>
+                                            <h3>时间：</h3>
                                         </p>
-                                        <Calendar data={'2016-11-10'} ctrlName={'consultation'}
+                                        <Calendar data={today} ctrlName={'consultation'}
                                                   callbackParent={this.onChildChanged.bind(this,'startDate')}/>
                                     </div>
-                                    <div className='row-50' style={{float:'left',border:'1px ',  width:'50%' }}>
-                                        <p style={{float:'left', marginLeft: '-6%' }}>
-                                            起——至
+                                    <div className='row-50' style={{float:'left' }}>
+                                        <p style={{float:'left' }}>
+                                            <h3>起——至</h3>
                                         </p>
-                                        <Calendar data={'2016-11-10'} ctrlName={'consultation'}
+                                        <Calendar data={today} ctrlName={'consultation'}
                                                   callbackParent={this.onChildChanged.bind(this,'endDate')}/>
                                     </div>
                                 </div>
                                 <div>
-                                    <input className='search-new' value="新问题"
+                                    <input style={{borderRadius: '6px',borderStyle:'outset',borderColor:'grey',cursor: 'pointer'}}className='search-new' value="新问题"
                                            onClick={this.goToOthers.bind(this,'newQuestion')}
                                         />
                                     {SyncStore.getNote() ?
@@ -380,7 +381,7 @@ var Consultation=React.createClass({
         return (
             <div className='Consultation' ref='consultation'>
                 <div className='container' style={{position:'static',background:'#fff'}}>
-                    <div className='row' style={{padding:'10px 10px 0px 10px'}}>
+                    <div className='row' >
                         {navbar}
                     </div>
                 </div>
