@@ -12,7 +12,7 @@ var ProxyQ = require('../proxy/ProxyQ');
 
 var Li = React.createClass({
     returnCb:function () {
-        this.setState({hiddenInfo: null});
+        this.setState({hiddenInfo: null,leftReturn:true});
         $(this.refs.contentDiv).slideDown();
         $(this.refs.pagination).slideDown();
     },
@@ -35,7 +35,7 @@ var Li = React.createClass({
                     {row: ['返回|return|']}
                 ];
                 ob.data = data;
-                this.setState({hiddenInfo: ob});
+                this.setState({hiddenInfo: ob , leftReturn:false});
                 $(this.refs.contentDiv).slideUp();
                 $(this.refs.pagination).slideUp();
             }
@@ -142,9 +142,14 @@ var Li = React.createClass({
             auto          : auto,
             data$initialed: data$initialed,
             currentPage   : currentPage,
-            contentMapping: contentMapping
+            contentMapping: contentMapping,
         });
     },
+
+    componentWillReceiveProps:function(){
+        this.setState({leftReturn:true})
+    },
+
     render:function () {
         var lis = new Array();
         if (this.state.data$initialed !== true && (this.props.data == null || this.props.data == undefined)) {
@@ -165,9 +170,13 @@ var Li = React.createClass({
             state.contentMapping = new Object();
             this.state.data.map(function (item, i) {
                 state.contentMapping[i] = item;
-                lis.push(<li key={i}>
-                    <span data-index={i} onClick={cb}>{item.label}</span>
-                </li>);
+                lis.push(
+                    <li key={i}>
+                        <a className="news_a">
+                            <span className="new-title" data-index={i} onClick={cb}>{item.label}</span>
+                        </a>
+                        <span className='new-date'>{item.newsTimeStr}</span>
+                    </li>);
             });
         }
 
@@ -246,7 +255,9 @@ var Li = React.createClass({
             var cb = function () {
                 props.returnCb();
             }
-            returnBtn = <button onClick={cb} className="btn btn-default">返回</button>
+            if(this.state.leftReturn !==false){
+                returnBtn = <button onClick={cb} className="btn btn-default">返回</button>
+            }
         }
 
         return (

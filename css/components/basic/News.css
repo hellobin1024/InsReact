@@ -5,9 +5,22 @@
 .inline{
     display: inline-block;
 }
-.fleft{
+.title{
+    display: block;
     float: left;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.2em;
 }
-.fright{
+
+.date{
     float: right;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+a.news_a {
+    cursor: pointer;
 }

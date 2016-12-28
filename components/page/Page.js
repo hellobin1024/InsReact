@@ -6,9 +6,9 @@
 
 
 var ob=function(){
-    var threshold=10;
+    var thresholds=null;
     var pageCategory=10;
-    var getInitialDataIndex=function (capacity,pageIndex,callback) {
+    var getInitialDataIndex=function (threshold,capacity,pageIndex,callback) {
         let begin =pageIndex*threshold;
         let end = begin;
         for (let i = 0; i < threshold; i++) {
@@ -18,10 +18,11 @@ var ob=function(){
         }
         if(callback!==undefined&&callback!==null)
             callback({begin:begin,end:end});
+        thresholds=threshold;
     }.bind(this);
 
     return {
-        threshold:threshold,
+        threshold:thresholds,
         pageCategory:pageCategory,
         getInitialDataIndex:getInitialDataIndex
     };

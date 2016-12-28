@@ -78,7 +78,7 @@ var NewQuestion=React.createClass({
                     case 'main':
                         container=
                             <div>
-                                <div className='search-area-wrapper'>
+                                <div className='search-area-wrapper' style={{minHeight:'10em'}}>
                                     <div className='search-area '>
                                         <h3 className='search-header'>提出您的新问题</h3>
 
@@ -99,7 +99,7 @@ var NewQuestion=React.createClass({
                                                     <p>如果您在刚刚的搜索中没有找到与您问题相符的问题及解决方案，您可以在此提交您自己的问题，我们的客服人员将会在三到五个工作日之内对您的问题进行解答，敬请谅解！</p>
                                                     <hr></hr>
                                             </article>
-                                                <form  className="row"  method="post">
+                                                <form  className="row"  method="post" style={{paddingTop:'10px'}}>
                                                     <div className="span2">
                                                         <label >问题/主题内容:<span>*</span> </label>
                                                     </div>

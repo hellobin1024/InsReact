@@ -16,7 +16,7 @@ var OrderCenter=React.createClass({
     paginationData:function (data,pageIndex) {
         let capacity=data.length;
         var slices=null;
-        Page.getInitialDataIndex(10,capacity,pageIndex,function(ob){
+        Page.getInitialDataIndex(capacity,pageIndex,function(ob){
             slices=data.slice(ob.begin,ob.end);
         });
         return slices;
@@ -75,11 +75,11 @@ var OrderCenter=React.createClass({
             null,
             function(ob) {
                 var re = ob.re;
-                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //信息为空
+                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //登录信息为空或数据为空
                     return;
                 }
                 var data=ob.data;
-                this.setState({data:data});
+                this.setState({data: data,current:tab,pageIndex:0});
             }.bind(this),
             function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
@@ -166,12 +166,12 @@ var OrderCenter=React.createClass({
             null,
             function(ob) {
                 var re = ob.re;
-                var data=ob.data;
-                var personInfo=ob.personInfo;
-                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //信息为空
+                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //登录信息为空
                     return;
                 }
-                this.setState({personInfo:personInfo, data:data});
+                var data=ob.data;
+                var personInfo=ob.personInfo;
+                this.setState({data:data, personInfo:personInfo});
             }.bind(this),
             function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
@@ -608,29 +608,32 @@ var OrderCenter=React.createClass({
                             //Array.prototype.push.apply(scoreList, lifeOrderList);
                             //Array.prototype.push.apply(scoreList, serviceOrderList);
                             data = this.paginationData(scoreList, this.state.pageIndex);
-                            data.map(function (order, i) {
-                                orders.push({orderNum: order.orderNum});
-                                trs.push(
-                                    <tr key={i}>
-                                        <td>
-                                            <a href="javascript:void(0)"
-                                               onClick={slideDetail.bind(ins,i)}>{order.orderNum}</a>
-                                        </td>
-                                        <td>
-                                            {order.scoreResource}
-                                        </td>
-                                        <td>
-                                            {order.score}
-                                        </td>
-                                        <td>
-                                            {order.applyTime}
-                                        </td>
-                                        <td>
-                                            {order.orderStateStr}
-                                        </td>
-                                    </tr>
-                                );
-                            });
+
+                            if(data!==null){
+                                data.map(function (order, i) {
+                                    orders.push({orderNum: order.orderNum});
+                                    trs.push(
+                                        <tr key={i}>
+                                            <td>
+                                                <a href="javascript:void(0)"
+                                                   onClick={slideDetail.bind(ins,i)}>{order.orderNum}</a>
+                                            </td>
+                                            <td>
+                                                {order.scoreResource}
+                                            </td>
+                                            <td>
+                                                {order.score}
+                                            </td>
+                                            <td>
+                                                {order.applyTime}
+                                            </td>
+                                            <td>
+                                                {order.orderStateStr}
+                                            </td>
+                                        </tr>
+                                    );
+                                });
+                            }
                             break;
 
                         case 'income':
@@ -638,57 +641,61 @@ var OrderCenter=React.createClass({
                             scoreList = scoreList.concat(score_lifeOrderList)
 
                             data = this.paginationData(scoreList, this.state.pageIndex);
-                            data.map(function (order, i) {
-                                orders.push({orderNum: order.orderNum});
-                                trs.push(
-                                    <tr key={i}>
-                                        <td>
-                                            <a href="javascript:void(0)"
-                                               onClick={slideDetail.bind(ins,i)}>{order.orderNum}</a>
-                                        </td>
-                                        <td>
-                                            {order.scoreResource}
-                                        </td>
-                                        <td>
-                                            {order.score}
-                                        </td>
-                                        <td>
-                                            {order.applyTime}
-                                        </td>
-                                        <td>
-                                            {order.orderStateStr}
-                                        </td>
-                                    </tr>
-                                );
-                            });
+                            if(data!==null){
+                                data.map(function (order, i) {
+                                    orders.push({orderNum: order.orderNum});
+                                    trs.push(
+                                        <tr key={i}>
+                                            <td>
+                                                <a href="javascript:void(0)"
+                                                   onClick={slideDetail.bind(ins,i)}>{order.orderNum}</a>
+                                            </td>
+                                            <td>
+                                                {order.scoreResource}
+                                            </td>
+                                            <td>
+                                                {order.score}
+                                            </td>
+                                            <td>
+                                                {order.applyTime}
+                                            </td>
+                                            <td>
+                                                {order.orderStateStr}
+                                            </td>
+                                        </tr>
+                                    );
+                                });
+                            }
                             break;
 
                         case 'used':
                             scoreList = score_serviceOrderList;
                             data = this.paginationData(scoreList, this.state.pageIndex);
-                            data.map(function (order, i) {
-                                orders.push({orderNum: order.orderNum});
-                                trs.push(
-                                    <tr key={i}>
-                                        <td>
-                                            <a href="javascript:void(0)"
-                                               onClick={slideDetail.bind(ins,i)}>{order.orderNum}</a>
-                                        </td>
-                                        <td>
-                                            {order.scoreResource}
-                                        </td>
-                                        <td>
-                                            {order.score}
-                                        </td>
-                                        <td>
-                                            {order.orderDate}
-                                        </td>
-                                        <td>
-                                            {order.orderStateStr}
-                                        </td>
-                                    </tr>
-                                );
-                            });
+                            if(data!==null){
+                                data.map(function (order, i) {
+                                    orders.push({orderNum: order.orderNum});
+                                    trs.push(
+                                        <tr key={i}>
+                                            <td>
+                                                <a href="javascript:void(0)"
+                                                   onClick={slideDetail.bind(ins,i)}>{order.orderNum}</a>
+                                            </td>
+                                            <td>
+                                                {order.scoreResource}
+                                            </td>
+                                            <td>
+                                                {order.score}
+                                            </td>
+                                            <td>
+                                                {order.orderDate}
+                                            </td>
+                                            <td>
+                                                {order.orderStateStr}
+                                            </td>
+                                        </tr>
+                                    );
+                                });
+                            }
                             break;
                     }
 

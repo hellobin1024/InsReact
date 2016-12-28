@@ -1,0 +1,125 @@
+.lifeTitle{
+    padding-top: 13px;
+    color: firebrick;
+    font-family: sans-serif;
+    padding-bottom: 13px;
+}
+.proIntro{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+.productIntro {
+    overflow: hidden;
+    zoom: 1;
+    margin-top: 10px;
+}
+.lyys{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+.bzfw{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+.kfjx{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+.jlsm{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+.shfw{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+.proleft {
+    float: left;
+    width: 220px;
+    overflow: hidden;
+    margin-left: 8%;
+}
+.proright {
+    float: left;
+    width: 740px;
+    overflow: hidden;
+    padding-left:3em;
+}
+.line-height25 {
+    line-height: 25px;
+    text-align: -webkit-left;
+}
+.line-height35 {
+    line-height: 35px;
+    text-align: -webkit-left;
+    padding-left: 7%;
+}
+.bold {
+    font-weight: bold;
+}
+.pro_tese dl {
+    width: 320px;
+    float: left;
+    margin-top: 20px;
+    text-align: left;
+}
+.pro_tese dt {
+    font-size: 15px;
+    font-weight: bold;
+    color: #95050d;
+    font-family: "微软雅黑";
+}
+.pro_tese ul {
+    margin-left: 70px;
+}
+.pro_tese dd ul li {
+    line-height: 30px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+.risk{
+    text-align: left;
+    padding-left: 8%;
+}
+.red {
+    color: #C00;
+}
+.bxj {
+    margin-top: 15px;
+}
+.text-indent2em {
+    text-indent: 2em;
+    padding-left: 7em;
+}
+.bzfwp{
+    text-align: left;
+    padding-left: 7em;
+}
+.text{
+    font-size: 1em;
+}
+.lizi {
+    margin-left: 25px;
+    width: 90%;
+}
+.lizi p {
+    line-height: 25px;
+}
+.shfw_dl {
+    width: 90%;
+    line-height: 25px;
+    margin-top: 30px;
+}
+.shfw_dl dt {
+    padding-left: 15px;
+}
+.bznr{
+    margin-left: 25px;
+    width: 90%;
+}

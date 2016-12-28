@@ -67,7 +67,7 @@ var Navigator=React.createClass({
         if(this.props.capacity!==undefined&&this.props.capacity!==null)
             capacity=this.props.capacity;
 
-        let threshold=10; //每页显示的订单数量
+        let threshold=5; //每页显示的订单数量
         if(this.props.threshold!==undefined&&this.props.threshold!==null)
             threshold=this.props.threshold;
         let pageIndex=0;
@@ -98,7 +98,7 @@ var Navigator=React.createClass({
 
     componentWillReceiveProps:function(props) {
         let capacity = null;
-        let threshold = 10;
+        let threshold = 5;
         let pageIndex = null;
         let isChange = null;
         if (props.capacity !== undefined && props.capacity !== null)
@@ -168,8 +168,8 @@ var Navigator=React.createClass({
 
 
         return (
-            <div className='Navigator' ref='navigator'>
-                <div className='container' style={{position:'static',background:'#fff'}}>
+            <div className='Navigator' ref='navigator' >
+                <div className='container' style={{position:'static'}}>
                     <div className='row pagination' style={{padding:'10px 10px 0px 10px'}}>
                         {navigator}
                     </div>

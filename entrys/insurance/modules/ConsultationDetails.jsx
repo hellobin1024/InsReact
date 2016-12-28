@@ -201,17 +201,18 @@ var ConsultationDetails=React.createClass({
 
                         <article className=" type-post format-standard hentry clearfix">
 
-                            <h1 className="post-title"><a href="#">{this.state.title}</a></h1>
+                            <h1 className="post-title"><a>{this.state.title}</a></h1>
 
                             <div className="post-meta clearfix">
                                 <span className="icon-calendar">{this.state.date.month+1+'月'+this.state.date.date+'日'}</span>
-                                <span className="icon-comment">
+                                <span className="icon-comment" style={{marginLeft:'15px'}}>
                                     <a href="#" title="Comment on Integrating WordPress with Your Website">
                                         {this.state.comments+'  '}Comments
                                     </a>
                                 </span>
                             </div>
                         </article>
+                        <hr/>
                         <div>
                             <dl className="faqs" >
                                 <dt>{this.state.title}</dt>

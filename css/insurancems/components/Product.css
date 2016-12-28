@@ -12,7 +12,7 @@
     padding-right: 15px;
 }
 .featured-grid, .featured-grid.featured-grid-2 {
-    width: 85%;
+    width: 101%;
     height: 376px;
     float: left;
     background-size: cover;
@@ -20,7 +20,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 4px;
-    margin-left: 3em;
+    /*margin-left: 3em;*/
 }
 
 .featured-grid .desc {
