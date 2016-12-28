@@ -16,7 +16,7 @@ var OrderCenter=React.createClass({
     paginationData:function (data,pageIndex) {
         let capacity=data.length;
         var slices=null;
-        Page.getInitialDataIndex(capacity,pageIndex,function(ob){
+        Page.getInitialDataIndex(10,capacity,pageIndex,function(ob){
             slices=data.slice(ob.begin,ob.end);
         });
         return slices;
