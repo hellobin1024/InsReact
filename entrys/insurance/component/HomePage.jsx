@@ -14,12 +14,12 @@ var HomePage=React.createClass({
             return(
 
             <div className='container'
-                 style={{paddingLeft:'0px',position:'absolute',width:'100%',top:'0',height:'90%',background:'url('+App.getResourceDeployPrefix()+'/images/background.png) no-repeat',backgroundSize:'100%'}}>
+                 style={{paddingLeft:'0px',position:'absolute',width:'100%',top:'0',height:'92%',background:'url('+App.getResourceDeployPrefix()+'/images/background.png) no-repeat',backgroundSize:'100%'}}>
                 <div className="in-container">
                     <div className="topAndCenter">
                         <div className="topMain" style={{position:'relative',margin:'30px auto auto 20px'}}>
-                        <span style={{display:'inline-block'}}>
-                             <h2>山东泓信信息股份有限公司</h2>
+                        <span style={{display:'inline-block', fontSize:'2em', fontWeight:'bold'}}>
+                             <h2 style={{fontSize:'1.5em', fontWeight:'bold'}}>山东泓信信息股份有限公司</h2>
                         </span>
                             <div className='enterHomePage'
                                  style={{display: 'inline-block',height: '100%',position: 'absolute',right: '10%',top: '30%',cursor:'pointer'}}>
@@ -71,10 +71,8 @@ var HomePage=React.createClass({
 
                 <div className="footer"
                      style={{background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%',
-                        position:'fixed',bottom:'0',width:'100%',height:'10%'}}>
-                    <p className="bottom" style={{color:'#fff',marginTop:'20px',textAlign:'center'}}>
-                        欢迎来到捷惠宝
-                    </p>
+                        position:'fixed',bottom:'0',width:'100%',height:'8%'}}>
+                    <Footer/>
                 </div>
             </div>
 

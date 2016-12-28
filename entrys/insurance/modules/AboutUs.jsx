@@ -4,6 +4,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+import Footer from '../../insurance/component/Footer.jsx'
 var AboutUs=React.createClass({
     onClick:function(ob){
 
@@ -13,26 +14,29 @@ var AboutUs=React.createClass({
         return(
 
             <div className="about" style={{background:'#CCCCCC'}}>
-                 <div className="about-text">
-                     <p style={{marginTop:'20px',textAlign:'center',fontSize:'2.5em'}}>
-                         关于我们
-                     </p>
-                 </div>
-                 <div style={{position:'fixed',bottom:'0',width:'100%',textAlign:'center'}}>
-                    <img src={App.getResourceDeployPrefix()+"/images/aboutUs_01.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
-                 </div>
+                <div style={{width:'100%'}}>
+                    <div className="about-text">
+                        <p style={{textAlign:'center',fontSize:'2.5em'}}>
+                            关于我们
+                        </p>
+                    </div>
+                    <div style={{position:'fixed',bottom:'0',width:'100%',textAlign:'center'}}>
+                        <img src={App.getResourceDeployPrefix()+"/images/aboutUs_01.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
+                    </div>
 
-                 <div style={{position:'fixed',top:'104px',left:'20%',width:'60%',height:'60%'}}>
-                     <img src={App.getResourceDeployPrefix()+"/images/aboutUs_06.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
-                     <div style={{position:'absolute',width:'71%',height:'100%',zIndex:'2',left:'15%',top:'8%',fontSize:'1.5em',color:'#fff'}}>
-                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;百度（纳斯达克：BIDU），全球最大的中文搜索引擎、最大的中文网站。
-                         1999年底,身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，
-                         他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于 2000年1月1日在中关村创建了百度公司。
-                         “百度”二字,来自于八百年前南宋词人辛弃疾的一句词：众里寻他千百度。这句话描述了词人对理想的执着追求。
-                         百度拥有数万名研发工程师，这是中国乃至全球最为优秀的技术团队。这支队伍掌握着世界上最为先进的搜索引擎技术，
-                         使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
-                     </div>
-                 </div>
+                    <div style={{position:'fixed',top:'104px',left:'20%',width:'50%',height:'50%'}}>
+                        <img src={App.getResourceDeployPrefix()+"/images/aboutUs_06.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
+                        <div style={{position:'absolute',width:'71%',height:'100%',zIndex:'2',left:'15%',top:'8%',fontSize:'1.2em',color:'#fff'}}>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            捷惠保：立足于客户立场，深度发掘客户需求，客观分析，在众多保险产品中为客户选择适合的产品；与保险主体公司深度合作，依据已有客户需求研发更多，保障全，保费低的优质产品；为客户提供咨询，理赔，资料代管，车驾管服务等与保险相关的一站式服务
+                        </div>
+                    </div>
+                </div>
+                <div className="footer"
+                     style={{background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%',
+                        position:'fixed',bottom:'0',width:'100%',height:'8%'}}>
+                    <Footer/>
+                </div>
             </div>
         );
     }

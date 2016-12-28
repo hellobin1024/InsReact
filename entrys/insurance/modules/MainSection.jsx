@@ -62,14 +62,7 @@ var MainSection = React.createClass({
                     label = "产品中心";
                     break;
                 case window.App.getAppRoute() + "/news":
-                    ctrl = <News query={{
-                                            url:"/insurance/insuranceReactPageDataRequest.do",
-                                            params:{
-                                                reactPageName:"groupNewsReactPage",
-                                                reactActionName:"getInsuranceNewsList"
-                                            }
-                                         }}
-                                 auto={true}/>;
+                    ctrl = <News></News>;
                     label = "新闻资讯";
                     break;
                 case window.App.getAppRoute() + "/personalCenter":
@@ -173,7 +166,7 @@ var MainSection = React.createClass({
         return (
             <div style={{margin: "0px auto 0 auto",paddingBottom:"20px",width:"100%"}} className="baba">
                 <div ref="mainSection" className="mainSection"
-                     style={{display:"none",marginLeft:"auto",marginRight:"auto"}}>
+                     style={{display:"none",marginLeft:"auto",marginRight:"auto", background:'#F5F5F5'}}>
                     {ctrl}
                 </div>
             </div>

@@ -93,7 +93,6 @@ var PersonalCenter=React.createClass({
 
                                     </div>
                                     <div className="form-options clearfix">
-                                        <a className="pull-right" href="#" style={{marginTop:'25px'}}>忘记密码了？</a>
 
                                         <div className="text-left">
                                             <input type="submit" value="登录" onClick={this.validate}

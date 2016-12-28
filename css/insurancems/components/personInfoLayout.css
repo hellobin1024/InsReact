@@ -40,8 +40,7 @@
 .self_input,.frm_textarea {width: 300px;outline: 0 none;border: 1px solid #C5C5C5;height: 35px;line-height: 35px;vertical-align: middle;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06) inset;-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06) inset;padding: 0 10px;}
 .self_input:focus,.frm_textarea:focus {border: 1px solid #4677BD;box-shadow: 0 0 2px #ddd;-webkit-box-shadow: 0 0 3px #ddd;}
 .frm_tips {color: #C1C2C3;padding-top: 4px;width: 320px;}
-.toolBar {margin-top: 91
-5px;padding: 20px 0 0 98px;border-top: 1px solid #D2D2D2;box-shadow: 0 1px 0 #FBFBFB inset;-webkit-box-shadow: 0 1px 0 #FBFBFB inset;}
+.toolBar {margin-top: 15px;padding: 20px 0 0 98px;border-top: 1px solid #D2D2D2;box-shadow: 0 1px 0 #FBFBFB inset;-webkit-box-shadow: 0 1px 0 #FBFBFB inset;}
 .saveBtn {border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;cursor: pointer;display: inline-block;font-size: 18px;height: 35px;line-height: 35px;overflow: visible;padding: 0 36px;text-align: center;text-decoration: none;vertical-align: middle;}
 .btn_primary {background-color: #4AAF33;color: #FFFFFF;border: 1px solid #3EAC27;}
 .btn_default {background-color: #F1F1F1;color: #000000;border: 1px solid #D1D1D1;}

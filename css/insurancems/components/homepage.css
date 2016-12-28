@@ -1,19 +1,7 @@
-.container{
-    position:absolute;
-    width:100%;
-    height:93%;
-}
 
 .topAndCenter{
     position:absolute;
     width:100%;
-}
-
-.footer{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    height:10%;
 }
 
 .topMain{
@@ -35,48 +23,6 @@
     top:30px;
     width:600px;
     height:70px;
-
-}
-
-.topRight {
-    position:absolute;
-    right:300px;
-    top:50px;
-    width:300px;
-    height:70px;
-    border:2px solid #ff0000
-}
-
-.centerLeft{
-    position:absolute;
-    left:900px;
-    top: 200px;
-    width:200px;
-    height:200px;
-    border:2px solid #ff0000
-}
-
-.centerRight{
-    position:absolute;
-    left:1100px;
-    top: 200px;
-    width:200px;
-    height:200px;
-    border:2px solid #ff0000
-}
-
-.iosQRCode{
-    position:absolute;
-    left:930px;
-    top: 360px;
-    border:2px solid #ff0000
-}
-
-.androidQRCode{
-    position:absolute;
-    left:1130px;
-    top: 360px;
-    border:2px solid #ff0000
 }
 
 

@@ -43,6 +43,7 @@
 .list li.main {
     height: 40px;
     line-height: 40px;
+    font-size: 1.1em;
 }
 
 .list li.main span {
@@ -58,24 +59,24 @@
 }
 
 .list li.vice {
-    line-height: 30px;
-    height: 30px;
+    line-height: 40px;
+    height: 40px;
 }
 
-.list li.vice span {
+.list li.vice span.title {
     color: #0026ed;
-    margin-left: 10%;
+    margin-left: 2%;
     cursor: pointer;
 }
 
-.list li.vice span:hover {
+.list li.vice span.title:hover {
     color: #aa381e;
 }
 
 .list li a {
     float: left;
     margin: 0 10px;
-    color: #333;
+    color: #337ab7;
 }
 
 
@@ -176,4 +177,22 @@ div.next span:hover{
     color:#00f;
     cursor:pointer;
     font-size: 1.6em;
+}
+
+
+.list li.vice span.title{
+    display: block;
+    float: left;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.2em;
+}
+
+.list li.vice span.date{
+    float: right;
+    margin-right: 10%;
+    color: #000000;
+    font-size: 1.2em;
 }

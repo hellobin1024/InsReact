@@ -3,14 +3,15 @@ import {render} from 'react-dom';
 var Panel = require('../../../components/panel/Panel.jsx');
 var Li = require('../../../components/basic/Li.jsx');
 import Hide from '../../../components/basic/Hide.jsx';
+import Footer from '../component/Footer.jsx';
 import '../../../css/insurancems/components/news.css';
 var ProxyQ = require('../../../components/proxy/ProxyQ');
 
 
 var News=React.createClass({
     returnCb:function () {
-        this.setState({hiddenInfo: null});
-        $(this.refs.contentDiv).slideDown();
+        this.setState({hiddenInfo: null, display:'list'});
+        //$(this.refs.contentDiv).slideDown();
     },
 
     clickCb:function (evt) {
@@ -29,8 +30,8 @@ var News=React.createClass({
                     {row: ['返回|return|']}
                 ];
                 ob.data = data;
-                this.setState({hiddenInfo: ob});
-                $(this.refs.contentDiv).slideUp();
+                this.setState({hiddenInfo: ob, display:'content'});
+                //$(this.refs.contentDiv).slideUp();
             }
         }
     },
@@ -50,17 +51,29 @@ var News=React.createClass({
             //TODO:change the structor of ob
             ob.query = query;
             ob.auto = true;
-            this.setState({hiddenInfo: ob});
-            $(this.refs.contentDiv).slideUp();
+            this.setState({hiddenInfo: ob, display:'content'});
+            //$(this.refs.contentDiv).slideUp();
         }
 
     },
 
     fetch:function(){
+
+        var url = "/insurance/insuranceReactPageDataRequest.do";
+        var params ={
+            reactPageName:"groupNewsReactPage",
+            reactActionName:"getInsuranceNewsList"};
+        //if(this.props.query.url!=undefined && this.props.query.url!=null){
+        //    url = this.props.query.url;
+        //}
+        //if(this.props.query.params!=undefined && this.props.query.params!=null){
+        //    params=this.props.query.params;
+        //}
+
         ProxyQ.queryHandle(
             null,
-            this.props.query.url,
-            this.props.query.params,
+            url,
+            params,
             null,
             function(response){
                 var data;
@@ -82,19 +95,33 @@ var News=React.createClass({
 
     getInitialState:function(){
         var data$initialed;
-
         var data;
-        if(this.props.data!==undefined&&this.props.data!==null)
-        {
+        var hiddenInfo;
+        var auto =true;
+        var display='list';
+        if(this.props.data!==undefined&&this.props.data!==null) {
             data = this.props.data;
             data$initialed=true;
         }
 
-        var auto;
-        if(this.props.auto===true||this.props.auto==="true")
+        if(this.props.hiddenInfo!==undefined&&this.props.hiddenInfo!==null) {
+            hiddenInfo = this.props.hiddenInfo;
+        }
+
+        if(this.props.auto===true||this.props.auto==="true"){
             auto=true;
+        }
+
+        if(this.props.display!==undefined&&this.props.display!==null){
+            display=this.props.display;;
+        }
+
         var contentMapping = new Object();
-        return ({data: data, data$initialed: data$initialed, auto: auto, contentMapping: contentMapping});
+        if(this.props.contentMapping!==undefined && this.props.contentMapping!==null){
+            contentMapping=this.props.contentMapping;
+        }
+
+        return ({data: data, data$initialed: data$initialed, auto: auto,hiddenInfo: hiddenInfo, contentMapping: contentMapping, display:display});
     },
 
     render:function () {
@@ -129,6 +156,7 @@ var News=React.createClass({
                             var content = news.content;
                             var author = news.author;
                             var title = news.title;
+                            var date = news.newsTimeStr;
                             state.contentMapping[k] = {
                                 content: content,
                                 author : author,
@@ -138,7 +166,8 @@ var News=React.createClass({
                             var cb = clickCb;
                             uls.push(
                                 <li key={k} className="vice">
-                                    <span data-index={k++} onClick={cb}>{title}</span>
+                                    <span className="title" data-index={k++} onClick={cb}>{title}</span>
+                                    <span className='date'>{date}</span>
                                 </li>);
                         });
                     }
@@ -177,29 +206,46 @@ var News=React.createClass({
                 }
             }
 
+            var mainContent=null;
+            if(this.state.display!==undefined && this.state.display!==null && this.state.display=="content"){
+                mainContent=
+                    <div ref="hideDiv">
+                        {hide}
+                    </div>
+            }
+            if(this.state.display!==undefined && this.state.display!==null && this.state.display=="list"){
+                mainContent=
+                    <div ref="contentDiv">
+                        <ul className="list">
+                            {uls}
+                        </ul>
+                    </div>
+            }
 
             return (
                 <div>
-                    <div className="about-text">
-                        <p style={{marginTop:'20px',textAlign:'center',fontSize:'2.5em'}}>
-                            新闻资讯
-                        </p>
+                    <div style={{position:'absolute',width:'100%',top:'0',height:'90%',background:'url('+App.getResourceDeployPrefix()+'/images/background_1.png) no-repeat',backgroundSize:'100%'}}>
+                        <div className="about-text">
+                            <p style={{marginTop:'20px',textAlign:'center',fontSize:'2.5em'}}>
+                                新闻资讯
+                            </p>
+                        </div>
+
+                        <div className="section clearfix news" ref="news">
+                            {mainContent}
+                            <div ref="pagination">
+                                <li key={0} className="active">
+                                    <a href="javascript:void(0);"
+                                        >{}</a>
+                                </li>
+                            </div>
+                        </div>
                     </div>
-                    <div className="section clearfix news" ref="news">
-                        <div ref="hideDiv">
-                            {hide}
-                        </div>
-                        <div ref="contentDiv">
-                            <ul className="list">
-                                {uls}
-                            </ul>
-                        </div>
-                        <div ref="pagination">
-                            <li key={0} className="active">
-                                <a href="javascript:void(0);"
-                                    >{}</a>
-                            </li>
-                        </div>
+
+                    <div className="footer"
+                         style={{background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%',
+                        position:'fixed',bottom:'0',width:'100%',height:'8%'}}>
+                        <Footer/>
                     </div>
                 </div>
             );

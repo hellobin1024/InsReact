@@ -16,7 +16,7 @@ var OrderCenter=React.createClass({
     paginationData:function (data,pageIndex) {
         let capacity=data.length;
         var slices=null;
-        Page.getInitialDataIndex(capacity,pageIndex,function(ob){
+        Page.getInitialDataIndex(10,capacity,pageIndex,function(ob){
             slices=data.slice(ob.begin,ob.end);
         });
         return slices;
@@ -74,8 +74,12 @@ var OrderCenter=React.createClass({
             params,
             null,
             function(ob) {
+                var re = ob.re;
+                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //信息为空
+                    return;
+                }
                 var data=ob.data;
-                this.setState({data: data,current:tab,pageIndex:0});
+                this.setState({data:data});
             }.bind(this),
             function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
@@ -162,12 +166,12 @@ var OrderCenter=React.createClass({
             null,
             function(ob) {
                 var re = ob.re;
-                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //登录信息为空
-                    return;
-                }
                 var data=ob.data;
                 var personInfo=ob.personInfo;
-                this.setState({data:data, personInfo:personInfo});
+                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //信息为空
+                    return;
+                }
+                this.setState({personInfo:personInfo, data:data});
             }.bind(this),
             function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
@@ -232,13 +236,19 @@ var OrderCenter=React.createClass({
                                     <a href="javascript:void(0)" onClick={slideDetail.bind(ins,i)}>{order.orderNum}</a>
                                 </td>
                                 <td>
+                                    {order.insuranceNum}
+                                </td>
+                                <td>
                                     {order.productName}
                                 </td>
                                 <td>
-                                    {order.applyTime}
+                                    {order.orderDate}
                                 </td>
                                 <td>
                                     {order.orderStateStr}
+                                </td>
+                                <td>
+                                    {order.companyName}
                                 </td>
                                 <td>
                                     {order.insuranceFeeTotal}
@@ -387,7 +397,7 @@ var OrderCenter=React.createClass({
                                     {order.productName}
                                 </td>
                                 <td>
-                                    {order.applyTime}
+                                    {order.orderDate}
                                 </td>
                                 <td>
                                     {order.orderStateStr}
@@ -532,7 +542,7 @@ var OrderCenter=React.createClass({
                                     {order.serviceType}
                                 </td>
                                 <td>
-                                    {order.applyTime}
+                                    {order.orderFinishDate}
                                 </td>
                                 <td>
                                     {order.orderStateStr}
@@ -671,7 +681,7 @@ var OrderCenter=React.createClass({
                                             {order.score}
                                         </td>
                                         <td>
-                                            {order.applyTime}
+                                            {order.orderDate}
                                         </td>
                                         <td>
                                             {order.orderStateStr}
@@ -794,7 +804,7 @@ var OrderCenter=React.createClass({
                                     <tr key={2}>
                                         <td>客户编号：{orderDetail.customerNum}</td>
                                         <td>客户姓名：{orderDetail.customerName}</td>
-                                        <td>订单完成时间：{orderDetail.orderFinishDate}</td>
+                                        <td>订单完成时间：{orderDetail.orderDate}</td>
                                         <td>积分：{orderDetail.fee}</td>
                                         <td>结算时间：{orderDetail.feeDate}</td>
                                     </tr>
@@ -816,7 +826,7 @@ var OrderCenter=React.createClass({
             switch (this.state.current) {
 
                 case 'carOrder':
-                    mainContent =(  <div className='carOrder container' style={{position:'static',background:'#FAEBD7'}}>
+                    mainContent =(  <div className='carOrder container' style={{position:'static'}}>
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
@@ -827,17 +837,19 @@ var OrderCenter=React.createClass({
                             </div>
                         </div>
 
-                        <div className="slider" ref="slider" style={{marginTop:'20px',width:'100%',position:'relative'}}>
+                        <div className="slider" ref="slider" style={{width:'100%',position:'relative'}}>
                             <div className="col-lg-12">
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
                                         <table className="table table-striped invoice-table">
-                                            <thead>
+                                                <thead className="table-head">
                                                 <tr>
                                                     <th width="300">订单编号</th>
+                                                    <th width="300">保单号</th>
                                                     <th width="300">产品名称</th>
-                                                    <th width="300">申请时间</th>
+                                                    <th width="300">订单时间</th>
                                                     <th width="300">订单状态</th>
+                                                    <th width="300">保险公司</th>
                                                     <th width="300">保费</th>
                                                 </tr>
                                             </thead>
@@ -869,7 +881,7 @@ var OrderCenter=React.createClass({
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
                                         <table className="table table-striped invoice-table">
-                                            <thead>
+                                            <thead className="table-head">
                                                 <tr>
                                                     <th width="300"></th>
                                                     <th width="300"></th>
@@ -884,17 +896,17 @@ var OrderCenter=React.createClass({
                                             {detail_trs}
                                             </tbody>
 
-                                            <h4 style={{marginTop:'15px'}}>><strong>行驶证信息:</strong></h4>
+                                            <h4 style={{marginTop:'15px'}}><strong>行驶证信息:</strong></h4>
                                             <tbody>
                                             {carInfo_trs}
                                             </tbody>
 
-                                            <h4 style={{marginTop:'15px'}}>><strong>产品信息:</strong></h4>
+                                            <h4 style={{marginTop:'15px'}}><strong>产品信息:</strong></h4>
                                             <tbody>
                                             {product_trs}
                                             </tbody>
 
-                                            <h4 style={{marginTop:'15px'}}>><strong>投保人信息:</strong></h4>
+                                            <h4 style={{marginTop:'15px'}}><strong>投保人信息:</strong></h4>
                                             <tbody>
                                             {insurer_trs}
                                             </tbody>
@@ -928,27 +940,24 @@ var OrderCenter=React.createClass({
 
                 case 'score':
                     mainContent =(
-                        <div className='container' style={{position:'static',background:'#FAEBD7'}}>
+                        <div className='container' style={{position:'static'}}>
 
                             <div className="nav-collapse">
                                 <ul className="nav " >
 
                                     <li className="all" onClick={this.scoreTabChange.bind(this,'all')} >
-                                        <a href="javascript:void(0)" className='all' style={{fontSize:'1.3em'}}>
-                                            <span aria-hidden="true" >
-                                            </span>积分明细
+                                        <a href="javascript:void(0)" className='all' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                            积分明细
                                         </a>
                                     </li>
                                     <li className="income" onClick={this.scoreTabChange.bind(this,'income')} >
-                                        <a href="javascript:void(0)" className='income' style={{fontSize:'1.3em'}}>
-                                            <span aria-hidden="true" >
-                                            </span>积分收入
+                                        <a href="javascript:void(0)" className='income' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                            积分收入
                                         </a>
                                     </li>
                                     <li className="used" onClick={this.scoreTabChange.bind(this,'used')} >
-                                        <a href="javascript:void(0)" className='used' style={{fontSize:'1.3em'}}>
-                                            <span aria-hidden="true" >
-                                            </span>积分支出
+                                        <a href="javascript:void(0)" className='used' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                            积分支出
                                         </a>
                                     </li>
                                 </ul>
@@ -957,11 +966,11 @@ var OrderCenter=React.createClass({
                             <div className="score" style={{paddingtop:'8px'}}>
                                 <div className="summary clearfix">
                                     <div className="item valid">
-                                        <span className="desc">可用积分:</span>
+                                        <span className="desc" style={{display:'block',float:'left'}}>可用积分:</span>
                                         <span className="point">{score}</span>
                                     </div>
                                     <div className="item exchange">
-                                        <a href="" target="_blank">积分充值</a>
+                                        <a href="javascript:void(0);" target="_blank">暂不可充值</a>
                                     </div>
                                 </div>
                             </div>
@@ -972,12 +981,12 @@ var OrderCenter=React.createClass({
                                     <div className="widget-container fluid-height">
                                         <div className="widget-content padded clearfix">
                                             <table className="table table-striped invoice-table">
-                                                <thead>
+                                                <thead className="table-head">
                                                     <tr>
                                                         <th width="300">订单编号</th>
                                                         <th width="300">来源/用途</th>
                                                         <th width="300">积分变化</th>
-                                                        <th width="300">申请时间</th>
+                                                        <th width="300">订单时间</th>
                                                         <th width="300">订单状态</th>
                                                     </tr>
                                                 </thead>
@@ -1009,7 +1018,7 @@ var OrderCenter=React.createClass({
                                     <div className="widget-container fluid-height">
                                         <div className="widget-content padded clearfix">
                                             <table className="table table-striped invoice-table">
-                                                <thead>
+                                                <thead className="table-head">
                                                 <tr>
                                                     <th width="300"></th>
                                                     <th width="300"></th>
@@ -1039,27 +1048,27 @@ var OrderCenter=React.createClass({
                     break;
 
                 case 'lifeOrder':
-                    mainContent =(<div className='lifeOrder container' style={{position:'static',background:'#FAEBD7'}}>
+                    mainContent =(<div className='lifeOrder container' style={{position:'static'}}>
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
-                                    <span>
+                                    <span >
                                         <strong>订单列表</strong>
                                     </span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="slider" ref="slider" style={{marginTop:'20px',position:'relative'}}>
+                        <div className="slider" ref="slider" style={{position:'relative'}}>
                             <div className="col-lg-12">
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
                                         <table className="table table-striped invoice-table">
-                                            <thead>
+                                            <thead className="table-head">
                                                 <tr>
                                                     <th width="300">订单编号</th>
                                                     <th width="300">产品名称</th>
-                                                    <th width="300">申请时间</th>
+                                                    <th width="300">订单时间</th>
                                                     <th width="300">订单状态</th>
                                                     <th width="300">保费</th>
                                                 </tr>
@@ -1092,7 +1101,7 @@ var OrderCenter=React.createClass({
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
                                         <table className="table table-striped invoice-table">
-                                            <thead>
+                                            <thead className="table-head">
                                             <tr>
                                                 <th width="300"></th>
                                                 <th width="300"></th>
@@ -1150,7 +1159,7 @@ var OrderCenter=React.createClass({
                     break;
 
                 case 'serviceOrder':
-                    mainContent =(<div className='serviceOrder container' style={{position:'static',background:'#FAEBD7'}}>
+                    mainContent =(<div className='serviceOrder container' style={{position:'static'}}>
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
@@ -1161,16 +1170,16 @@ var OrderCenter=React.createClass({
                             </div>
                         </div>
 
-                        <div className="slider" ref="slider" style={{marginTop:'20px',position:'relative'}}>
+                        <div className="slider" ref="slider" style={{position:'relative'}}>
                             <div className="col-lg-12">
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
                                         <table className="table table-striped invoice-table">
-                                            <thead>
+                                            <thead className="table-head">
                                             <tr>
                                                 <th width="300">订单编号</th>
                                                 <th width="300">服务类型</th>
-                                                <th width="300">申请时间</th>
+                                                <th width="300">订单完成时间</th>
                                                 <th width="300">订单状态</th>
                                                 <th width="300">费用</th>
                                             </tr>
@@ -1203,7 +1212,7 @@ var OrderCenter=React.createClass({
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
                                         <table className="table table-striped invoice-table">
-                                            <thead>
+                                            <thead className="table-head">
                                             <tr>
                                                 <th width="300"></th>
                                                 <th width="300"></th>
@@ -1240,13 +1249,13 @@ var OrderCenter=React.createClass({
         }
 
         let navbar=
-            <div className="nav-collapse" style={{marginTop:'2%',background:'#FAEBD7'}}>
+            <div className="nav-collapse">
 
                 <div style={{float:'left',marginLeft:'40%'}}>
                     <ul className="nav">
 
                         <li onClick={this.tabChange.bind(this,'score')}>
-                            <a href="javascript:void(0)" className='current' style={{fontSize:'1.2em'}}>
+                            <a href="javascript:void(0)" className='current' style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-credit-card'></i>
                             </span>积分
@@ -1254,7 +1263,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'carOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.2em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-truck'></i>
                             </span>车险
@@ -1262,7 +1271,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'lifeOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.2em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-user-md'></i>
                             </span>寿险
@@ -1270,7 +1279,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'serviceOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.2em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-list-ul'></i>
                             </span>服务
@@ -1282,25 +1291,20 @@ var OrderCenter=React.createClass({
                 <div style={{float:'right',marginRight:'5%',marginTop:'1%'}}>
                     <ul>
                         <li className="dropdown">
-                            <a data-toggle="dropdown" href="javascript:void(0)">
+                            <a data-toggle="dropdown" href="javascript:void(0)" style={{fontSize:'1.2em'}}>
                                 <span aria-hidden="true" >
                                     <i className='icon-user'></i>
                                 </span><strong>{perName}</strong><b className="caret"></b>
                             </a>
                             <ul className="dropdown-menu">
                                 <li>
-                                    <a>电话：{phone}</a>
+                                    <a style={{fontSize:'1.1em'}}>电话：{phone}</a>
                                 </li>
                                 <li>
-                                    <a>地址：{address}</a>
+                                    <a style={{fontSize:'1.1em'}}>地址：{address}</a>
                                 </li>
                                 <li>
-                                    <a>邮编：{postCode}</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" onClick={this.modifyPersonInfo.bind(this,customerId)} style={{fontSize:'1.2em'}}>
-                                        <Link to={window.App.getAppRoute()+"/personInfo"}><strong>个人信息维护</strong></Link>
-                                    </a>
+                                    <a style={{fontSize:'1.1em'}}>邮编：{postCode}</a>
                                 </li>
                             </ul>
                         </li>
@@ -1317,8 +1321,8 @@ var OrderCenter=React.createClass({
         }else{
             return (
                 <div className='Business' ref='business'>
-                    <div className='container' style={{position:'static',background:'#FAF0E6'}}>
-                        <div className='row' style={{padding:'10px 10px 0px 10px'}}>
+                    <div className='container' style={{position:'static',background:'#EEEEEE'}}>
+                        <div className='row' style={{padding:'0px 10px 0px 10px'}}>
                             {navbar}
                         </div>
                     </div>
