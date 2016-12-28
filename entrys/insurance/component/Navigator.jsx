@@ -236,19 +236,44 @@ var Nav=React.createClass({
                 var splitIntoBranch = this.splitIntoBranch;
                 var innerThis = this; //用在map()函数里面，外面的this不能在里面用
                 this.state.data.map(function(first,i) {
-                    lis.push(
-                        <li className="nav-li" style={{marginLeft: "-2.57143px"}} key={i} >
-                            <a href="javascript:void(0)" className="nav_a" >
-                                <Link to={window.App.getAppRoute()+(first.route!==undefined && first.route!==null?first.route:"/")}>
-                                    {first.label}</Link>
-                            </a>
-                        </li>
-                    );
+                    if(first.label=='产品中心'){
+                        lis.push(
+                            <li className="dropdown" style={{width:'85px'}}>
+                                <a data-toggle="dropdown" href="javascript:void(0)">
+                                <span aria-hidden="true" >
+                                </span><strong style={{fontWeight:'100'}}>{first.label}</strong>
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li >
+                                        <Link to={window.App.getAppRoute()+(first.route1!==undefined && first.route1!==null?first.route1:"/")}>
+                                            <a>寿险</a>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to={window.App.getAppRoute()+(first.route2!==undefined && first.route2!==null?first.route2:"/")}>
+                                            <a>车险</a>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li>
+                        );
+                    }
+                    else{
+                        lis.push(
+                            <li className="nav-li" style={{marginLeft: "-2.57143px"}} key={i} >
+                                <a href="javascript:void(0)" className="nav_a" >
+                                    <Link to={window.App.getAppRoute()+(first.route!==undefined && first.route!==null?first.route:"/")}>
+                                        {first.label}</Link>
+                                </a>
+                            </li>
+                        );
+                    }
+
                 });
 
                 //TODO:assign value to nav
                 nav =
-                    <div className="nav" style={{float:'left',paddingTop:'44px',paddingLeft:'500px'}}>
+                    <div className="nav" style={{float:'right',paddingTop:'44px'}}>
                         <ul ref="ul">
                             {lis}
                         </ul>

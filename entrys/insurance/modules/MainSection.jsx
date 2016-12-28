@@ -4,13 +4,13 @@ import {render} from 'react-dom';
 
 import App from '../modules/App.jsx';
 import MainPage from '../modules/MainPage.jsx';
-import ProductCenter from '../modules/Product.jsx';
 import PersonalCenter from '../modules/PersonalCenter.jsx';
 import Consultation from '../modules/Consultation.jsx'
 import News from '../modules/News.jsx';
 import AboutUs from '../modules/AboutUs.jsx';
 import PersonInfo from '../modules/PersonInfo.jsx';
 import LifeInsurance from '../modules/lifeInsurance.jsx';
+import CarInsurance from '../modules/CarInsurance.jsx';
 
 var config=require('../../../config.json');
 import '../../../css/insurancems/components/mainSection.css';
@@ -57,10 +57,10 @@ var MainSection = React.createClass({
                     ctrl = <MainPage></MainPage>;
                     label = "主页";
                     break;
-                case window.App.getAppRoute() + "/productCenter":
-                    ctrl = <ProductCenter></ProductCenter>;
-                    label = "产品中心";
-                    break;
+                //case window.App.getAppRoute() + "/productCenter":
+                //    ctrl = <ProductCenter></ProductCenter>;
+                //    label = "产品中心";
+                //    break;
                 case window.App.getAppRoute() + "/news":
                     ctrl = <News query={{
                                             url:"/insurance/insuranceReactPageDataRequest.do",
@@ -90,6 +90,10 @@ var MainSection = React.createClass({
                     break;
                 case window.App.getAppRoute() + "/lifeInsurance":
                     ctrl = <LifeInsurance></LifeInsurance>;
+                    label = "关于我们";
+                    break;
+                case window.App.getAppRoute() + "/carInsurance":
+                    ctrl = <CarInsurance></CarInsurance>;
                     label = "关于我们";
                     break;
 

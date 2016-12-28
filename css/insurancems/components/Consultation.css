@@ -26,6 +26,7 @@ h3.search-header {
     font-weight: bold;
     font-size: 36px;
     text-align: center;
+    color: black;
 }
 
 p.search-tag-line {
@@ -124,6 +125,7 @@ form.search-form input.search-btn:hover {
     width:60%;
     borderRight:1px solid #aaa;
     textAlign:center;
+
 }
 .detail .who{
     float:left;
@@ -144,7 +146,7 @@ form.search-form input.search-btn:hover {
     textAlign:center;
 }
 .detail .item-list {
-    margin-top: 12px;
+    margin-top: 2px;
     border-top: 1px solid #f1f1f1;
 }
 .detail .item {
@@ -160,18 +162,19 @@ form.search-form input.search-btn:hover {
     text-align: left;
     padding: 20px;
     margin-top: 1%;
+    color: black;
 }
 
 .detail .item .who {
 
     line-height: 91px;
     text-align: center;
-    color: #999;
+    color: black;
     font-size: 17px;
 }
 .detail .item .when {
     line-height: 91px;
-    color: #999;
+    color: black;
     text-align: center;
     font-size: 17px;
 }

@@ -1,5 +1,5 @@
 .banner-bottom {
-    padding: 4em 0 0 0;
+    padding: 1em 0 0 0;
     background: #f4f7f9;
 }
 
@@ -7,10 +7,7 @@
 
         padding: 2em;
     }
-    .banner-bottom{
-        padding: 4em 0 0 0;
-        background: #f4f7f9;
-    }
+
     .banner-bottom-grid a {
         text-decoration: none;
         display: block;
@@ -87,10 +84,10 @@
     }
 */
 
-    .dropdown li a{
-        border-left: 6px solid #1a2c4d;
-        display: block;
-    }
+    /*.dropdown li a{*/
+        /*border-left: 6px solid #1a2c4d;*/
+        /*display: block;*/
+    /*}*/
     /*.destinations-grid imag{*/
         /*width:100%;*/
     /*}*/
@@ -108,6 +105,9 @@
         color: #fdd000;
 
     }
+.starTextLabel{
+    font-size:16px ;
+}
     .destinations-price{
         float: left;
         width: 13%;
@@ -161,7 +161,7 @@
 }
 .hotel-price span.p-day-grid {
     color: #777;
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 400;
 }
 .product-right-grids {
@@ -228,11 +228,17 @@
     font-size: 1.4em;
     display: block;
 }
-.banner {
+.carBanner {
+    background: url(../../../build/images/topPicture2.png) no-repeat 0px -8em;
+    background-size: cover;
+    padding-top: 2em;
+    padding-bottom: 17em;
+}
+.lifeBanner {
     background: url(../../../build/images/topPicture1.png) no-repeat 0px 0px;
     background-size: cover;
     padding-top: 2em;
-    padding-bottom: 34em;
+    padding-bottom: 26em;
 }
 .sap_tabs {
     background: rgba(0, 0, 0, 0.57);
@@ -428,15 +434,28 @@
 }
 .basic {
     float: left;
-    width: 29.59%;
+    width: 21.59%;
     text-align: center;
     margin: 1em 1em;
 }
-.business {
+.lifeBusiness {
     background: #192C3B;
     padding: 2em 0em;
     height: 175px;
 }
+.lifeBusiness h1,h2,h3{
+    color: #D1D5D8;
+}
+.lifeBusiness p{
+    color: #D1D5D8;
+    margin: 18px;
+}
+.business {
+    background: #192C3B;
+    padding: 2em 0em;
+    height: 0%;
+}
+
 .business h2 {
     font-size: 26px;
     color: #D1D5D8;
@@ -463,7 +482,7 @@
     margin: 0;
     background: url(../../../build/images/circle.png) no-repeat 14em 7em #F4F4F4;
     display: block;
-    height: 215px;
+    height: 250px;
     box-shadow: 0px 2px 0px #D7D7D7;
 }
 
@@ -473,7 +492,7 @@
     border-bottom: 1px dotted #5B6873;
     padding-bottom: .5em;
     list-style-type: none;
-    margin: 0.5em 7em;
+    margin: 0.5em 1em;
 }
 .basic ul li span {
     color: #d54f30;

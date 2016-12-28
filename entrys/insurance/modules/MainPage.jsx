@@ -8,7 +8,9 @@ import Carousel from './Carousel.jsx';
 import News from '../../../components/basic/News.js';
 import Nav from '../component/Navigator.jsx';
 import MENU from '../data/menus.json';
+import Footer from '../component/Footer.jsx';
 import '../../../css/insurancems/components/MainPage.css';
+import '../../../css/insurancems/components/Product.css';
 
 var ProxyQ = require('../../../components/proxy/ProxyQ');
 
@@ -67,12 +69,16 @@ var MainPage=React.createClass({
 
                     <div className='container' style={{position:'static'}}>
                         <div className='row'>
-                            <div className="col-sm-4" style={{padding:'20px'}}>
-                                <div className="desc" style={{height:'330px',border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_6.png)',backgroundSize:'100%'}}>
-                                    <h3>寿险</h3>
-                                    <span>Web Design</span>
+                            <Link to={window.App.getAppRoute()+"/lifeInsurance"}>
+                                <div className="col-sm-4" style={{padding:'20px',paddingRight:'0px'}}>
+                                    <a  className="featured-grid" style={{height:'330px',border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_6.png)'}}>
+                                        <div className="desc">
+                                            <h3>寿险</h3>
+                                            <span>Web Design</span>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
+                            </Link>
 
                             <div className="col-sm-4" style={{padding:'20px'}}>
                                 <div style={{padding:'10px',border:'1px solid ',height:'330px'}}>
@@ -99,22 +105,18 @@ var MainPage=React.createClass({
                                     <div style={{marginTop:'20px'}}></div>
                                 </div>
                             </div>
-
-                            <div className="col-sm-4" style={{padding:'20px'}}>
-                                <div className="desc" style={{height:'330px',border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_2.png)',backgroundSize:'100%'}}>
-                                    <h3>车险</h3>
-                                    <span>Application</span>
+                            <Link to={window.App.getAppRoute()+"/carInsurance"}>
+                                <div className="col-sm-4" style={{padding:'20px',paddingLeft:'0px'}}>
+                                    <a className="featured-grid featured-grid-2" style={{height:'330px',border:'#e1e1e1 1px solid',boxShadow:'0px 3px 11px #737373',backgroundImage: 'url('+App.getResourceDeployPrefix()+'/images/image_2.png)'}}>
+                                        <div className="desc">
+                                            <h3>车险</h3>
+                                            <span>Application</span>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-
+                            </Link>
                         </div>
-                        <div className="footer"
-                             style={{width:'100%',height:'15%',background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%'
-                        }}>
-                            <p className="bottom" style={{color:'#fff',marginTop:'20px',textAlign:'center'}}>
-                                欢迎来到捷惠宝
-                            </p>
-                        </div>
+                        <Footer/>
                         </div>
                 </div>
         }else{

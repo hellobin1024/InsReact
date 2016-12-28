@@ -63,7 +63,7 @@ var Consultation=React.createClass({
     paginationData:function (data,pageIndex) {
         let capacity=data.length;
         var slices=null;
-        Page.getInitialDataIndex(capacity,pageIndex,function(ob){
+        Page.getInitialDataIndex(10,capacity,pageIndex,function(ob){
                 slices=data.slice(ob.begin,ob.end);
             }
         );
@@ -152,9 +152,13 @@ var Consultation=React.createClass({
             null,
             function(ob) {
                 info=ob;
+                if(info.data=="data is null"){
+                    alert("暂无解答！");
+                }else{
+                    this.state.nav='consultationDetails';
+                    this.initialData();
+                }
 
-                this.state.nav='consultationDetails';
-                this.initialData();
 
             }.bind(this),
 
@@ -263,8 +267,7 @@ var Consultation=React.createClass({
                         <ul className="item-list" key={i}>
                             <li className="item clearfix">
                                 <div className="what">
-                                    <h3 className="theme"> {item.title}</h3>
-
+                                    {item.title}
                                 </div>
                                 <div className="who">
                                     {item.perName}
@@ -345,15 +348,15 @@ var Consultation=React.createClass({
                                 <div className='row-50'
                                      style={{width:'30%',float:'left',paddingTop:'25px',marginLeft:'7%' }}>
                                     <div className='row-50' style={{float:'left' }}>
-                                        <p style={{float:'left' }}>
-                                            <h3>时间：</h3>
+                                        <p style={{float:'left'}}>
+                                            <h3 style={{color:'black'}}>时间：</h3>
                                         </p>
                                         <Calendar data={today} ctrlName={'consultation'}
                                                   callbackParent={this.onChildChanged.bind(this,'startDate')}/>
                                     </div>
                                     <div className='row-50' style={{float:'left' }}>
-                                        <p style={{float:'left' }}>
-                                            <h3>起——至</h3>
+                                        <p style={{float:'left'}}>
+                                            <h3 style={{color: 'black'}} >起——至</h3>
                                         </p>
                                         <Calendar data={today} ctrlName={'consultation'}
                                                   callbackParent={this.onChildChanged.bind(this,'endDate')}/>

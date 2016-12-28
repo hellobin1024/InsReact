@@ -126,7 +126,7 @@ var LifeInsuranceDetail=React.createClass({
             <ul style={{height: 'auto'}}>
                 <li className="item clearfix">
                     <div>
-                        <h2>{this.state.productName}</h2>
+                        <h2 style={{color:'black'}}>{this.state.productName}</h2>
                         <h4 style={{marginTop:'1em'}}>
                             <p>保障期限:</p>
                             <span>{insuranceDuringType}</span>
@@ -159,7 +159,7 @@ var LifeInsuranceDetail=React.createClass({
                 </li>
             </ul>
             <div className="buy-me">
-                <a onClick={this.Branch.bind(this,undefined)}>return</a>
+                <a onClick={this.Branch.bind(this,undefined)}>返回</a>
             </div>
         </div>
         );

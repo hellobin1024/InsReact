@@ -19,7 +19,7 @@ var HomePage=React.createClass({
                     <div className="topAndCenter">
                         <div className="topMain" style={{position:'relative',margin:'30px auto auto 20px'}}>
                         <span style={{display:'inline-block'}}>
-                             <h2>山东泓信信息股份有限公司</h2>
+                             <h2 style={{color:'black'}}>山东泓信信息股份有限公司</h2>
                         </span>
                             <div className='enterHomePage'
                                  style={{display: 'inline-block',height: '100%',position: 'absolute',right: '10%',top: '30%',cursor:'pointer'}}>

@@ -1,12 +1,32 @@
 import React from 'react';
 import {render} from 'react-dom';
 import '../../../css/insurancems/components/lifeInsurance.css';
-import Detail from '../modules/lifeInsuranceDetails.jsx';
-
+import Detail from '../modules/lifeDetails.jsx';
+import PageNavigator from './PageNavigator';
+var Page = require('../../../components/page/Page');
 var ProxyQ = require('../../../components/proxy/ProxyQ');
 
 var info=null;
 var LifeInsurance=React.createClass({
+    paginationData:function (data,pageIndex) {
+        let capacity=data.length;
+        var slices=null;
+        Page.getInitialDataIndex(8,capacity,pageIndex,function(ob){
+                slices=data.slice(ob.begin,ob.end);
+            }
+        );
+        return slices;
+    },
+    previousCb:function (index,isChange) { //向前跳页
+        this.setState({pageIndex:index,isChange:isChange});
+    },
+
+    pageCb:function(index,isChange) { //进入指定页的列表
+        this.setState({pageIndex:index,isChange:isChange});
+    },
+    nextCb:function(index,isChange){ //向后跳页,isChange为true
+        this.setState({pageIndex:index,isChange:isChange});
+    },
     Branch:function(branch){
         this.setState({nav: branch});
 
@@ -16,7 +36,9 @@ var LifeInsurance=React.createClass({
             InputCompany:null,
             InputCompanyType:null,
             InputStarLevel:null,
-            InputIncrement:null
+            InputIncrement:null,
+            pageIndex:0,
+            isChange:false,
         }
     },
     initialData:function(){
@@ -201,17 +223,20 @@ var LifeInsurance=React.createClass({
     },
     render:function() {
         var container=null;
+        var len=null;
         if(this.state.company!==undefined&&this.state.company!==null&&this.state.data!==undefined&&this.state.data!==null) {
             var trs = [];
             var company=this.state.company;
             company.map(function (item, i) {
                 trs.push(
                     <option value={item.companyId} key={i}>{item.companyName}</option>
-
                 )
             });
             var lrs = [];
-            var data=this.state.data;
+            var test=this.state.data;
+            len = test.length;
+            var data = this.paginationData(test, this.state.pageIndex);
+            //var data=;
             var ref=this;
             data.map(function (item, i) {
                 var stars=[];
@@ -241,8 +266,8 @@ var LifeInsurance=React.createClass({
                 }
                 lrs.push(
                     <div className="basic" key={i}>
-                        <div className="business">
-                            <h2>{item.productName}</h2>
+                        <div className="lifeBusiness">
+                            <h3>{item.productName}</h3>
                             <p>{item.companyName}</p>
                         </div>
                         <div className="value">
@@ -250,13 +275,13 @@ var LifeInsurance=React.createClass({
                                 {stars}
                             </p>
                         </div>
-                        <ul>
+                        <ul style={{height:'160px'}}>
                             <li>保额:<span>{item.insuranceQuota}</span></li>
                             <li>险种类型:<span>{type}</span></li>
                         </ul>
                         <div className="buy-me">
-                            <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly)}style={{borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor'}}href="#">了解</a>
-                            <a style={{borderLeft:'1px',borderStyle:'outset',borderLeftColor:'currentColor'}}href="#">buy</a>
+                            <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly)}style={{cursor: 'pointer',borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor'}}>了解</a>
+                            <a style={{cursor: 'pointer',borderLeft:'1px',borderStyle:'outset',borderLeftColor:'currentColor'}}>购买</a>
                         </div>
 
                     </div>
@@ -265,23 +290,25 @@ var LifeInsurance=React.createClass({
         }else{
             this.initialData();
         }
+
         switch (this.state.nav) {
             case 'buy':
                 break;
             case 'detail':
-                container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar} briefly={this.state.propBriefly}/>
+                //container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar} briefly={this.state.propBriefly}/>
+                container=<Detail productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar}/>
                 break;
             case undefined:
                 container=
                     <div  ref="slider"  style={{position:'relative'}}>
 
                     <div>
-                        <div className="banner" >
+                        <div className="lifeBanner" >
                             <div className="container" onLoad={this.getCompanies()}>
                                 <div className="col-md-8 banner-left">
                                     <div className="sap_tabs">
                                         <div className="booking-info">
-                                            <h2>Book Domestic  International Flight Tickets</h2>
+                                            <h2>选购或定制您的寿险产品</h2>
                                         </div>
                                         <div id="horizontalTab" >
 
@@ -340,7 +367,7 @@ var LifeInsurance=React.createClass({
                                                                                 <li className="span1_of_3">
                                                                                     <div className="date_btn">
                                                                                         <form>
-                                                                                            <input className="search" onClick={this.getLimitInsurancesList} value="Search" />
+                                                                                            <input className="search" onClick={this.getLimitInsurancesList} value="查询" />
                                                                                         </form>
                                                                                     </div>
                                                                                 </li>
@@ -379,9 +406,9 @@ var LifeInsurance=React.createClass({
                             <div className="container"style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',height:'auto'}}>
                                 <div className="faqs-top-grids">
                                     <div className="product-grids">
-                                        <div className="col-md-3 product-left">
+                                        <div className="col-md-3 product-left" style={{paddingTop:'15px',paddingLeft: '40px'}}>
                                             <div className="h-class" id="inputStarLevel"onClick={this.getInfoBySlide.bind(this,'inputStarLevel')}>
-                                                <h5>推荐星级</h5>
+                                                <h4 style={{fontWeight:'bold'}}>推荐星级</h4>
                                                 <div className="hotel-price" >
                                                     <label className="check">
                                                         <input type="checkbox" value="5"/>
@@ -390,7 +417,7 @@ var LifeInsurance=React.createClass({
                                                         <span className="glyphicon glyphicon-star" ></span>
                                                         <span className="glyphicon glyphicon-star" ></span>
                                                         <span className="glyphicon glyphicon-star" ></span>
-                                                        <span className="starTextLabel">5 Stars (18)</span>
+                                                        <span className="starTextLabel">5 星</span>
                                                     </label>
                                                 </div>
                                                 <div className="hotel-price">
@@ -400,7 +427,7 @@ var LifeInsurance=React.createClass({
                                                         <span className="glyphicon glyphicon-star" ></span>
                                                         <span className="glyphicon glyphicon-star" ></span>
                                                         <span className="glyphicon glyphicon-star" ></span>
-                                                        <span className="starTextLabel">4 Stars (30)</span>
+                                                        <span className="starTextLabel">4 星</span>
                                                     </label>
                                                 </div>
                                                 <div className="hotel-price">
@@ -409,7 +436,7 @@ var LifeInsurance=React.createClass({
                                                         <span className="glyphicon glyphicon-star" ></span>
                                                         <span className="glyphicon glyphicon-star" ></span>
                                                         <span className="glyphicon glyphicon-star" ></span>
-                                                        <span className="starTextLabel">3 Stars (106)</span>
+                                                        <span className="starTextLabel">3 星</span>
                                                     </label>
                                                 </div>
                                                 <div className="hotel-price">
@@ -417,19 +444,19 @@ var LifeInsurance=React.createClass({
                                                         <input type="checkbox"value="2"/>
                                                         <span className="glyphicon glyphicon-star" ></span>
                                                         <span className="glyphicon glyphicon-star" ></span>
-                                                        <span className="starTextLabel">2 Stars (78)</span>
+                                                        <span className="starTextLabel">2 星</span>
                                                     </label>
                                                 </div>
                                                 <div className="hotel-price">
                                                     <label className="check">
                                                         <input type="checkbox"value="1"/>
                                                         <span className="glyphicon glyphicon-star" ></span>
-                                                        <span className="starTextLabel">1 Stars (10)</span>
+                                                        <span className="starTextLabel">1 星</span>
                                                     </label>
                                                 </div>
                                             </div>
                                             <div className="h-class p-day" id="inputCompany" onClick={this.getInfoBySlide.bind(this,'inputCompany')} >
-                                                <h5>推荐公司</h5>
+                                                <h4 style={{fontWeight:'bold'}}>推荐公司</h4>
                                                 <div className="hotel-price">
                                                     <label className="check"  >
                                                         <input id="price1" type="checkbox"  value="8"/>
@@ -462,7 +489,7 @@ var LifeInsurance=React.createClass({
                                                 </div>
                                             </div>
                                             <div className="h-class" id="inputCompanyType" onClick={this.getInfoBySlide.bind(this,'inputCompanyType')}>
-                                                <h5>公司类型</h5>
+                                                <h4 style={{fontWeight:'bold'}}>公司类型</h4>
                                                 <div className="hotel-price">
                                                     <label className="check">
                                                         <input type="checkbox" value="1"/>
@@ -483,7 +510,7 @@ var LifeInsurance=React.createClass({
                                                 </div>
                                             </div>
                                             <div className="h-class" id="inputIncrement" onClick={this.getInfoBySlide.bind(this,'inputIncrement')}>
-                                                <h5>增值服务</h5>
+                                                <h4 style={{fontWeight:'bold'}}>增值服务</h4>
                                                 <div className="hotel-price">
                                                     <label className="check">
                                                         <input type="radio" name="hideRegionId"  value="all"/>
@@ -506,10 +533,23 @@ var LifeInsurance=React.createClass({
                                         </div>
                                         <div onLoad={this.getInsurancesList()} className="col-md-9 product-right">
 
-                                            <div className="container">
+                                            <div className="container" style={{height: 'auto',paddingLeft:'0px'}}>
                                                 {lrs}
-                                            </div>
 
+                                                <div style={{float:'left',width:'100%',paddingLeft:'40%'}}>
+                                                    <PageNavigator style={{marginTop:'100%'}}
+                                                        capacity={len}
+                                                        threshold={5}
+                                                        pageIndex={this.state.pageIndex}
+                                                        pageBegin={1}
+                                                        previousCb={this.previousCb}
+                                                        pageCb={this.pageCb}
+                                                        nextCb={this.nextCb}
+                                                        isChange={this.state.isChange}
+                                                        paginate={Page}
+                                                        />
+                                                </div>
+                                            </div>
                                         </div>
                                         <div className="clearfix"> </div>
                                     </div>
@@ -521,12 +561,12 @@ var LifeInsurance=React.createClass({
                     </div>
 
 
-                    <div style={{display:'inline-block',top:'0px',width:'100%',position:'absolute',left:'100%'}}className="banner">
+                    <div style={{display:'inline-block',top:'0px',width:'100%',position:'absolute',left:'100%'}}className="lifeBanner">
                         <div className="container" >
                             <div className="col-md-8 banner-right">
 
                             </div>
-                            <div className="col-md-8 banner-left"  style={{    marginLeft: '-70%', width: '15%',cursor:'pointer',marginTop:'16em'}}>
+                            <div className="col-md-8 banner-left"  style={{    marginLeft: '-70%', width: '15%',cursor:'pointer',marginTop:'10em'}}>
                                 <div className="sap_tabs" onClick={this.slidePage.bind(this,'left')} style={{ width: '150px',height: '185px'}}>
                                     <div style={{float: 'left',width: '50%',marginTop:'3em'}}>
                                         <img src="images/navigate-left.png"/>
@@ -540,9 +580,9 @@ var LifeInsurance=React.createClass({
 
                         </div>
                     </div>
-                    <div className="banner-bottom" style={{display:'inline-block',top: '36em',width:'100%',position:'absolute',left:'100%'}}>
-                        <div className="container">
-                            <div className="faqs-top-grids">
+                    <div className="banner-bottom" style={{display:'inline-block',top: '30em',width:'100%',position:'absolute',left:'100%'}}>
+                        <div className="container" style={{height: 'auto',background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%'}}>
+                            <div className="faqs-top-grids" style={{padding:'0px'}}>
                                 <div className="product-grids">
                                     <div className="basic" style={{width:'98%'}}>
                                         <div className="business">

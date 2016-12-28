@@ -68,3 +68,6 @@ input[type="text"] {
 .login-container .form-options .checkbox {
     display: inline-block;
 }
+.dropdown li{
+    width: 100%;
+}

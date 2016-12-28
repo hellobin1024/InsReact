@@ -16,9 +16,11 @@ var CarInsurance=React.createClass({
     goToOthers:function(branch){
 
         if(this.state.buyName!=null&&this.state.buyName!=undefined&&this.state.buyName.length!=0){
-            this.setState({
-            nav: branch
-        });}else{
+        //    this.setState({
+        //    nav: branch
+        //});
+            alert("该部分功能暂未开放！");
+        }else{
             alert("您还没有选购商品！");
         }
 
@@ -233,11 +235,10 @@ var CarInsurance=React.createClass({
                                     <h2>{item.productName}</h2>
                                     <p>{item.companyName}</p>
                                 </div>
-                                <div className="value">
-                                    <p>19,99$</p>
+                                <div className="value" style={{padding: '3px 0'}}>
                                 </div>
-                                <ul ref={i} value="0">
-                                    <li><span>简介:</span>这是一个好的保险！</li>
+                                <ul ref={i} value="0" style={{padding:'1em 0 1em'}}>
+                                    <li><span>简介:</span>{item.description}</li>
                                 </ul>
 
                                 <div className="buy-me">
@@ -255,11 +256,10 @@ var CarInsurance=React.createClass({
                                         <h2>{item.productName}</h2>
                                         <p>{item.companyName}</p>
                                     </div>
-                                    <div className="value">
-                                        <p>19,99$</p>
+                                    <div className="value" style={{padding: '3px 0'}}>
                                     </div>
-                                    <ul ref={i} value="0">
-                                        <li><span>简介:</span>这是一个好的保险！</li>
+                                    <ul ref={i} value="0"style={{padding:'1em 0 1em'}}>
+                                        <li><span>简介:</span>{item.description}</li>
                                     </ul>
                                     <div className="buy-me">
                                         <a style={{cursor:'pointer'}} onClick={ref.changeBuyState.bind(this,i,item.productName)}>选择/撤销</a>
@@ -272,12 +272,11 @@ var CarInsurance=React.createClass({
                                         <h2>{item.productName}</h2>
                                         <p>{item.companyName}</p>
                                     </div>
-                                    <div className="value">
-                                        <p>19,99$</p>
+                                    <div className="value" style={{padding: '3px 0'}}>
                                     </div>
-                                    <ul ref={i} value="0">
-                                        <li><span>简介:</span>这是一个好的保险！</li>
-                                        <li>
+                                    <ul ref={i} value="0"style={{padding:'1em 0 1em'}}>
+                                        <li><span>简介:</span>{item.description}</li>
+                                        <li style={{ height: '35px'}}>
                                             <div className="hotel-price">
                                                 <label className="check" style={{paddingLeft:'0'}}>
                                                     <input id="attach" type="checkbox"  defaultChecked={true}/>
@@ -305,17 +304,15 @@ var CarInsurance=React.createClass({
                 case undefined:
                     container=
                         <div>
-                            <div className="banner" onLoad={this.getCarInsurances()}>
+                            <div className="carBanner" onLoad={this.getCarInsurances()}>
                                 <div className="container"  >
-                                    <div className="col-md-8 banner-left">
-                                        <div className="sap_tabs" style={{marginLeft: '32em',marginTop: '8em'}}>
+                                        <div className="sap_tabs" >
                                             <div className="booking-info" style={{textAlign:'center'}}>
                                                 <h2>机动车辆保险</h2>
                                                 <h3 style={{color:'white'}}>产品列表</h3>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                             <div className="banner-bottom" >
                                 <div className="container"style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%'}}>
@@ -323,12 +320,12 @@ var CarInsurance=React.createClass({
                                         <div className=" product-left">
                                             <div className="product-grids" style={{position: 'relative'}}>
                                                 <hr/>
-                                                <h4 style={{marginLeft: '46.5%'}}>必备险</h4>
+                                                <h3 style={{marginLeft: '46.5%',color:'black'}}>必备险</h3>
                                                 {jqx}
-                                                <hr style={{marginTop: '36em'}}/>
+                                                <hr style={{marginTop: '32em'}}/>
                                             </div>
-                                            <div className="product-grids" style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',position: 'absolute',zIndex:'99',top:'43em',left:'0',paddingBottom:'5em'}}>
-                                                <h4 style={{marginLeft: '47%'}}>商业险</h4>
+                                            <div className="product-grids" style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',position: 'absolute',zIndex:'99',top:'38em',left:'0',paddingBottom:'5em'}}>
+                                                <h3 style={{marginLeft: '47%',color:'black'}}>商业险</h3>
                                                 {trs}
                                             </div>
                                         </div>
