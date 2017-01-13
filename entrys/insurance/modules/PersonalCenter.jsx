@@ -51,45 +51,15 @@ var PersonalCenter=React.createClass({
         }
     },
 
-    initialData:function(){
-        var url="/insurance/insuranceReactPageDataRequest.do";
-        var params={
-            reactPageName:'insurancePersonalCenterPage',
-            reactActionName:'getInsurancePersonInfo'
-        };
-
-        ProxyQ.queryHandle(
-            'post',
-            url,
-            params,
-            null,
-            function(ob) {
-                var re = ob.re;
-                if(re!==undefined && re!==null && (re ==2 || re =="2")) { //登录信息为空或数据为空
-                    return;
-                }
-                var personInfo=ob.personInfo;
-                this.setState({personInfo:personInfo});
-            }.bind(this),
-            function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        );
-    },
-
     getInitialState:function(){
-        return ({session: SyncStore.getNote(), personInfo:null}); //取初始登录状态
+        return ({session: SyncStore.getNote()}); //取初始登录状态
     },
 
     render:function(){
         if(this.state.session == true){
-            if(this.state.personInfo!==undefined && this.state.personInfo!==null){
-                return(
-                    <OrderCenter personInfo={this.state.personInfo}/>
-                )
-            }else{
-                this.initialData(); //获取个人信息
-            }
+            return(
+                <OrderCenter/>
+            )
         }else{
             return(
                 <div>

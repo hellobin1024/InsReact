@@ -170,8 +170,7 @@ var OrderCenter=React.createClass({
                     return;
                 }
                 var data=ob.data;
-                //var personInfo=ob.personInfo;
-                //this.setState({data:data, personInfo:personInfo});
+                var personInfo=ob.personInfo;
                 this.setState({data:data, personInfo:personInfo});
             }.bind(this),
             function(xhr, status, err) {
@@ -181,11 +180,7 @@ var OrderCenter=React.createClass({
     },
 
     getInitialState:function(){
-        var personInfo;
-        if(this.props.personInfo!==undefined && this.props.personInfo!==null){
-            personInfo=this.props.personInfo;
-        }
-        return ({current:'carOrder', data:null, personInfo:personInfo, scoreTabCurrent:'all',
+        return ({current:'carOrder', data:null, personInfo:null, scoreTabCurrent:'all',
             pageIndex:0, orderDetail:null, isChange:false, customerId:null, isModify:false});
     },
 
@@ -547,9 +542,6 @@ var OrderCenter=React.createClass({
                                     {order.serviceType}
                                 </td>
                                 <td>
-                                    {order.applyTime}
-                                </td>
-                                <td>
                                     {order.orderFinishDate}
                                 </td>
                                 <td>
@@ -846,7 +838,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span>
-                                        车险订单列表
+                                        <strong>订单列表</strong>
                                     </span>
                                 </div>
                             </div>
@@ -870,11 +862,10 @@ var OrderCenter=React.createClass({
                                             </thead>
                                             <tbody>
                                             {trs}
-                                            <tr></tr>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <td colSpan={7}>
+                                                <td colSpan={5}>
                                                     <PageNavigator
                                                         capacity={carOrderList.length}
                                                         pageIndex={this.state.pageIndex}
@@ -937,11 +928,17 @@ var OrderCenter=React.createClass({
 
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
-                                    <a href="#" onClick={this.return}>
+                                    <a href="javascript:void(0)" onClick={this.return}>
                                         <div style={{display:'inline-block',fontSize:'24px'}}>
                                             <span aria-hidden="true">返回</span>
                                         </div>
                                     </a>
+                                    <a href="http://www.baidu.cn/" target="_blank" onClick={this.pay}>
+                                        <div style={{display:'inline-block',fontSize:'24px',marginLeft:'30px'}}>
+                                            <span aria-hidden="true">{payment}</span>
+                                        </div>
+                                    </a>
+
                                 </div>
                             </div>
                         </div>
@@ -1046,7 +1043,7 @@ var OrderCenter=React.createClass({
 
                                     <div className="nav-return">
                                         <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
-                                        <a href="#" onClick={this.return}>
+                                        <a href="javascript:void(0)" onClick={this.return}>
                                             <div style={{display:'inline-block',fontSize:'24px'}}>
                                                 <span aria-hidden="true">返回</span>
                                             </div>
@@ -1063,7 +1060,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span >
-                                        寿险订单列表
+                                        <strong>订单列表</strong>
                                     </span>
                                 </div>
                             </div>
@@ -1157,7 +1154,7 @@ var OrderCenter=React.createClass({
 
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
-                                    <a href="#" onClick={this.return}>
+                                    <a href="javascript:void(0)" onClick={this.return}>
                                         <div style={{display:'inline-block',fontSize:'24px'}}>
                                             <span aria-hidden="true">返回</span>
                                         </div>
@@ -1174,7 +1171,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span>
-                                        服务订单列表
+                                        <strong>订单列表</strong>
                                     </span>
                                 </div>
                             </div>
@@ -1189,7 +1186,6 @@ var OrderCenter=React.createClass({
                                             <tr>
                                                 <th width="300">订单编号</th>
                                                 <th width="300">服务类型</th>
-                                                <th width="300">申请时间</th>
                                                 <th width="300">订单完成时间</th>
                                                 <th width="300">订单状态</th>
                                                 <th width="300">费用</th>
@@ -1200,7 +1196,7 @@ var OrderCenter=React.createClass({
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <td colSpan={6}>
+                                                <td colSpan={5}>
                                                     <PageNavigator
                                                         capacity={serviceOrderList.length}
                                                         pageIndex={this.state.pageIndex}
@@ -1243,7 +1239,7 @@ var OrderCenter=React.createClass({
 
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
-                                    <a href="#" onClick={this.return}>
+                                    <a href="javascript:void(0)" onClick={this.return}>
                                         <div style={{display:'inline-block',fontSize:'24px'}}>
                                             <span aria-hidden="true">返回</span>
                                         </div>
@@ -1299,7 +1295,7 @@ var OrderCenter=React.createClass({
                     </ul>
                 </div>
 
-                <div style={{float:'right',marginRight:'7%',marginTop:'2%'}}>
+                <div style={{float:'right',marginRight:'5%',marginTop:'1%'}}>
                     <ul>
                         <li className="dropdown">
                             <a data-toggle="dropdown" href="javascript:void(0)" style={{fontSize:'1.2em'}}>

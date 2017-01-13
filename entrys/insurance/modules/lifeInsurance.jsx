@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Link } from 'react-router'
 import '../../../css/insurancems/components/lifeInsurance.css';
 import Detail from '../modules/lifeDetails.jsx';
 import PageNavigator from './PageNavigator';
@@ -281,6 +282,7 @@ var LifeInsurance=React.createClass({
                         </ul>
                         <div className="buy-me">
                             <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly)}style={{cursor: 'pointer',borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor'}}>了解</a>
+                            <a style={{cursor: 'pointer',borderLeft:'1px',borderStyle:'outset',borderLeftColor:'currentColor'}}>购买</a>
                         </div>
 
                     </div>
@@ -295,7 +297,7 @@ var LifeInsurance=React.createClass({
                 break;
             case 'detail':
                 //container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar} briefly={this.state.propBriefly}/>
-                container=<Detail productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar}/>
+                container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar}/>
                 break;
             case undefined:
                 container=
