@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Link } from 'react-router'
 import '../../../css/insurancems/components/lifeInsurance.css';
 import Detail from '../modules/lifeDetails.jsx';
 import PageNavigator from './PageNavigator';
@@ -296,7 +297,7 @@ var LifeInsurance=React.createClass({
                 break;
             case 'detail':
                 //container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar} briefly={this.state.propBriefly}/>
-                container=<Detail productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar}/>
+                container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar}/>
                 break;
             case undefined:
                 container=

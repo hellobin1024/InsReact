@@ -16,7 +16,7 @@ var Download=React.createClass({
             attach=<a href={href}>{this.props.title}</a>;
         }
 
-        return(<div>
+        return(<div  style={{float:'left',marginTop:'-5px'}}>
                 {attach}
                 </div>);
 
