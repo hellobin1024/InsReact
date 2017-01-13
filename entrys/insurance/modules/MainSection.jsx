@@ -11,7 +11,6 @@ import AboutUs from '../modules/AboutUs.jsx';
 import PersonInfo from '../modules/PersonInfo.jsx';
 import LifeInsurance from '../modules/lifeInsurance.jsx';
 import CarInsurance from '../modules/CarInsurance.jsx';
-import lifeDetail from '../modules/lifeDetails.jsx';
 
 var config=require('../../../config.json');
 import '../../../css/insurancems/components/mainSection.css';
@@ -58,9 +57,9 @@ var MainSection = React.createClass({
                     ctrl = <MainPage></MainPage>;
                     label = "主页";
                     break;
-                //case window.App.getAppRoute() + "/lifeDetail":
-                //    ctrl = <lifeDetail></lifeDetail>;
-                //    label = "寿险详情";
+                //case window.App.getAppRoute() + "/productCenter":
+                //    ctrl = <ProductCenter></ProductCenter>;
+                //    label = "产品中心";
                 //    break;
                 case window.App.getAppRoute() + "/news":
                     ctrl = <News></News>;

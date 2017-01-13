@@ -143,7 +143,7 @@ var News=React.createClass({
                     var groupNews = item;
 
                     if (item.query !== undefined && item.query !== null) {
-                        uls.push(<li key={k++} className="main">
+                        uls.push(<li key={k++} className="main" style={{}}>
                             <span>{groupNews.newsTypeName}</span>
                             <span onClick={queryCb} className="more" data-query={JSON.stringify(item.query)}
                                   data-comp={item.comp!==undefined&&item.comp!==null?item.comp:null}>more</span>
