@@ -282,7 +282,6 @@ var LifeInsurance=React.createClass({
                         </ul>
                         <div className="buy-me">
                             <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly)}style={{cursor: 'pointer',borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor'}}>了解</a>
-                            <a style={{cursor: 'pointer',borderLeft:'1px',borderStyle:'outset',borderLeftColor:'currentColor'}}>购买</a>
                         </div>
 
                     </div>
