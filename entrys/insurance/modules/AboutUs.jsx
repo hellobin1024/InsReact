@@ -24,7 +24,7 @@ var AboutUs=React.createClass({
                         <img src={App.getResourceDeployPrefix()+"/images/aboutUs_01.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
                     </div>
 
-                    <div style={{position:'fixed',top:'104px',left:'20%',width:'50%',height:'50%'}}>
+                    <div style={{position:'fixed',top:'104px',left:'25%',width:'50%',height:'50%'}}>
                         <img src={App.getResourceDeployPrefix()+"/images/aboutUs_06.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
                         <div style={{position:'absolute',width:'71%',height:'100%',zIndex:'2',left:'15%',top:'8%',fontSize:'1.2em',color:'#fff'}}>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

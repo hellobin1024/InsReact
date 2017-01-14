@@ -838,7 +838,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span>
-                                        <strong>订单列表</strong>
+                                        车险订单列表
                                     </span>
                                 </div>
                             </div>
@@ -865,7 +865,7 @@ var OrderCenter=React.createClass({
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <td colSpan={5}>
+                                                <td colSpan={7}>
                                                     <PageNavigator
                                                         capacity={carOrderList.length}
                                                         pageIndex={this.state.pageIndex}
@@ -1060,7 +1060,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span >
-                                        <strong>订单列表</strong>
+                                        寿险订单列表
                                     </span>
                                 </div>
                             </div>
@@ -1171,7 +1171,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span>
-                                        <strong>订单列表</strong>
+                                        服务订单列表
                                     </span>
                                 </div>
                             </div>

@@ -60,7 +60,7 @@ var MainPage=React.createClass({
         if(this.state.data!==undefined && this.state.data!==null){
             mainContent=
                 <div className='MainPage'>
-                    <Nav logo={App.getResourceDeployPrefix()+"/images/logo.png"} data={MENU} splitIntoBranch={this.splitIntoBranch}/>
+                    <Nav logo={window.App.getResourceDeployPrefix()+"/images/logo.png"} data={MENU} />
 
                     <div style={{marginTop:'1px'}}>
                         <Carousel />

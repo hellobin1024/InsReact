@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-
+import Nav from '../component/Navigator.jsx';
+import MENU from '../data/menus.json';
 import App from '../modules/App.jsx';
 import MainPage from '../modules/MainPage.jsx';
 import PersonalCenter from '../modules/PersonalCenter.jsx';
@@ -63,6 +64,16 @@ var MainSection = React.createClass({
                 //    label = "寿险详情";
                 //    break;
                 case window.App.getAppRoute() + "/news":
+                    //ctrl = <News query={{
+                    //                         url:"/bsuims/reactPageDataRequest.do",
+                    //                        params:{
+                    //                            reactPageName:"groupNewsReactPage",
+                    //                            reactActionName:"listTypeNewsUseReact"
+                    //                        }
+                    //                     }}
+                    //             auto={true}/>;
+                    //label = "新闻查询业务";
+                    //break;
                     ctrl = <News></News>;
                     label = "新闻资讯";
                     break;
@@ -172,6 +183,9 @@ var MainSection = React.createClass({
             <div style={{margin: "0px auto 0 auto",paddingBottom:"20px",width:"100%"}} className="baba">
                 <div ref="mainSection" className="mainSection"
                      style={{display:"none",marginLeft:"auto",marginRight:"auto", background:'#F5F5F5'}}>
+                    <div style={{width:'100%'}}>
+                        <Nav logo={window.App.getResourceDeployPrefix()+"/images/logo.png"} data={MENU} />
+                    </div>
                     {ctrl}
                 </div>
             </div>
