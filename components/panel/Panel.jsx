@@ -360,7 +360,7 @@ var Panel=React.createClass({
                     {
                         if(coms.length>1) {
                             if (coms[1] !== null && coms[1] != undefined && coms[1] !== 'download') {
-                                label = (<td key={td$index++} style={{textAlign:"right",width:"20%"}} colSpan={1}>
+                                label = (<td key={td$index++} style={{textAlign:"right",width:"10%"}} colSpan={1}>
                                     {name}
                                 </td>);
                             }
@@ -673,7 +673,7 @@ var Panel=React.createClass({
                                 {ctrl}
                             </td>;
                         }else{
-                            ctrl$comp= <td key={td$index++} style={{textAlign:"center"}} colSpan={j==row.length-1?max$cols-j:1} >
+                            ctrl$comp= <td key={td$index++} style={{textAlign:"center",textIndent:'2em',wordBreak:'break-all',wordWrap:'break-word'}} colSpan={j==row.length-1?max$cols-j:1} >
                                 {ctrl}
                             </td>;
                         }
@@ -724,7 +724,7 @@ var Panel=React.createClass({
                 <form name="PanelForm" className={highLight==true?"form panel highLight":gradient==true?"form panel gradient":"form panel default"}
                       action={this.state.query!==undefined&&this.state.query!==null?+"/bsuims/"+this.state.query.url:""}
                       method="post"
-                      style={{boxShadow:"none", padding:padding!==undefined&&padding!==null?padding:"2px",paddingLeft:paddingLeft!==null&&paddingLeft!==undefined?paddingLeft:"40px"}}>
+                      style={{boxShadow:"none", padding:padding!==undefined&&padding!==null?padding:"2px",paddingLeft:paddingLeft!==null&&paddingLeft!==undefined?paddingLeft:"15px"}}>
                     <div className="row">
                         <div className="col-sm-12">
                             <table className="table table-bordered center panel" style={{border:"none"}}>

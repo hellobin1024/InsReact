@@ -54,32 +54,34 @@ var News=React.createClass({
             var k=0;
             if (newsList !== undefined && newsList !== null) {
                 newsList.map(function(item,i) {
-                    var content = item.content;
-                    var author = item.author;
-                    var title = item.title;
-                    var date = item.newsTimeStr;
-                    state.contentMapping[k] = {
-                        content: content,
-                        author : author,
-                        title  : title
-                    }
+                    if(i<=6){ //只显示6条记录
+                        var content = item.content;
+                        var author = item.author;
+                        var title = item.title;
+                        var date = item.newsTimeStr;
+                        state.contentMapping[k] = {
+                            content: content,
+                            author : author,
+                            title  : title
+                        }
 
-                    if(date!==undefined&&date!==null)
-                        lis.push(
-                            <li key={i}>
-                                <a className="news_a">
-                                    <span className="title" data-index={k++} onClick={clickCb}>{title}</span>
-                                </a>
-                                <span className='date'>{date}</span>
-                            </li>
-                        );
-                    else
-                        lis.push(
-                            <li key={i}>
-                                <a className="news_a">
-                                    <span className="title" data-index={k++} onClick={clickCb}>{title}</span>
-                                </a>
-                            </li>);
+                        if(date!==undefined&&date!==null)
+                            lis.push(
+                                <li key={i}>
+                                    <a className="news_a">
+                                        <span className="title" data-index={k++} onClick={clickCb}>{title}</span>
+                                    </a>
+                                    <span className='date'>{date}</span>
+                                </li>
+                            );
+                        else
+                            lis.push(
+                                <li key={i}>
+                                    <a className="news_a">
+                                        <span className="title" data-index={k++} onClick={clickCb}>{title}</span>
+                                    </a>
+                                </li>);
+                    }
                 });
             }
 

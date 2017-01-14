@@ -6,7 +6,6 @@ import { render } from 'react-dom';
 import { Link } from 'react-router'
 import Carousel from './Carousel.jsx';
 import NewsList from '../../../components/basic/News.js';
-import News from '../modules/News.jsx';
 import Nav from '../component/Navigator.jsx';
 import NewsInfo from '../modules/News.jsx';
 import MENU from '../data/menus.json';
