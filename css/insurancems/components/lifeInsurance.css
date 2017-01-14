@@ -451,14 +451,13 @@
     margin: 18px;
 }
 .business {
-    background: #192C3B;
-    padding: 2em 0em;
+    padding: 0em 0em;
     height: 0%;
 }
 
 .business h2 {
     font-size: 26px;
-    color: #D1D5D8;
+    color: black;
     margin: 0;
     font-family: 'Nunito', sans-serif;
 }
@@ -480,7 +479,7 @@
 .basic ul {
     padding: 2em 0 1em;
     margin: 0;
-    background: url(../../../build/images/circle.png) no-repeat 14em 7em #F4F4F4;
+    background:#F4F4F4;
     display: block;
     height: 250px;
     box-shadow: 0px 2px 0px #D7D7D7;

@@ -320,12 +320,12 @@ var CarInsurance=React.createClass({
                                         <div className=" product-left">
                                             <div className="product-grids" style={{position: 'relative'}}>
                                                 <hr/>
-                                                <h3 style={{marginLeft: '46.5%',color:'black'}}>必备险</h3>
+
                                                 {jqx}
                                                 <hr style={{marginTop: '32em'}}/>
                                             </div>
                                             <div className="product-grids" style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',position: 'absolute',zIndex:'99',top:'38em',left:'0',paddingBottom:'5em'}}>
-                                                <h3 style={{marginLeft: '47%',color:'black'}}>商业险</h3>
+
                                                 {trs}
                                             </div>
                                         </div>

@@ -83,6 +83,28 @@ getInitialState: function() {
             }.bind(this)
         );
     },
+    getProductFeeInfo:function(){
+        var url="/insurance/insuranceReactPageDataRequest.do";
+        var params={
+            reactPageName:'insuranceLifeProductCenterPage',
+            reactActionName:'getProductFeeInfo',
+            productId:this.state.productId
+        };
+
+        ProxyQ.queryHandle(
+            'post',
+            url,
+            params,
+            null,
+            function(ob) {
+              var a=ob;
+            }.bind(this),
+
+            function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        );
+    },
     render:function(){
         if(this.state.data!==undefined&&this.state.data!==null){
             var data=this.state.data[0];
@@ -176,13 +198,55 @@ getInitialState: function() {
                 <div className="lyys">
                     <h3 style={{color: 'firebrick',fontFamily: 'Nunito sans-serif',paddingRight:'80%'}}>利益测算</h3>
                     <hr style={{borderTop: '5px solid firebrick',width: '86%',marginLeft:'7%'}}/>
+                    <table style={{border:'0', cellPadding:"0", cellSpacing:"0", width: '70%',marginLeft:'15%', borderBottom: '2px solid #ccc'}}>
+                        <tr>
+                            <td style={{height:"37", width:"20%"}}>被保险人出生日期：</td>
+                            <td align="left" width="10%">
+                                <input id="insBirthday" name="ebizInsuredDto.birthday" style={{width: '90px'}} readonly="readonly" type="text" value=""/>
+                            </td>
+                            <td style={{height:"37", width:"20%"}}>交费方式：</td>
+                            <td style={{width:"10%"}}>
+                                年交
+                                <input type="hidden" name="ebizOrderInsuranceDto.payIntv" id="payIntv" value="12"/>
+                            </td>
+                            <td style={{height:"37", width:"20%"}}>交费期间：</td>
+                            <td style={{width:"10%"}}>
+                                <select id="payYears" name="ebizOrderInsuranceDto.payYears" style={{width:'100px'}}>
+                                    <option value="5">5年</option>
+                                    <option value="10">10年</option>
+                                    <option value="15">15年</option>
+                                    <option value="20">20年</option>
+                                </select>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style={{height:"37", width:"10%"}} >性别：</td>
+                            <td style={{width:"10%"}}>
+                                <select id="sex" name="ebizInsuredDto.sex" style={{width: '54px'}}>
+                                    <option value="0">男</option>
+                                    <option value="1">女</option>
+                                </select>
+                            </td>
+                            <td style={{ height:"37"}}>保额：</td>
+                            <td align="left">
+                                <input id="amt" name="ebizOrderInsuranceDto.amt" style={{width: '91px'}} type="text" value=""/>
+                            </td>
+                            <td style={{rowSpan:"1" }} >
+                            </td>
+                            <td style={{rowSpan:"1" }}  >
+                                <input className="search" style={{width: '100%',height: '90%',borderRadius: '7px',background:'brown',marginBottom: '15px'}}type="button" value="利益测算" id="showGainDemo"   />
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
                 <div className="kfjx">
                     <h3 style={{color: 'firebrick',fontFamily: 'Nunito sans-serif',paddingRight:'80%'}}>可附加险种</h3>
                     <hr style={{borderTop: '5px solid firebrick',width: '86%',marginLeft:'7%'}}/>
                     <div className="line-height35">您可以根据自己的需要选购您所需的附加产品：</div>
                     <div className="bxj ">
-                        <p className="bold bzfwp text"><input style={{marginRight:"2em"}} type="checkbox" />非意外身故保险金</p>
+                        <p className="bold bzfwp text"><input style={{marginRight:"2em"}} type="checkbox" onClick={this.getProductFeeInfo}/>非意外身故保险金</p>
                         <p className="bold bzfwp text"><input style={{marginRight:"2em"}} className="fjxbox" type="checkbox"/>{attach}</p>
                     </div>
                 </div>
