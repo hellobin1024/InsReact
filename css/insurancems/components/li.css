@@ -11,7 +11,7 @@
     font-size: 1.2em;
 }
 .new-title:hover {
-    color: #aa381e;
+    color: #337aff;
 }
 .new-date{
     margin-right: 10px;
@@ -19,6 +19,6 @@
 }
 
 .list a span {
-    color: #0026ed;
+    color: #337ab7;
     cursor: pointer;
 }
