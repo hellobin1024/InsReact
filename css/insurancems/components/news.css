@@ -43,7 +43,7 @@
 .list li.main {
     height: 40px;
     line-height: 40px;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .list li.main span {
@@ -64,13 +64,13 @@
 }
 
 .list li.vice span.title {
-    color: #0026ed;
+    color: #337ab7;
     margin-left: 2%;
     cursor: pointer;
 }
 
 .list li.vice span.title:hover {
-    color: #aa381e;
+    color: #337aff;
 }
 
 .list li a {
