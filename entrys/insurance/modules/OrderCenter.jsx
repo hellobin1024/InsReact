@@ -865,7 +865,7 @@ var OrderCenter=React.createClass({
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <td colSpan={5}>
+                                                <td colSpan={7}>
                                                     <PageNavigator
                                                         capacity={carOrderList.length}
                                                         pageIndex={this.state.pageIndex}
