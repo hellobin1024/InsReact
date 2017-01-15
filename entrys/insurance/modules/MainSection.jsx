@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 
 import Nav from '../component/Navigator.jsx';
 import MENU from '../data/menus.json';
+import Footer from '../component/Footer.jsx';
 import App from '../modules/App.jsx';
 import MainPage from '../modules/MainPage.jsx';
 import PersonalCenter from '../modules/PersonalCenter.jsx';
@@ -180,13 +181,19 @@ var MainSection = React.createClass({
         //remove breadcrumb by zyy,yeah i am so native
 
         return (
-            <div style={{margin: "0px auto 0 auto",paddingBottom:"20px",width:"100%"}} className="baba">
+            <div style={{margin: "0px auto 0 auto",width:"100%"}} className="baba">
                 <div ref="mainSection" className="mainSection"
-                     style={{display:"none",marginLeft:"auto",marginRight:"auto", background:'#F5F5F5'}}>
+                     style={{display:"none",marginLeft:"auto",marginRight:"auto",marginBottom:"auto"}}>
                     <div style={{width:'100%'}}>
                         <Nav logo={window.App.getResourceDeployPrefix()+"/images/logo.png"} data={MENU} />
                     </div>
                     {ctrl}
+                </div>
+
+                <div className="footer"
+                     style={{background:'url('+window.App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%',
+                        position:'fixed',bottom:'0',width:'100%',height:'5%'}}>
+                    <Footer/>
                 </div>
             </div>
         );

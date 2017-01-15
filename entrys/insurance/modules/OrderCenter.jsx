@@ -833,7 +833,7 @@ var OrderCenter=React.createClass({
             switch (this.state.current) {
 
                 case 'carOrder':
-                    mainContent =(  <div className='carOrder container' style={{position:'static'}}>
+                    mainContent =(  <div className='carOrder' style={{position:'absolute',zIndex:'-1'}} >
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
@@ -928,14 +928,9 @@ var OrderCenter=React.createClass({
 
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
-                                    <a href="javascript:void(0)" onClick={this.return}>
+                                    <a href="#" onClick={this.return}>
                                         <div style={{display:'inline-block',fontSize:'24px'}}>
                                             <span aria-hidden="true">返回</span>
-                                        </div>
-                                    </a>
-                                    <a href="http://www.baidu.cn/" target="_blank" onClick={this.pay}>
-                                        <div style={{display:'inline-block',fontSize:'24px',marginLeft:'30px'}}>
-                                            <span aria-hidden="true">{payment}</span>
                                         </div>
                                     </a>
 
@@ -947,7 +942,7 @@ var OrderCenter=React.createClass({
 
                 case 'score':
                     mainContent =(
-                        <div className='container' style={{position:'static'}}>
+                        <div className='score' style={{position:'absolute',zIndex:'-1'}}>
 
                             <div className="nav-collapse">
                                 <ul className="nav " >
@@ -1055,7 +1050,7 @@ var OrderCenter=React.createClass({
                     break;
 
                 case 'lifeOrder':
-                    mainContent =(<div className='lifeOrder container' style={{position:'static'}}>
+                    mainContent =(<div className='lifeOrder' style={{position:'absolute',zIndex:'-1'}}>
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
@@ -1166,7 +1161,7 @@ var OrderCenter=React.createClass({
                     break;
 
                 case 'serviceOrder':
-                    mainContent =(<div className='serviceOrder container' style={{position:'static'}}>
+                    mainContent =(<div className='serviceOrder' style={{position:'absolute',zIndex:'-1'}}>
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
@@ -1258,7 +1253,30 @@ var OrderCenter=React.createClass({
         let navbar=
             <div className="nav-collapse">
 
-                <div style={{float:'left',marginLeft:'40%'}}>
+                <div style={{margin:'15% 0 0 12%'}}>
+                    <ul>
+                        <li className="dropdown">
+                            <a data-toggle="dropdown" href="javascript:void(0)" style={{fontSize:'1.2em'}}>
+                                <span aria-hidden="true" >
+                                    <i className='icon-user'></i>
+                                </span><strong>{perName}</strong><b className="caret"></b>
+                            </a>
+                            <ul className="dropdown-menu">
+                                <li>
+                                    <a style={{fontSize:'1.1em'}}>电话：{phone}</a>
+                                </li>
+                                <li>
+                                    <a style={{fontSize:'1.1em'}}>地址：{address}</a>
+                                </li>
+                                <li>
+                                    <a style={{fontSize:'1.1em'}}>邮编：{postCode}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style={{float:'left',marginLeft:'5%'}}>
                     <ul className="nav">
 
                         <li onClick={this.tabChange.bind(this,'score')}>
@@ -1295,28 +1313,6 @@ var OrderCenter=React.createClass({
                     </ul>
                 </div>
 
-                <div style={{float:'right',marginRight:'5%',marginTop:'1%'}}>
-                    <ul>
-                        <li className="dropdown">
-                            <a data-toggle="dropdown" href="javascript:void(0)" style={{fontSize:'1.2em'}}>
-                                <span aria-hidden="true" >
-                                    <i className='icon-user'></i>
-                                </span><strong>{perName}</strong><b className="caret"></b>
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li>
-                                    <a style={{fontSize:'1.1em'}}>电话：{phone}</a>
-                                </li>
-                                <li>
-                                    <a style={{fontSize:'1.1em'}}>地址：{address}</a>
-                                </li>
-                                <li>
-                                    <a style={{fontSize:'1.1em'}}>邮编：{postCode}</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>;
 
 
@@ -1327,13 +1323,14 @@ var OrderCenter=React.createClass({
             );
         }else{
             return (
-                <div className='Business' ref='business'>
-                    <div className='container' style={{position:'static',background:'#EEEEEE'}}>
+                <div className='Business' ref='business'
+                     style={{background:'url('+App.getResourceDeployPrefix()+'/images/orderCenter.png) no-repeat',backgroundSize:'100%'}}>
+                    <div className='nav_bar' style={{float:'left',width:'8%',position:'static',background:'#EEEEEE',height:'900px'}}>
                         <div className='row' style={{padding:'0px 10px 0px 10px'}}>
                             {navbar}
                         </div>
                     </div>
-                    <div>
+                    <div style={{float:'left',width:'92%'}}>
                         {mainContent}
                     </div>
                 </div>);
