@@ -213,7 +213,7 @@ var Li = React.createClass({
                 </li>
 
             pagination =
-                <ul className="pagination pagination-lg" ref="pages" style={{marginLeft:"50%"}}>
+                <ul className="pagination pagination-lg" ref="pages" style={{marginLeft:"40%"}}>
                     {firstPage}
                     {previousPage}
                     {currentPage}
@@ -256,13 +256,13 @@ var Li = React.createClass({
                 props.returnCb();
             }
             if(this.state.leftReturn !==false){
-                returnBtn = <button onClick={cb} className="btn btn-default">返回</button>
+                returnBtn = <button onClick={cb} className="icon-chevron-left" style={{width:'4%',fontSize:'1.4em'}}></button>
             }
         }
 
         return (
             <div className="clearfix Li" ref="Li">
-                <div style={{marginBottom:"20px"}}>
+                <div style={{marginBottom:"15px"}}>
                     {returnBtn}
                 </div>
                 <div ref="hideDiv">
