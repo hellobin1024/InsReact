@@ -329,11 +329,6 @@ var Consultation=React.createClass({
             navbar =
                 <div className='search-area-wrapper'>
                     <div className='search-area '>
-                        <h3 className='search-header'>问题咨询</h3>
-
-                        <p className='search-tag-line'>
-                            如果您有任何问题，请在此进行查询或者提问！</p>
-
                         <form className='search-form clearfix' method="get" action="#">
                             <input className='search-term required' type="text"
                                    placeholder="在此输入您的问题进行搜素！"

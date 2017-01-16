@@ -4,24 +4,59 @@ import { Link } from 'react-router';
 import '../../../css/insurancems/components/lifeDetails.css';
 import Download from '../../../components/basic/Download.jsx';
 var ProxyQ = require('../../../components/proxy/ProxyQ');
-
+var _val = "";
 var LifeDetail=React.createClass({
-    Branch:function(url) {
-
-        //if (this.state.session != true) {
-        //    var loginModal = this.refs['loginModal'];
-        //    $(loginModal).modal('show');
-        //} else {
-        if(this.props.Branch!==undefined&&this.props.Branch!==null)
-
-        {
-            var successModal = this.refs['successModal'];
-            $(successModal).modal('hide');
-            this.props.Branch(url);
-            //var state = store.get('loginState');
-
+    changeVal:function(type,e){
+        var val = e.target.value;
+        if(isNaN(val)){
+            val = _val;
+            alert("只能输入数字!");
+        }else{
+            _val = val;
+            if(type=="val"){
+                this.setState({"val":val});
+            }else{
+                this.setState({"age":val});
+            }
         }
-        //}
+    },
+    measure:function(){
+
+        if(this.state.val!==null&&this.state.val!==undefined&&this.state.age!==null&&this.state.age!==undefined){
+            if(this.state.val%this.state.insuranceQuota==0){
+            var a=this.state.val/this.state.insuranceQuota;
+            var sex=$('#sex option:selected').val();
+            var payYears=$('#payYears option:selected').val();
+            var attachPayYears=$('#attachPayYears option:selected').val();
+
+            var url="/insurance/insuranceReactPageDataRequest.do";
+            var params={
+                reactPageName:'insuranceLifeProductCenterPage',
+                reactActionName:'getMeasure',
+                productId:this.state.productId,
+                val:a,
+                age:this.state.age,
+                sex:sex,
+                payYears:payYears,
+                attachPayYears:attachPayYears
+            };
+            ProxyQ.queryHandle(
+                'post',
+                url,
+                params,
+                null,
+                function(ob) {
+                    this.setState({"measure":ob.data});
+                }.bind(this),
+                function(xhr, status, err) {
+                    console.error(this.props.url, status, err.toString());
+                }.bind(this)
+            );
+        }else{
+            alert("保额必须是"+this.state.insuranceQuota+"的整数倍");
+        }}else{
+            alert("被保人年龄不可为空!");
+        }
 
     },
     modelHtml:function(data){
@@ -44,11 +79,16 @@ getInitialState: function() {
         //briefly=this.props.briefly;
         var productStar=null;
         productStar=this.props.productStar;
+        var insuranceQuota=null;
+        insuranceQuota=this.props.insuranceQuota;
         return {
             productId:productId,
             productName:productName,
             //briefly:briefly,
             productStar:productStar,
+            insuranceQuota:insuranceQuota,
+            val:insuranceQuota
+
         }
     },
     initialData:function(){
@@ -117,6 +157,7 @@ getInitialState: function() {
             var paymentType=data.paymentType;
             var image=this.state.image;
             var attach=this.state.attach[0].productName;
+            var measure=this.state.measure;
             var characteristic=data.characteristic.split(",");
             var safeGuardRange=data.insuranceLifeProduct.safeGuardRange.split(",");
             var charact=[];
@@ -147,19 +188,16 @@ getInitialState: function() {
 
         return <div className="basic" style={{width:'98%'}}>
             <div className="business">
-                <h2>产品详情</h2>
-            </div>
-            <div className="value">
-                <p>推荐星级:</p>
-                <label className="check" style={{paddingLeft:'0px'}}>
-                    {stars}
-                </label>
             </div>
             <ul style={{height: 'auto'}}>
                 <div className="proIntro">
                     <h3 style={{color: 'firebrick',fontFamily: 'Nunito sans-serif',paddingRight:'80%'}}>产品介绍</h3>
                     <hr style={{borderTop: '5px solid firebrick',width: '86%',marginLeft:'7%'}}/>
                     <h4 className="lifeTitle">{this.state.productName}</h4>
+                    <p>推荐星级:</p>
+                    <label className="check" style={{paddingLeft:'0px'}}>
+                        {stars}
+                    </label>
                     <div className="risk">
                         <span>风险提示：{risk}</span>
                     </div>
@@ -199,45 +237,66 @@ getInitialState: function() {
                     <h3 style={{color: 'firebrick',fontFamily: 'Nunito sans-serif',paddingRight:'80%'}}>利益测算</h3>
                     <hr style={{borderTop: '5px solid firebrick',width: '86%',marginLeft:'7%'}}/>
                     <table style={{border:'0', cellPadding:"0", cellSpacing:"0", width: '70%',marginLeft:'15%', borderBottom: '2px solid #ccc'}}>
+                        <tbody>
                         <tr>
-                            <td style={{height:"37", width:"20%"}}>被保险人出生日期：</td>
-                            <td align="left" width="10%">
-                                <input id="insBirthday" name="ebizInsuredDto.birthday" style={{width: '90px'}} readonly="readonly" type="text" value=""/>
+                            <td style={{height:"37px", width:"20%"}}>被保险人年龄：</td>
+                            <td width="10%">
+                                <input id="insBirthday" defaultValue="" value={this.state.age} onChange={this.changeVal.bind(this,'age')} style={{width: '100px',borderRadius:'4px'}} />
                             </td>
-                            <td style={{height:"37", width:"20%"}}>交费方式：</td>
+                            <td style={{height:"37px", width:"10%"}} >性别：</td>
                             <td style={{width:"10%"}}>
-                                年交
-                                <input type="hidden" name="ebizOrderInsuranceDto.payIntv" id="payIntv" value="12"/>
+                                <select id="sex" name="ebizInsuredDto.sex" style={{width: '54px'}}>
+                                    <option value="1">男</option>
+                                    <option value="2">女</option>
+                                </select>
                             </td>
-                            <td style={{height:"37", width:"20%"}}>交费期间：</td>
+                            <td style={{height:"37px", width:"20%"}}>交费期间：</td>
                             <td style={{width:"10%"}}>
                                 <select id="payYears" name="ebizOrderInsuranceDto.payYears" style={{width:'100px'}}>
-                                    <option value="5">5年</option>
-                                    <option value="10">10年</option>
-                                    <option value="15">15年</option>
-                                    <option value="20">20年</option>
+                                    <option value="2">5年</option>
+                                    <option value="3">10年</option>
+                                    <option value="4">15年</option>
+                                    <option value="5">20年</option>
                                 </select>
                             </td>
 
                         </tr>
                         <tr>
-                            <td style={{height:"37", width:"10%"}} >性别：</td>
+                            <td style={{height:"37px", width:"20%"}}>附加险交费期间：</td>
                             <td style={{width:"10%"}}>
-                                <select id="sex" name="ebizInsuredDto.sex" style={{width: '54px'}}>
-                                    <option value="0">男</option>
-                                    <option value="1">女</option>
+                                <select id="attachPayYears" name="ebizOrderInsuranceDto.payYears" style={{width:'100px'}}>
+                                    <option value="2">5年</option>
+                                    <option value="3">10年</option>
+                                    <option value="4">15年</option>
+                                    <option value="5">20年</option>
                                 </select>
                             </td>
-                            <td style={{ height:"37"}}>保额：</td>
-                            <td align="left">
-                                <input id="amt" name="ebizOrderInsuranceDto.amt" style={{width: '91px'}} type="text" value=""/>
+                            <td style={{ height:"37px"}}>保额：</td>
+                            <td>
+                                <input id="amt" style={{width: '100px',borderRadius:'4px'}} defaultValue="" name="title" value={this.state.val} onChange={this.changeVal.bind(this,'val')} />
                             </td>
-                            <td style={{rowSpan:"1" }} >
+                            <td  >
                             </td>
-                            <td style={{rowSpan:"1" }}  >
-                                <input className="search" style={{width: '100%',height: '90%',borderRadius: '7px',background:'brown',marginBottom: '15px'}}type="button" value="利益测算" id="showGainDemo"   />
+                            <td  >
+                                <input onClick={this.measure} className="search" style={{width: '100%',height: '90%',borderRadius: '7px',background:'brown',marginBottom: '15px'}}type="button" value="利益测算" id="showGainDemo"   />
                             </td>
                         </tr>
+                        </tbody>
+                    </table>
+                    <div className="red bold line-height35">您的保障：</div>
+                    <table style={{border:'0', cellPadding:"0", cellSpacing:"0", width: '70%',marginLeft:'15%', borderBottom: '2px solid #ccc'}}>
+                        <tbody>
+                            <tr>
+                                <td>每期缴费:</td>
+                                <td>{measure}</td>
+                                <td>（主险保险费+附加险保险费）</td>
+                            </tr>
+                            <tr>
+                                <td>身故保险金:</td>
+                                <td>{this.state.val}</td>
+                                <td>（主险保险费+附加险保险费）</td>
+                            </tr>
+                        </tbody>
                     </table>
 
                 </div>
@@ -281,9 +340,7 @@ getInitialState: function() {
 
                 </div>
             </ul>
-            <div onClick={this.Branch.bind(this,undefined)} style={{cursor: 'pointer',position:'fixed',bottom:'15%',zIndex:9999,width: '140px',height: '150px',right: '30px',background: 'url('+App.getResourceDeployPrefix()+'/images/edit-undo.png) no-repeat',backgroundSize:'100%'}}>
-                 <p style={{marginTop:'8em'}}>返回寿险产品中心</p>
-            </div>
+
         </div>
 
 

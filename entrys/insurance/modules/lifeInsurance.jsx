@@ -52,7 +52,7 @@ var LifeInsurance=React.createClass({
         }.bind(this), 300);
 
     },
-    goToOthers:function(branch,num,name,star,briefly){
+    goToOthers:function(branch,num,name,star,briefly,quota){
         //if (this.state.session != true) {
         //    var loginModal = this.refs['loginModal'];
         //    $(loginModal).modal('show');
@@ -62,6 +62,7 @@ var LifeInsurance=React.createClass({
             this.state.propProductName=name;
             this.state.propBriefly=briefly;
             this.state.propStar=star;
+            this.state.propQuota=quota;
         }
         this.setState({
             nav: branch,
@@ -271,17 +272,17 @@ var LifeInsurance=React.createClass({
                             <h3>{item.productName}</h3>
                             <p>{item.companyName}</p>
                         </div>
-                        <div className="value">
+                        <div className="value" style={{padding: '0em 0'}}>
                             <p>
                                 {stars}
                             </p>
                         </div>
-                        <ul style={{height:'160px'}}>
+                        <ul style={{height:'130px'}}>
                             <li>保额:<span>{item.insuranceQuota}</span></li>
                             <li>险种类型:<span>{type}</span></li>
                         </ul>
                         <div className="buy-me">
-                            <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly)}style={{cursor: 'pointer',borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor'}}>了解</a>
+                            <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly,item.insuranceQuota)}style={{cursor: 'pointer',borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor'}}>了解</a>
                         </div>
 
                     </div>
@@ -296,117 +297,69 @@ var LifeInsurance=React.createClass({
                 break;
             case 'detail':
                 //container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar} briefly={this.state.propBriefly}/>
-                container=<Detail Branch={this.Branch} productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar}/>
+                container=<Detail  productId={this.state.propProductId} productName={this.state.propProductName} productStar={this.state.propStar} insuranceQuota={this.state.propQuota}/>
                 break;
             case undefined:
                 container=
                     <div  ref="slider"  style={{position:'relative'}}>
 
                     <div>
-                        <div className="lifeBanner" >
-                            <div className="container" onLoad={this.getCompanies()}>
-                                <div className="col-md-8 banner-left">
-                                    <div className="sap_tabs">
-                                        <div className="booking-info">
-                                            <h2>选购或定制您的寿险产品</h2>
-                                        </div>
-                                        <div id="horizontalTab" >
-
-                                            <div className="resp-tabs-container">
-                                                <div className="tab-1 resp-tab-content" >
-                                                    <div className="facts">
-                                                        <div className="booking-form">
-
-                                                            <div className="online_reservation">
-                                                                <div className="b_room">
-                                                                    <div className="booking_room">
-                                                                        <div className="reservation">
-                                                                            <ul>
-                                                                                <li  className="span1_of_1 desti">
-                                                                                    <h5>产品名:</h5>
-                                                                                    <div className="book_date">
-                                                                                        <form>
-                                                                                            <input type="text" onChange={this.onSaveInput.bind(this)} className="typeahead1 input-md form-control tt-input" required=""/>
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </li>
-
-                                                                                <div className="clearfix"></div>
-                                                                            </ul>
-                                                                        </div>
-
-                                                                        <div className="reservation">
-                                                                            <ul>
-                                                                                <li className="span1_of_1 left ">
-                                                                                    <h5>公司选择:</h5>
-                                                                                    <div className="section_room" >
-                                                                                        <select id="company" onChange={this.getSelectCompany} className="frm-field required">
-                                                                                            <option value="null">{"无"}</option>
-                                                                                            {trs}
-                                                                                        </select>
-                                                                                    </div>
-                                                                                </li>
-                                                                                <li className="span1_of_1 right "  >
-                                                                                    <h5>险种类型:</h5>
-                                                                                    <div className="section_room">
-                                                                                        <select onChange={this.getSelectLifeInsuranceType}id="lifeInsuranceType" style={{width: '80px'}} className="frm-field required">
-                                                                                            <option value="0">无</option>
-                                                                                            <option value="1">重疾险</option>
-                                                                                            <option value="2">意外险</option>
-                                                                                            <option value="3">养老险</option>
-                                                                                            <option value="4">理财险</option>
-                                                                                            <option value="5">医疗险</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                </li>
-                                                                                <div className="clearfix"></div>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div className="reservation">
-                                                                            <ul>
-                                                                                <li className="span1_of_3">
-                                                                                    <div className="date_btn">
-                                                                                        <form>
-                                                                                            <input className="search" onClick={this.getLimitInsurancesList} value="查询" />
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </li>
-                                                                                <div className="clearfix"></div>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="clearfix"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                        <div className="lifeBanner" onLoad={this.getCompanies()}>
+                                <div className="col-md-8 banner-left" style={{width:'85%',paddingLeft: '20%',paddingTop:'10px'}}>
+                                    <div className="reservation">
+                                        <ul>
+                                            <li  className="span1_of_1 desti" style={{width:'22em'}}>
+                                                <h4>产品名:</h4>
+                                                <div className="book_date">
+                                                    <form>
+                                                        <input type="text" onChange={this.onSaveInput.bind(this)} className="typeahead1 input-md form-control tt-input" required=""/>
+                                                    </form>
                                                 </div>
-
-                                            </div>
-                                        </div>
+                                            </li>
+                                            <li className="span1_of_1 left " style={{paddingLeft: '6em'}}>
+                                                <h4>公司选择:</h4>
+                                                <div className="section_room" >
+                                                    <select id="company" onChange={this.getSelectCompany} className="frm-field required">
+                                                        <option value="null">{"无"}</option>
+                                                        {trs}
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li className="span1_of_1 right "  >
+                                                <h4>险种类型:</h4>
+                                                <div className="section_room">
+                                                    <select onChange={this.getSelectLifeInsuranceType}id="lifeInsuranceType" style={{width: '80px'}} className="frm-field required">
+                                                        <option value="0">无</option>
+                                                        <option value="1">重疾险</option>
+                                                        <option value="2">意外险</option>
+                                                        <option value="3">养老险</option>
+                                                        <option value="4">理财险</option>
+                                                        <option value="5">医疗险</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li className="span1_of_3" style={{ paddingRight: '10em',marginTop: '-5px',float:'right'}}>
+                                                <div className="date_btn">
+                                                    <form>
+                                                        <input className="search" style={{borderRadius:'3px',height:'3em',marginTop: '11%'}}onClick={this.getLimitInsurancesList} value="查询" />
+                                                    </form>
+                                                </div>
+                                            </li>
+                                            <div className="clearfix"></div>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div className="col-md-8 banner-left" style={{    marginLeft: '91%', width: '15%',marginTop: '-16%',cursor:'pointer'}}>
-                                    <div className="sap_tabs" onClick={this.slidePage.bind(this,'right')}style={{ width: '150px',height: '185px'}}>
-                                        <div className="booking-info"style={{width: '50%',float: 'left',marginTop: '-24%'}}>
-                                            <h2>定制产品</h2>
-                                        </div>
-                                        <div style={{float: 'left',width: '50%',marginTop:'3em'}}>
-                                            <img src="images/navigate-right.png"/>
-                                        </div>
 
-                                    </div>
+                                <div className="col-md-8 banner-left" onClick={this.slidePage.bind(this,'right')} style={{width: '15%',cursor:'pointer',paddingTop:'10px'}}>
+                                            <h2 style={{ color: 'darkblue'}}>定制产品</h2>
                                 </div>
-                            </div>
+                            <div className="clearfix"></div>
                         </div>
 
-
-
-                        <div className="banner-bottom" >
                             <div className="container"style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',height:'auto'}}>
                                 <div className="faqs-top-grids">
                                     <div className="product-grids">
-                                        <div className="col-md-3 product-left" style={{paddingTop:'15px',paddingLeft: '40px'}}>
+                                        <div className="col-md-3 product-left" style={{paddingTop:'15px',paddingLeft: '7em'}}>
                                             <div className="h-class" id="inputStarLevel"onClick={this.getInfoBySlide.bind(this,'inputStarLevel')}>
                                                 <h4 style={{fontWeight:'bold'}}>推荐星级</h4>
                                                 <div className="hotel-price" >
@@ -557,39 +510,23 @@ var LifeInsurance=React.createClass({
 
 
                             </div>
-                        </div>
+
                     </div>
 
 
                     <div style={{display:'inline-block',top:'0px',width:'100%',position:'absolute',left:'100%'}}className="lifeBanner">
-                        <div className="container" >
-                            <div className="col-md-8 banner-right">
 
-                            </div>
-                            <div className="col-md-8 banner-left"  style={{    marginLeft: '-70%', width: '15%',cursor:'pointer',marginTop:'10em'}}>
-                                <div className="sap_tabs" onClick={this.slidePage.bind(this,'left')} style={{ width: '150px',height: '185px'}}>
-                                    <div style={{float: 'left',width: '50%',marginTop:'3em'}}>
-                                        <img src="images/navigate-left.png"/>
-                                    </div>
-                                    <div className="booking-info"style={{width: '50%',float: 'left',marginTop: '22%'}}>
-                                    <h2>返回</h2>
-                                </div>
-
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
-                    <div className="banner-bottom" style={{display:'inline-block',top: '30em',width:'100%',position:'absolute',left:'100%'}}>
+                    <div className="banner-bottom" style={{display:'inline-block',top: '0em',width:'100%',position:'absolute',left:'100%'}}>
                         <div className="container" style={{height: 'auto',background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%'}}>
                             <div className="faqs-top-grids" style={{padding:'0px'}}>
                                 <div className="product-grids">
                                     <div className="basic" style={{width:'98%'}}>
                                         <div className="business">
                                             <h2>产品定制</h2>
-                                            <p>填写如下信息，选择最适合您的产品！</p>
+                                            <p style={{color:'black'}}>填写如下信息，选择最适合您的产品！</p>
                                         </div>
-                                        <div className="value">
+                                        <div className="value" style={{background:'rgba(17, 17, 17, 0.6)'}}>
                                             <p>计划保费:</p>
                                             <input type="text" style={{width:'25%',height: 'auto',margin:'0 auto',textAlign:'center', fontSize:'20px'}}className="typeahead1 input-md form-control tt-input" required=""/>
                                         </div>
@@ -668,6 +605,9 @@ var LifeInsurance=React.createClass({
                                 </div>
                             </div>
                         </div>
+                        <div onClick={this.slidePage.bind(this,'left')} style={{cursor: 'pointer',position:'absolute',top:'52em',zIndex:9999,width: '140px',height: '150px',right: '20px',background: 'url('+App.getResourceDeployPrefix()+'/images/edit-undo.png) no-repeat',backgroundSize:'100%'}}>
+                        <p style={{marginTop:'8em'}}>返回寿险产品中心</p>
+                    </div>
                     </div>
 
 
