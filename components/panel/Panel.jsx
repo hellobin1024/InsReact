@@ -360,7 +360,7 @@ var Panel=React.createClass({
                     {
                         if(coms.length>1) {
                             if (coms[1] !== null && coms[1] != undefined && coms[1] !== 'download') {
-                                label = (<td key={td$index++} style={{textAlign:"right",width:"10%"}} colSpan={1}>
+                                label = (<td key={td$index++} style={{textAlign:"right",width:"10%",fontSize:'1.2em'}} colSpan={1}>
                                     {name}
                                 </td>);
                             }
@@ -654,7 +654,7 @@ var Panel=React.createClass({
                                 break;
                             case 'return':
 
-                                    ctrl = <button  onClick={returnCb} style={{width:"5%", height:'30px',fontSize:'1.2em'}} data-return={props.returnCb}>
+                                    ctrl = <button  onClick={returnCb} style={{width:"8%", height:'30px',fontSize:'1.2em'}} data-return={props.returnCb}>
                                         {coms[0]}</button>;
 
 
@@ -673,7 +673,7 @@ var Panel=React.createClass({
                                 {ctrl}
                             </td>;
                         }else{
-                            ctrl$comp= <td key={td$index++} style={{textAlign:"center",textIndent:'2em',wordBreak:'break-all',wordWrap:'break-word'}} colSpan={j==row.length-1?max$cols-j:1} >
+                            ctrl$comp= <td key={td$index++} style={{textAlign:"center",textIndent:'2em',wordBreak:'break-all',wordWrap:'break-word',fontSize:'1.2em'}} colSpan={j==row.length-1?max$cols-j:1} >
                                 {ctrl}
                             </td>;
                         }
