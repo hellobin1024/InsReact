@@ -1285,7 +1285,7 @@ var OrderCenter=React.createClass({
                     <ul className="nav">
 
                         <li onClick={this.tabChange.bind(this,'score')}>
-                            <a href="javascript:void(0)" className='current' style={{fontSize:'1.8em', hover:'#000000'}}>
+                            <a href="javascript:void(0)" className='current' style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-credit-card'></i>
                             </span>积分
@@ -1293,7 +1293,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'carOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em',hover:'#000000'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-truck'></i>
                             </span>车险
@@ -1301,7 +1301,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'lifeOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em',hover:'#000000'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-user-md'></i>
                             </span>寿险
@@ -1309,7 +1309,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'serviceOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em',hover:'#000000'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-list-ul'></i>
                             </span>服务
