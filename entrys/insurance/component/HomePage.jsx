@@ -14,7 +14,7 @@ var HomePage=React.createClass({
             return(
 
             <div className='container'
-                 style={{paddingLeft:'0px',position:'absolute',width:'100%',top:'0',height:'92%',background:'url('+App.getResourceDeployPrefix()+'/images/background.png) no-repeat',backgroundSize:'100%'}}>
+                 style={{paddingLeft:'0px',position:'absolute',width:'100%',top:'0',height:'95%',background:'url('+App.getResourceDeployPrefix()+'/images/background.png) no-repeat',backgroundSize:'100%'}}>
                 <div className="in-container">
                     <div className="topAndCenter">
                         <div className="topMain" style={{position:'relative',margin:'30px auto auto 20px'}}>
@@ -71,7 +71,7 @@ var HomePage=React.createClass({
 
                 <div className="footer"
                      style={{background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%',
-                        position:'fixed',bottom:'0',width:'100%',height:'8%'}}>
+                        position:'fixed',bottom:'0',width:'100%',height:'5%'}}>
                     <Footer/>
                 </div>
             </div>

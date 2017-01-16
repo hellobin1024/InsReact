@@ -99,6 +99,7 @@ var News=React.createClass({
         var hiddenInfo;
         var auto =true;
         var display='list';
+        var nav=null;
         if(this.props.data!==undefined&&this.props.data!==null) {
             data = this.props.data;
             data$initialed=true;
@@ -121,7 +122,11 @@ var News=React.createClass({
             contentMapping=this.props.contentMapping;
         }
 
-        return ({data: data, data$initialed: data$initialed, auto: auto,hiddenInfo: hiddenInfo, contentMapping: contentMapping, display:display});
+        if(this.props.nav!==undefined&&this.props.nav!==null){
+            nav=this.props.nav;
+        }
+
+        return ({data: data, data$initialed: data$initialed, auto: auto,hiddenInfo: hiddenInfo, contentMapping: contentMapping, display:display, nav:nav});
     },
 
     render:function () {
@@ -222,15 +227,13 @@ var News=React.createClass({
                     </div>
             }
 
+
             return (
                 <div>
-                    <div style={{position:'absolute',width:'100%',top:'0',height:'90%',background:'url('+App.getResourceDeployPrefix()+'/images/background_1.png) no-repeat',backgroundSize:'100%'}}>
-                        <div className="about-text">
-                            <p style={{marginTop:'20px',textAlign:'center',fontSize:'2.5em'}}>
-                                新闻资讯
-                            </p>
-                        </div>
-
+                    <div style={{width:'100%'}}>
+                        {this.state.nav}
+                    </div>
+                    <div style={{position:'absolute',width:'100%',height:'90%',background:'url('+App.getResourceDeployPrefix()+'/images/background_1.png) no-repeat',backgroundSize:'100%'}}>
                         <div className="section clearfix news" ref="news">
                             {mainContent}
                             <div ref="pagination">
@@ -240,12 +243,6 @@ var News=React.createClass({
                                 </li>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="footer"
-                         style={{background:'url('+App.getResourceDeployPrefix()+'/images/footer.png) no-repeat',backgroundSize:'100%',
-                        position:'fixed',bottom:'0',width:'100%',height:'8%'}}>
-                        <Footer/>
                     </div>
                 </div>
             );

@@ -168,9 +168,9 @@ var Navigator=React.createClass({
 
 
         return (
-            <div className='Navigator' ref='navigator' >
-                <div className='container' style={{position:'static'}}>
-                    <div className='row pagination' style={{padding:'10px 10px 0px 10px'}}>
+            <div className='Navigator' ref='navigator' style={{textAlign:'center'}}>
+                <div style={{position:'static'}}>
+                    <div className='pagination' style={{padding:'10px 10px 0px 10px'}}>
                         {navigator}
                     </div>
                 </div>

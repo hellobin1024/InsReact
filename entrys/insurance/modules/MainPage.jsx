@@ -6,10 +6,11 @@ import { render } from 'react-dom';
 import { Link } from 'react-router'
 import Carousel from './Carousel.jsx';
 import NewsList from '../../../components/basic/News.js';
-import Nav from '../component/Navigator.jsx';
 import NewsInfo from '../modules/News.jsx';
-import MENU from '../data/menus.json';
 import Footer from '../component/Footer.jsx';
+
+import Nav from '../component/Navigator.jsx';
+import MENU from '../data/menus.json';
 
 import '../../../css/insurancems/components/MainPage.css';
 import '../../../css/insurancems/components/Product.css';
@@ -85,7 +86,7 @@ var MainPage=React.createClass({
                                             <span style={{display:'inline-block',fontSize:'1.3em'}}>新闻资讯</span>
 
                                             <Link to={window.App.getAppRoute()+"/news"}>
-                                                <span style={{display:'inline-block',position:'absolute',right:'10%',fontSize:'1.3em'}}>more</span>
+                                                <span style={{display:'inline-block',position:'absolute',right:'10%',fontSize:'1.3em'}}>News</span>
                                             </Link>
 
                                         </div>
@@ -119,9 +120,11 @@ var MainPage=React.createClass({
             this.initialData();
         }
 
+        var nav= <Nav logo={window.App.getResourceDeployPrefix()+"/images/logo.png"} data={MENU} />
         if(this.state.isEnter!=undefined && this.state.isEnter!=null){
             return(
                 <NewsInfo
+                    nav={nav}
                     data={this.state.data}
                     auto={true}
                     hiddenInfo={this.state.hiddenInfo}

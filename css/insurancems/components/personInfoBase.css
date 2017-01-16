@@ -5,10 +5,7 @@
  *       2、设置通用原子类
  */
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-    background:#ffffff;
-    color:#666;
-}
+
 body{
     font: 14px/24px "Microsoft YaHei","Arial",sans-serif;
     background:#E9EAEB;

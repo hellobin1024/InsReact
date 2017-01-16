@@ -71,21 +71,21 @@ var PersonalCenter=React.createClass({
                          ref='loginModal'
                         >
                         <div className="modal-dialog modal-sm" style={{position:'absolute',top:'30%',width:'50%',marginLeft:'25%'}}>
-                            <div className="modal-content" style={{position:'relative',width:'100%',padding:'40px'}}>
+                            <div className="modal-content" style={{position:'relative',width:'100%',padding:'40px',background:'#ccffcc'}}>
 
                                 <div className="modal-body">
 
                                     <div className="form-group">
                                         <span style={{display:'inline-block',fontSize:'1.2em'}}>用户名/手机号：</span>
                                     <span style={{display:'inline-block'}}>
-                                        <input className="form-control" name="username" placeholder="" type="text" style={{width:'200%'}}/>
+                                        <input className="form-control" name="username" placeholder="" type="text" style={{width:'200%',borderBottom:'3px solid #d6d6d6'}}/>
                                     </span>
                                     </div>
                                     <div className="form-group" style={{position:'relative'}}>
                                     <span style={{display:'inline-block',fontSize:'1.2em'}}>
-                                        密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
+                                        密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
                                     <span style={{display:'inline-block'}}>
-                                        <input className="form-control" name="password" placeholder="" type="password" style={{width:'200%'}}/>
+                                        <input className="form-control" name="password" placeholder="" type="password" style={{width:'200%',borderBottom:'3px solid #d6d6d6'}}/>
                                     </span>
 
                                     <span className='icon-right' onClick={this.validate} ><i className='icon-chevron-right'></i>

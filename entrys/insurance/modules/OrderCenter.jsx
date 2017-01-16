@@ -36,6 +36,11 @@ var OrderCenter=React.createClass({
     //积分tab
     scoreTabChange:function(tab){
         this.setState({scoreTabCurrent:tab});
+
+        window.setTimeout(function(){
+            var detail=this.refs.slider;
+            $(detail).animate({left:'0'}); //使页面划回到最左边
+        }.bind(this), 400) //等待500毫秒
     },
 
     tabChange:function(tab){
@@ -833,11 +838,11 @@ var OrderCenter=React.createClass({
             switch (this.state.current) {
 
                 case 'carOrder':
-                    mainContent =(  <div className='carOrder container' style={{position:'static'}}>
+                    mainContent =(  <div className='carOrder' style={{position:'absolute',zIndex:'-1'}} >
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
-                                    <span>
+                                    <span style={{color:'#288329'}}>
                                         车险订单列表
                                     </span>
                                 </div>
@@ -928,14 +933,9 @@ var OrderCenter=React.createClass({
 
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
-                                    <a href="javascript:void(0)" onClick={this.return}>
+                                    <a href="#" onClick={this.return}>
                                         <div style={{display:'inline-block',fontSize:'24px'}}>
                                             <span aria-hidden="true">返回</span>
-                                        </div>
-                                    </a>
-                                    <a href="http://www.baidu.cn/" target="_blank" onClick={this.pay}>
-                                        <div style={{display:'inline-block',fontSize:'24px',marginLeft:'30px'}}>
-                                            <span aria-hidden="true">{payment}</span>
                                         </div>
                                     </a>
 
@@ -947,23 +947,23 @@ var OrderCenter=React.createClass({
 
                 case 'score':
                     mainContent =(
-                        <div className='container' style={{position:'static'}}>
+                        <div className='score' style={{position:'absolute',zIndex:'-1'}}>
 
                             <div className="nav-collapse">
                                 <ul className="nav " >
 
                                     <li className="all" onClick={this.scoreTabChange.bind(this,'all')} >
-                                        <a href="javascript:void(0)" className='all' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                        <a href="javascript:void(0)" className='all' style={{color:'#288329', fontSize:'1.4em'}}>
                                             积分明细
                                         </a>
                                     </li>
                                     <li className="income" onClick={this.scoreTabChange.bind(this,'income')} >
-                                        <a href="javascript:void(0)" className='income' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                        <a href="javascript:void(0)" className='income' style={{color:'#288329', fontSize:'1.4em'}}>
                                             积分收入
                                         </a>
                                     </li>
                                     <li className="used" onClick={this.scoreTabChange.bind(this,'used')} >
-                                        <a href="javascript:void(0)" className='used' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                        <a href="javascript:void(0)" className='used' style={{color:'#288329', fontSize:'1.4em'}}>
                                             积分支出
                                         </a>
                                     </li>
@@ -1055,11 +1055,11 @@ var OrderCenter=React.createClass({
                     break;
 
                 case 'lifeOrder':
-                    mainContent =(<div className='lifeOrder container' style={{position:'static'}}>
+                    mainContent =(<div className='lifeOrder' style={{position:'absolute',zIndex:'-1'}}>
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
-                                    <span >
+                                    <span style={{color:'#288329'}}>
                                         寿险订单列表
                                     </span>
                                 </div>
@@ -1166,11 +1166,11 @@ var OrderCenter=React.createClass({
                     break;
 
                 case 'serviceOrder':
-                    mainContent =(<div className='serviceOrder container' style={{position:'static'}}>
+                    mainContent =(<div className='serviceOrder' style={{position:'absolute',zIndex:'-1'}}>
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
-                                    <span>
+                                    <span style={{color:'#288329'}}>
                                         服务订单列表
                                     </span>
                                 </div>
@@ -1258,7 +1258,30 @@ var OrderCenter=React.createClass({
         let navbar=
             <div className="nav-collapse">
 
-                <div style={{float:'left',marginLeft:'40%'}}>
+                <div style={{margin:'15% 0 0 12%'}}>
+                    <ul>
+                        <li className="dropdown">
+                            <a data-toggle="dropdown" href="javascript:void(0)" style={{fontSize:'1.2em'}}>
+                                <span aria-hidden="true" >
+                                    <i className='icon-user'></i>
+                                </span><strong>{perName}</strong><b className="caret"></b>
+                            </a>
+                            <ul className="dropdown-menu">
+                                <li>
+                                    <a style={{fontSize:'1.1em'}}>电话：{phone}</a>
+                                </li>
+                                <li>
+                                    <a style={{fontSize:'1.1em'}}>地址：{address}</a>
+                                </li>
+                                <li>
+                                    <a style={{fontSize:'1.1em'}}>邮编：{postCode}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style={{float:'left',marginLeft:'5%'}}>
                     <ul className="nav">
 
                         <li onClick={this.tabChange.bind(this,'score')}>
@@ -1295,28 +1318,6 @@ var OrderCenter=React.createClass({
                     </ul>
                 </div>
 
-                <div style={{float:'right',marginRight:'5%',marginTop:'1%'}}>
-                    <ul>
-                        <li className="dropdown">
-                            <a data-toggle="dropdown" href="javascript:void(0)" style={{fontSize:'1.2em'}}>
-                                <span aria-hidden="true" >
-                                    <i className='icon-user'></i>
-                                </span><strong>{perName}</strong><b className="caret"></b>
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li>
-                                    <a style={{fontSize:'1.1em'}}>电话：{phone}</a>
-                                </li>
-                                <li>
-                                    <a style={{fontSize:'1.1em'}}>地址：{address}</a>
-                                </li>
-                                <li>
-                                    <a style={{fontSize:'1.1em'}}>邮编：{postCode}</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>;
 
 
@@ -1327,13 +1328,14 @@ var OrderCenter=React.createClass({
             );
         }else{
             return (
-                <div className='Business' ref='business'>
-                    <div className='container' style={{position:'static',background:'#EEEEEE'}}>
+                <div className='Business' ref='business'
+                     style={{background:'url('+App.getResourceDeployPrefix()+'/images/background_1.png) no-repeat',backgroundSize:'100%'}}>
+                    <div className='nav_bar' style={{float:'left',width:'8%',position:'static',background:'#EEEEEE',height:'835px',borderRight:'1px #4b8ec6 solid'}}>
                         <div className='row' style={{padding:'0px 10px 0px 10px'}}>
                             {navbar}
                         </div>
                     </div>
-                    <div>
+                    <div style={{float:'left',width:'92%'}}>
                         {mainContent}
                     </div>
                 </div>);
