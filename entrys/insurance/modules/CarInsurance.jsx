@@ -311,7 +311,7 @@ var CarInsurance=React.createClass({
                                                 {jqx}
                                                 <hr style={{marginTop: '20em'}}/>
                                             </div>
-                                            <div className="product-grids" style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',position: 'absolute',zIndex:'99',top:'24em',left:'0',paddingBottom:'5em'}}>
+                                            <div className="product-grids" style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',position: 'absolute',top:'24em',left:'0',paddingBottom:'5em'}}>
 
                                                 {trs}
                                             </div>
@@ -319,7 +319,7 @@ var CarInsurance=React.createClass({
                                     </div>
                                 </div>
                             </div>
-                            <div style={{position:'fixed',bottom:'0px',width:'100%',zIndex:9999,backgroundColor:'oldlace',height:'5em'}}>
+                            <div style={{position:'fixed',bottom:'45px',width:'100%',zIndex:9999,backgroundColor:'oldlace',height:'5em'}}>
                                 <div className="col-md-10 " style={{marginTop: '1em'}}>
                                     <span style={{color: 'darksalmon',fontSize: 'large',paddingLeft: '1em'}}>您一共选购了 <a>{this.state.proNum}</a> 项产品,点击右侧 "购买" 以继续订单 --></span>
                                 </div>
