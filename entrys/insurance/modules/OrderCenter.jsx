@@ -1329,7 +1329,7 @@ var OrderCenter=React.createClass({
         }else{
             return (
                 <div className='Business' ref='business'
-                     style={{background:'url('+App.getResourceDeployPrefix()+'/images/orderCenter.png) no-repeat',backgroundSize:'100%'}}>
+                     style={{background:'url('+App.getResourceDeployPrefix()+'/images/background_1.png) no-repeat',backgroundSize:'100%'}}>
                     <div className='nav_bar' style={{float:'left',width:'8%',position:'static',background:'#EEEEEE',height:'835px',borderRight:'1px #4b8ec6 solid'}}>
                         <div className='row' style={{padding:'0px 10px 0px 10px'}}>
                             {navbar}
