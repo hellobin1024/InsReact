@@ -86,7 +86,7 @@ var MainPage=React.createClass({
                                             <span style={{display:'inline-block',fontSize:'1.3em'}}>新闻资讯</span>
 
                                             <Link to={window.App.getAppRoute()+"/news"}>
-                                                <span style={{display:'inline-block',position:'absolute',right:'10%',fontSize:'1.3em'}}>more</span>
+                                                <span style={{display:'inline-block',position:'absolute',right:'10%',fontSize:'1.3em'}}>News</span>
                                             </Link>
 
                                         </div>

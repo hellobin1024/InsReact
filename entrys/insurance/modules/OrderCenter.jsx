@@ -36,6 +36,11 @@ var OrderCenter=React.createClass({
     //积分tab
     scoreTabChange:function(tab){
         this.setState({scoreTabCurrent:tab});
+
+        window.setTimeout(function(){
+            var detail=this.refs.slider;
+            $(detail).animate({left:'0'}); //使页面划回到最左边
+        }.bind(this), 400) //等待500毫秒
     },
 
     tabChange:function(tab){
@@ -837,7 +842,7 @@ var OrderCenter=React.createClass({
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
-                                    <span>
+                                    <span style={{color:'#288329'}}>
                                         车险订单列表
                                     </span>
                                 </div>
@@ -948,17 +953,17 @@ var OrderCenter=React.createClass({
                                 <ul className="nav " >
 
                                     <li className="all" onClick={this.scoreTabChange.bind(this,'all')} >
-                                        <a href="javascript:void(0)" className='all' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                        <a href="javascript:void(0)" className='all' style={{color:'#288329', fontSize:'1.4em'}}>
                                             积分明细
                                         </a>
                                     </li>
                                     <li className="income" onClick={this.scoreTabChange.bind(this,'income')} >
-                                        <a href="javascript:void(0)" className='income' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                        <a href="javascript:void(0)" className='income' style={{color:'#288329', fontSize:'1.4em'}}>
                                             积分收入
                                         </a>
                                     </li>
                                     <li className="used" onClick={this.scoreTabChange.bind(this,'used')} >
-                                        <a href="javascript:void(0)" className='used' style={{color:'#64BD2E', fontSize:'1.4em'}}>
+                                        <a href="javascript:void(0)" className='used' style={{color:'#288329', fontSize:'1.4em'}}>
                                             积分支出
                                         </a>
                                     </li>
@@ -1054,7 +1059,7 @@ var OrderCenter=React.createClass({
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
-                                    <span >
+                                    <span style={{color:'#288329'}}>
                                         寿险订单列表
                                     </span>
                                 </div>
@@ -1165,7 +1170,7 @@ var OrderCenter=React.createClass({
                         <div className='row' style={{padding:'10px'}}>
                             <div className='main-content'>
                                 <div className="page-title">
-                                    <span>
+                                    <span style={{color:'#288329'}}>
                                         服务订单列表
                                     </span>
                                 </div>
@@ -1280,7 +1285,7 @@ var OrderCenter=React.createClass({
                     <ul className="nav">
 
                         <li onClick={this.tabChange.bind(this,'score')}>
-                            <a href="javascript:void(0)" className='current' style={{fontSize:'1.8em'}}>
+                            <a href="javascript:void(0)" className='current' style={{fontSize:'1.8em', hover:'#000000'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-credit-card'></i>
                             </span>积分
@@ -1288,7 +1293,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'carOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em',hover:'#000000'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-truck'></i>
                             </span>车险
@@ -1296,7 +1301,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'lifeOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em',hover:'#000000'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-user-md'></i>
                             </span>寿险
@@ -1304,7 +1309,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'serviceOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em',hover:'#000000'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-list-ul'></i>
                             </span>服务
@@ -1325,7 +1330,7 @@ var OrderCenter=React.createClass({
             return (
                 <div className='Business' ref='business'
                      style={{background:'url('+App.getResourceDeployPrefix()+'/images/orderCenter.png) no-repeat',backgroundSize:'100%'}}>
-                    <div className='nav_bar' style={{float:'left',width:'8%',position:'static',background:'#EEEEEE',height:'900px'}}>
+                    <div className='nav_bar' style={{float:'left',width:'8%',position:'static',background:'#EEEEEE',height:'835px',borderRight:'1px #4b8ec6 solid'}}>
                         <div className='row' style={{padding:'0px 10px 0px 10px'}}>
                             {navbar}
                         </div>
