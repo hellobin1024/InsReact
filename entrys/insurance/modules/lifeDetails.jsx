@@ -38,7 +38,7 @@ var LifeDetail=React.createClass({
                 age:this.state.age,
                 sex:sex,
                 payYears:payYears,
-                attachPayYears:attachPayYears
+                attachPayYears:attachPayYears//暂时未用
             };
             ProxyQ.queryHandle(
                 'post',
