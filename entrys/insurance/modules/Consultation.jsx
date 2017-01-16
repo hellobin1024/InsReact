@@ -329,7 +329,7 @@ var Consultation=React.createClass({
             navbar =
                 <div className='search-area-wrapper'>
                     <div className='search-area '>
-                        <form className='search-form clearfix' method="get" action="#">
+                        <form className='search-form clearfix' method="get" action="#" style={{margin:'0 0 0'}}>
                             <input className='search-term required' type="text"
                                    placeholder="在此输入您的问题进行搜素！"
                                    title="* Please enter a search term!"

@@ -14,9 +14,8 @@ var AboutUs=React.createClass({
         return(
 
             <div className="about" style={{background:'#CCCCCC'}}>
-                <div style={{width:'100%'}}>
-                    <img src={App.getResourceDeployPrefix()+"/images/background_1.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%',height:'120%'}}/>
-
+                <div style={{width:'100%',height:'90%'}}>
+                    <img src={App.getResourceDeployPrefix()+"/images/background_1.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
 
                     <div style={{position:'fixed',top:'104px',left:'25%',width:'50%',height:'50%',lineHeight:'25px'}}>
                         <img src={App.getResourceDeployPrefix()+"/images/aboutUs_05.png"} style={{background:'no-repeat',backgroundSize:'100%',width:'100%'}}/>
@@ -24,7 +23,8 @@ var AboutUs=React.createClass({
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             捷惠保：立足于客户立场，深度发掘客户需求，客观分析，在众多保险产品中为客户选择适合的产品；与保险主体公司深度合作，依据已有客户需求研发更多，保障全，保费低的优质产品；为客户提供咨询，理赔，资料代管，车驾管服务等与保险相关的一站式服务。
                         </div>
-                    </div>                </div>
+                    </div>
+                </div>
             </div>
         );
     }
