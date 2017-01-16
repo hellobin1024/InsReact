@@ -268,11 +268,11 @@ var LifeInsurance=React.createClass({
                 }
                 lrs.push(
                     <div className="basic" key={i}>
-                        <div className="lifeBusiness">
+                        <div className="lifeBusiness" style={{background:'rgba(17, 17, 17, 0.6)'}}>
                             <h3>{item.productName}</h3>
                             <p>{item.companyName}</p>
                         </div>
-                        <div className="value" style={{padding: '0em 0'}}>
+                        <div className="value" style={{padding: '0em 0',background:'tan'}}>
                             <p>
                                 {stars}
                             </p>
@@ -282,7 +282,7 @@ var LifeInsurance=React.createClass({
                             <li>险种类型:<span>{type}</span></li>
                         </ul>
                         <div className="buy-me">
-                            <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly,item.insuranceQuota)}style={{cursor: 'pointer',borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor'}}>了解</a>
+                            <a onClick={ref.goToOthers.bind(this,'detail',item.productId,item.productName,item.productStar,item.briefly,item.insuranceQuota)}style={{cursor: 'pointer',borderRight:'1px',borderStyle:'outset',borderRightColor:'currentColor',background:'tan'}}>了解</a>
                         </div>
 
                     </div>
@@ -305,7 +305,8 @@ var LifeInsurance=React.createClass({
 
                     <div>
                         <div className="lifeBanner" onLoad={this.getCompanies()}>
-                                <div className="col-md-8 banner-left" style={{width:'85%',paddingLeft: '20%',paddingTop:'10px'}}>
+                            <div style={{padding:'0 5em 0 5em'}}>
+                                <div className="col-md-8 banner-left" style={{width:'85%',paddingLeft: '8%',paddingTop:'10px'}}>
                                     <div className="reservation">
                                         <ul>
                                             <li  className="span1_of_1 desti" style={{width:'22em'}}>
@@ -341,7 +342,7 @@ var LifeInsurance=React.createClass({
                                             <li className="span1_of_3" style={{ paddingRight: '10em',marginTop: '-5px',float:'right'}}>
                                                 <div className="date_btn">
                                                     <form>
-                                                        <input className="search" style={{borderRadius:'3px',height:'3em',marginTop: '11%'}}onClick={this.getLimitInsurancesList} value="查询" />
+                                                        <input className="search" style={{borderRadius:'3px',height:'3em',marginTop: '11%',background:'gray'}}onClick={this.getLimitInsurancesList} value="查询" />
                                                     </form>
                                                 </div>
                                             </li>
@@ -353,11 +354,12 @@ var LifeInsurance=React.createClass({
                                 <div className="col-md-8 banner-left" onClick={this.slidePage.bind(this,'right')} style={{width: '15%',cursor:'pointer',paddingTop:'10px'}}>
                                             <h2 style={{ color: 'darkblue'}}>定制产品</h2>
                                 </div>
+                            </div>
                             <div className="clearfix"></div>
                         </div>
 
                             <div className="container"style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',height:'auto'}}>
-                                <div className="faqs-top-grids">
+                                <div className="faqs-top-grids" style={{ padding:'1em 5em 4em 5em'}}>
                                     <div className="product-grids">
                                         <div className="col-md-3 product-left" style={{paddingTop:'15px',paddingLeft: '7em'}}>
                                             <div className="h-class" id="inputStarLevel"onClick={this.getInfoBySlide.bind(this,'inputStarLevel')}>
@@ -489,7 +491,7 @@ var LifeInsurance=React.createClass({
                                             <div className="container" style={{height: 'auto',paddingLeft:'0px'}}>
                                                 {lrs}
 
-                                                <div style={{float:'left',width:'100%',paddingLeft:'40%'}}>
+                                                <div style={{float:'left',width:'100%'}}>
                                                     <PageNavigator style={{marginTop:'100%'}}
                                                         capacity={len}
                                                         threshold={5}
