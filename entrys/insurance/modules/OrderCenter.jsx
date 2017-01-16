@@ -40,7 +40,7 @@ var OrderCenter=React.createClass({
         window.setTimeout(function(){
             var detail=this.refs.slider;
             $(detail).animate({left:'0'}); //使页面划回到最左边
-        }.bind(this), 400) //等待500毫秒
+        }.bind(this), 200) //等待500毫秒
     },
 
     tabChange:function(tab){
@@ -94,7 +94,7 @@ var OrderCenter=React.createClass({
         window.setTimeout(function(){
             var detail=this.refs.slider;
             $(detail).animate({left:'0'}); //使页面划回到最左边
-        }.bind(this), 600) //等待500毫秒
+        }.bind(this), 200) //等待500毫秒
     },
 
     slideClick:function(i,ob){
@@ -983,7 +983,7 @@ var OrderCenter=React.createClass({
                             </div>
 
 
-                            <div className="slider" ref="slider" style={{marginTop:'20px',position:'relative'}}>
+                            <div className="slider" ref="slider" style={{width:'100%',marginTop:'20px',position:'relative'}}>
                                 <div className="col-lg-12">
                                     <div className="widget-container fluid-height">
                                         <div className="widget-content padded clearfix">
@@ -1066,7 +1066,7 @@ var OrderCenter=React.createClass({
                             </div>
                         </div>
 
-                        <div className="slider" ref="slider" style={{position:'relative'}}>
+                        <div className="slider" ref="slider" style={{width:'100%',position:'relative'}}>
                             <div className="col-lg-12">
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
@@ -1177,7 +1177,7 @@ var OrderCenter=React.createClass({
                             </div>
                         </div>
 
-                        <div className="slider" ref="slider" style={{position:'relative'}}>
+                        <div className="slider" ref="slider" style={{width:'100%',position:'relative'}}>
                             <div className="col-lg-12">
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
