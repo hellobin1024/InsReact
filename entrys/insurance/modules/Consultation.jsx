@@ -330,31 +330,35 @@ var Consultation=React.createClass({
                 <div className='search-area-wrapper'>
                     <div className='search-area '>
                         <form className='search-form clearfix' method="get" action="#" style={{margin:'0 0 0'}}>
+                            <div>
+                                <div>
+                            <div>
                             <input className='search-term required' type="text"
                                    placeholder="在此输入您的问题进行搜素！"
                                    title="* Please enter a search term!"
                                    onChange={this.onSaveInput.bind(this)}
                                 />
-                            <input style={{borderRadius: '6px',borderStyle:'outset',borderColor:'grey',cursor: 'pointer'}}className='search-btn' value="搜索"
-                                   onClick={this.getLimitQuestion}/>
-
-                            <div id="search-error-container"></div>
-                            <div style={{width:'150%'}}>
-                                <div className='row-50'
-                                     style={{width:'30%',float:'left',paddingTop:'25px',marginLeft:'7%' }}>
-                                    <div className='row-50' style={{float:'left' }}>
-                                        <p style={{float:'left'}}>
+                                </div>
+                                <div className='row-50' style={{width:'53%',paddingTop:'25px',paddingLeft:'13em' }}>
+                                    <div className='row-50' style={{ }}>
+                                        <p style={{}}>
                                             <h3 style={{color:'black'}}>时间：</h3>
                                         </p>
                                         <Calendar data={today} ctrlName={'consultation'}
                                                   callbackParent={this.onChildChanged.bind(this,'startDate')}/>
                                     </div>
-                                    <div className='row-50' style={{float:'left' }}>
-                                        <p style={{float:'left'}}>
+                                    <div className='row-50' style={{ }}>
+                                        <p style={{}}>
                                             <h3 style={{color: 'black'}} >起——至</h3>
                                         </p>
                                         <Calendar data={today} ctrlName={'consultation'}
                                                   callbackParent={this.onChildChanged.bind(this,'endDate')}/>
+                                    </div>
+                                </div>
+                                    </div>
+                                <div>
+                            <input style={{borderRadius: '6px',borderStyle:'outset',borderColor:'grey',cursor: 'pointer'}}className='search-btn' value="搜索"
+                                             onClick={this.getLimitQuestion}/>
                                     </div>
                                 </div>
                                 <div>
@@ -368,9 +372,7 @@ var Consultation=React.createClass({
                                         </span>
                                         :null}
 
-
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>;

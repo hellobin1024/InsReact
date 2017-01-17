@@ -458,7 +458,7 @@
 }
 .value {
     padding: 1em 0;
-    background: #d54f30;
+    background: tan;
 }
 .value p {
     color: #fff;
@@ -475,7 +475,7 @@
 }
 
 .basic ul li {
-    font-size: 14px;
+    font-size: 15px;
     color: #5B6873;
     border-bottom: 1px dotted #5B6873;
     padding-bottom: .5em;
@@ -494,7 +494,7 @@
 }
 .buy-me a {
     padding: 10px 35px;
-    background: #d54f30;
+    background: tan;
     color: #fff;
     font-size: 16px;
     font-family: 'Nunito', sans-serif;

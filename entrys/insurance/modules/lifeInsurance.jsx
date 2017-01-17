@@ -304,7 +304,7 @@ var LifeInsurance=React.createClass({
                     <div  ref="slider"  style={{position:'relative'}}>
 
                     <div>
-                        <div className="lifeBanner" onLoad={this.getCompanies()}>
+                        <div className="lifeBanner" onLoad={this.getCompanies()} style={{borderBottomStyle: 'solid',borderBottomColor:'mintcream',borderWidth:'1px'}}>
                             <div style={{padding:'0 5em 0 5em'}}>
                                 <div className="col-md-8 banner-left" style={{width:'85%',paddingLeft: '8%',paddingTop:'10px'}}>
                                     <div className="reservation">

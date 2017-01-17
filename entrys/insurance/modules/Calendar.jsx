@@ -16,7 +16,7 @@ var Calendar = React.createClass({
         if (this.props.ctrlName !== undefined && this.props.ctrlName !== null) {
             return (
                 <div className="input-append date" data-date={this.state.data} ref="datetimepicker"
-                     data-date-format="yyyy-mm-dd" style={{float:'left'}}>
+                     data-date-format="yyyy-mm-dd" style={{ }}>
                              <span className="add-on" >
                                  <i className="icon-calendar" style={{backgroundColor:'#999',padding:'11.5px'}}
                                  ></i>

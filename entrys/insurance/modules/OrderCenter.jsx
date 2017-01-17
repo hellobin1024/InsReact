@@ -983,7 +983,7 @@ var OrderCenter=React.createClass({
                             </div>
 
 
-                            <div className="slider" ref="slider" style={{marginTop:'20px',position:'relative'}}>
+                            <div className="slider" ref="slider" style={{width:'100%',marginTop:'20px',position:'relative'}}>
                                 <div className="col-lg-12">
                                     <div className="widget-container fluid-height">
                                         <div className="widget-content padded clearfix">
@@ -1066,18 +1066,18 @@ var OrderCenter=React.createClass({
                             </div>
                         </div>
 
-                        <div className="slider" ref="slider" style={{position:'relative'}}>
+                        <div className="slider" ref="slider" style={{width:'100%',position:'relative'}}>
                             <div className="col-lg-12">
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
                                         <table className="table table-striped invoice-table">
                                             <thead className="table-head">
                                                 <tr>
-                                                    <th width="300">订单编号</th>
-                                                    <th width="300">产品名称</th>
-                                                    <th width="300">订单时间</th>
-                                                    <th width="300">订单状态</th>
-                                                    <th width="300">保费</th>
+                                                    <th width="330">订单编号</th>
+                                                    <th width="330">产品名称</th>
+                                                    <th width="330">订单时间</th>
+                                                    <th width="330">订单状态</th>
+                                                    <th width="330">保费</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1177,7 +1177,7 @@ var OrderCenter=React.createClass({
                             </div>
                         </div>
 
-                        <div className="slider" ref="slider" style={{position:'relative'}}>
+                        <div className="slider" ref="slider" style={{width:'100%',position:'relative'}}>
                             <div className="col-lg-12">
                                 <div className="widget-container fluid-height">
                                     <div className="widget-content padded clearfix">
