@@ -175,7 +175,7 @@ var Li = React.createClass({
                         <a className="news_a">
                             <span className="new-title" data-index={i} onClick={cb}>{item.label}</span>
                         </a>
-                        <span className='new-date'>{item.newsTimeStr}</span>
+                        <span className='li-new-date'>{item.newsTimeStr}</span>
                     </li>);
             });
         }
