@@ -990,11 +990,11 @@ var OrderCenter=React.createClass({
                                             <table className="table table-striped invoice-table">
                                                 <thead className="table-head">
                                                     <tr>
-                                                        <th width="300">订单编号</th>
-                                                        <th width="300">来源/用途</th>
-                                                        <th width="300">积分变化</th>
-                                                        <th width="300">订单时间</th>
-                                                        <th width="300">订单状态</th>
+                                                        <th width="330">订单编号</th>
+                                                        <th width="330">来源/用途</th>
+                                                        <th width="330">积分变化</th>
+                                                        <th width="330">订单时间</th>
+                                                        <th width="330">订单状态</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -1073,11 +1073,11 @@ var OrderCenter=React.createClass({
                                         <table className="table table-striped invoice-table">
                                             <thead className="table-head">
                                                 <tr>
-                                                    <th width="300">订单编号</th>
-                                                    <th width="300">产品名称</th>
-                                                    <th width="300">订单时间</th>
-                                                    <th width="300">订单状态</th>
-                                                    <th width="300">保费</th>
+                                                    <th width="330">订单编号</th>
+                                                    <th width="330">产品名称</th>
+                                                    <th width="330">订单时间</th>
+                                                    <th width="330">订单状态</th>
+                                                    <th width="330">保费</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1184,11 +1184,11 @@ var OrderCenter=React.createClass({
                                         <table className="table table-striped invoice-table">
                                             <thead className="table-head">
                                             <tr>
-                                                <th width="300">订单编号</th>
-                                                <th width="300">服务类型</th>
-                                                <th width="300">订单完成时间</th>
-                                                <th width="300">订单状态</th>
-                                                <th width="300">费用</th>
+                                                <th width="330">订单编号</th>
+                                                <th width="330">服务类型</th>
+                                                <th width="330">订单完成时间</th>
+                                                <th width="330">订单状态</th>
+                                                <th width="330">费用</th>
                                             </tr>
                                             </thead>
                                             <tbody>
