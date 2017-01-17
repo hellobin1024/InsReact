@@ -156,13 +156,20 @@ getInitialState: function() {
             var safeGuardPeriod=data.safeGuardPeriod;
             var paymentType=data.paymentType;
             var image=this.state.image;
-            var attach=this.state.attach[0].productName;
+            var attach=this.state.attach;
             var measure=this.state.measure;
             var characteristic=data.characteristic.split(",");
             var safeGuardRange=data.insuranceLifeProduct.safeGuardRange.split(",");
             var charact=[];
             var safeGR=[];
             var stars=[];
+            var attachs=[];
+            attach.map(function(item,i){
+                attachs.push(
+                    <p key={"attach"+i}className="bold bzfwp text"><input style={{marginRight:"2em"}} className="fjxbox" type="checkbox"/>{item.productName}</p>
+                )
+
+            });
             characteristic.map(function(item,i){
                 charact.push(
                     <li key={i}>{item}</li>
@@ -306,7 +313,7 @@ getInitialState: function() {
                     <div className="line-height35">您可以根据自己的需要选购您所需的附加产品：</div>
                     <div className="bxj ">
                         <p className="bold bzfwp text"><input style={{marginRight:"2em"}} type="checkbox" onClick={this.getProductFeeInfo}/>非意外身故保险金</p>
-                        <p className="bold bzfwp text"><input style={{marginRight:"2em"}} className="fjxbox" type="checkbox"/>{attach}</p>
+                        {attachs}
                     </div>
                 </div>
                 <div className="bzfw">

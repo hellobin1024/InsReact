@@ -235,7 +235,7 @@ var CarInsurance=React.createClass({
                                 </div>
                                 <div className="value" style={{padding: '3px 0',background:'whitesmoke'}}>
                                 </div>
-                                <ul ref={i} value="0" style={{padding:'1em 0 1em',background: 'none',borderStyle: 'solid',borderColor: 'brown'}}>
+                                <ul ref={i} value="0" style={{padding:'1em 0 1em',background: 'none',borderStyle: 'solid',borderColor: 'tan'}}>
                                     <h2 style={{color:'brown'}}>重要通告声明</h2>
                                     <li>交强险为车险基础保障险,本如若您需要在本公司购买车险产品,本公司将默认您选购交强险!您如果已在他处购买交强险,请继续您的购买,在接下订单页面中,请务必填写已购交强险订单号并自行取消订单中的交强险!谢谢合作!</li>
                                     <li><span>交强险简介:</span>{item.description}</li>
@@ -302,7 +302,7 @@ var CarInsurance=React.createClass({
                             <div className="carBanner" onLoad={this.getCarInsurances()}>
                             </div>
                             <div className="banner-bottom" >
-                                <div className="container"style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%'}}>
+                                <div className="container"style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',padding:'0 7em'}}>
                                     <div className="faqs-top-grids">
                                         <div className=" product-left">
                                             <div className="product-grids" style={{position: 'relative'}}>
@@ -311,7 +311,7 @@ var CarInsurance=React.createClass({
                                                 {jqx}
                                                 <hr style={{marginTop: '20em'}}/>
                                             </div>
-                                            <div className="product-grids" style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',position: 'absolute',top:'24em',left:'0',paddingBottom:'5em'}}>
+                                            <div className="product-grids" style={{background: 'url(images/backgroundBigPicture.png) no-repeat',backgroundSize: '100%',position: 'absolute',top:'24em',left:'0',padding:'0 7em 8em 7em'}}>
 
                                                 {trs}
                                             </div>
