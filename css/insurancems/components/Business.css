@@ -107,7 +107,7 @@
 .page-title {
     padding: 0 20px;
     margin-top: 0px;
-    font-size: 1.7em;
+    font-size: 22px;
     text-align: center;
 }
 
@@ -155,7 +155,7 @@
 }
 
 .table-head{
-    font-size: 1.4em;
+    font-size: 18px;
 }
 
 .table tfoot > tr:first-child > td {
@@ -189,12 +189,12 @@
     width: 25%;
 }
 .summary .desc {
-    font-size: 1.5em;
+    font-size: 20px;
     font-weight: 700;
     color: #666;
 }
 .summary .point {
-    font-size: 34px;
+    font-size: 26px;
     font-weight: 700;
     color: #288c29;
     height: 40px;
@@ -219,7 +219,7 @@
     height: 44px;
     margin: 2px auto;
     line-height: 44px;
-    background: #d83c59;
+    background: cadetblue;
     color: #fff;
     font-size: 18px;
     border-radius: 3px;

@@ -238,8 +238,8 @@ var Nav=React.createClass({
                 this.state.data.map(function(first,i) {
                     if(first.label=='产品中心'){
                         lis.push(
-                            <li className="dropdown" style={{width:'85px'}} key={i}>
-                                <a data-toggle="dropdown" href="javascript:void(0)">
+                            <li className="dropdown" style={{marginLeft: "-2.57143px"}} key={i}>
+                                <a data-toggle="dropdown" href="javascript:void(0)" className="nav_a">
                                 <span aria-hidden="true" >
                                 </span><strong style={{fontWeight:'100'}}>{first.label}</strong>
                                 </a>
