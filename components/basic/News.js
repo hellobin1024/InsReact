@@ -71,7 +71,7 @@ var News=React.createClass({
                                     <a className="news_a">
                                         <span className="title" data-index={k++} onClick={clickCb}>{title}</span>
                                     </a>
-                                    <span className='date'>{date}</span>
+                                    <span className='new-date'>{date}</span>
                                 </li>
                             );
                         else

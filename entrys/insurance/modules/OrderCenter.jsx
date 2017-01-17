@@ -843,7 +843,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span style={{color:'#288329'}}>
-                                        车险订单列表
+                                        车险订单
                                     </span>
                                 </div>
                             </div>
@@ -934,7 +934,7 @@ var OrderCenter=React.createClass({
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
                                     <a href="#" onClick={this.return}>
-                                        <div style={{display:'inline-block',fontSize:'24px'}}>
+                                        <div style={{display:'inline-block',fontSize:'22px'}}>
                                             <span aria-hidden="true">返回</span>
                                         </div>
                                     </a>
@@ -1044,7 +1044,7 @@ var OrderCenter=React.createClass({
                                     <div className="nav-return">
                                         <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
                                         <a href="javascript:void(0)" onClick={this.return}>
-                                            <div style={{display:'inline-block',fontSize:'24px'}}>
+                                            <div style={{display:'inline-block',fontSize:'22px'}}>
                                                 <span aria-hidden="true">返回</span>
                                             </div>
                                         </a>
@@ -1060,7 +1060,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span style={{color:'#288329'}}>
-                                        寿险订单列表
+                                        寿险订单
                                     </span>
                                 </div>
                             </div>
@@ -1155,7 +1155,7 @@ var OrderCenter=React.createClass({
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
                                     <a href="javascript:void(0)" onClick={this.return}>
-                                        <div style={{display:'inline-block',fontSize:'24px'}}>
+                                        <div style={{display:'inline-block',fontSize:'22px'}}>
                                             <span aria-hidden="true">返回</span>
                                         </div>
                                     </a>
@@ -1171,7 +1171,7 @@ var OrderCenter=React.createClass({
                             <div className='main-content'>
                                 <div className="page-title">
                                     <span style={{color:'#288329'}}>
-                                        服务订单列表
+                                        服务订单
                                     </span>
                                 </div>
                             </div>
@@ -1240,7 +1240,7 @@ var OrderCenter=React.createClass({
                                 <div className="nav-return">
                                     <hr style={{height:'2px',border:'none',borderTop:'2px dotted #185598'}} />
                                     <a href="javascript:void(0)" onClick={this.return}>
-                                        <div style={{display:'inline-block',fontSize:'24px'}}>
+                                        <div style={{display:'inline-block',fontSize:'22px'}}>
                                             <span aria-hidden="true">返回</span>
                                         </div>
                                     </a>
@@ -1285,7 +1285,7 @@ var OrderCenter=React.createClass({
                     <ul className="nav">
 
                         <li onClick={this.tabChange.bind(this,'score')}>
-                            <a href="javascript:void(0)" className='current' style={{fontSize:'1.8em'}}>
+                            <a href="javascript:void(0)" className='current' style={{fontSize:'21px'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-credit-card'></i>
                             </span>积分
@@ -1293,7 +1293,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'carOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'21px'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-truck'></i>
                             </span>车险
@@ -1301,7 +1301,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'lifeOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'21px'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-user-md'></i>
                             </span>寿险
@@ -1309,7 +1309,7 @@ var OrderCenter=React.createClass({
                         </li>
 
                         <li className="dropdown" onClick={this.tabChange.bind(this,'serviceOrder')}>
-                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'1.8em'}}>
+                            <a data-toggle="dropdown" href="javascript:void(0)" className="current" style={{fontSize:'21px'}}>
                             <span aria-hidden="true" >
                                 <i className='icon-list-ul'></i>
                             </span>服务
