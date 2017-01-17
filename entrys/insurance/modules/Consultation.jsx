@@ -333,42 +333,52 @@ var Consultation=React.createClass({
                             <div>
                                 <div>
                             <div>
-                            <input className='search-term required' type="text"
+                                <span style={{float: 'left',paddingLeft: '15em'}}>
+                            <input  style={{float:'left'}}className='search-term required' type="text"
                                    placeholder="在此输入您的问题进行搜素！"
                                    title="* Please enter a search term!"
                                    onChange={this.onSaveInput.bind(this)}
                                 />
+                                    </span>
                                 </div>
-                                <div className='row-50' style={{width:'53%',paddingTop:'25px',paddingLeft:'13em' }}>
-                                    <div className='row-50' style={{ }}>
-                                        <p style={{}}>
+                                <div className='row-50' style={{width:'55em',paddingTop:'25px',paddingLeft:'15em' }}>
+                                    <div className='row-50' >
+                                        <span style={{float:'left',paddingTop:'10px'}}>
                                             <h3 style={{color:'black'}}>时间：</h3>
-                                        </p>
-                                        <Calendar data={today} ctrlName={'consultation'}
-                                                  callbackParent={this.onChildChanged.bind(this,'startDate')}/>
+                                        </span>
+                                        <span style={{float:'left',paddingTop:'15px'}}>
+                                            <Calendar data={today} ctrlName={'consultation'}
+                                                      callbackParent={this.onChildChanged.bind(this,'startDate')}/>
+                                        </span>
                                     </div>
-                                    <div className='row-50' style={{ }}>
-                                        <p style={{}}>
+                                    <div className='row-50' >
+                                        <span style={{float:'left',paddingTop:'10px'}}>
                                             <h3 style={{color: 'black'}} >起——至</h3>
-                                        </p>
-                                        <Calendar data={today} ctrlName={'consultation'}
-                                                  callbackParent={this.onChildChanged.bind(this,'endDate')}/>
+                                        </span>
+                                        <span style={{float:'left',paddingTop:'15px'}}>
+                                            <Calendar data={today} ctrlName={'consultation'}
+                                                      callbackParent={this.onChildChanged.bind(this,'endDate')}/>
+                                        </span>
                                     </div>
                                 </div>
                                     </div>
                                 <div>
-                            <input style={{borderRadius: '6px',borderStyle:'outset',borderColor:'grey',cursor: 'pointer'}}className='search-btn' value="搜索"
-                                             onClick={this.getLimitQuestion}/>
+                                    <span style={{float:'left',paddingTop:'15px',paddingLeft:'3em'}}>
+                                        <input style={{borderRadius: '3px',borderColor:'grey',cursor: 'pointer'}}className='search-btn' value="搜索"
+                                                         onClick={this.getLimitQuestion}/>
+                                        </span>
                                     </div>
                                 </div>
                                 <div>
-                                    <input style={{borderRadius: '6px',borderStyle:'outset',borderColor:'grey',cursor: 'pointer'}}className='search-new' value="新问题"
-                                           onClick={this.goToOthers.bind(this,'newQuestion')}
-                                        />
+                                    <span style={{float:'right',paddingRight:'20em',paddingTop:'15px'}}>
+                                        <input style={{borderRadius: '3px',borderColor:'grey',cursor: 'pointer'}}className='search-new' value="新问题"
+                                               onClick={this.goToOthers.bind(this,'newQuestion')}
+                                            />
+                                    </span>
                                     {SyncStore.getNote() ?
-                                        <span className='tg-list-item' style={{marginTeft:'34%', marginTop: '-2%'}}>
+                                        <span className='tg-list-item' style={{float:'right',paddingRight:'2%',paddingTop: '15px'}}>
                                         <input className='tgl tgl-flip' id='cb5' type='checkbox'/>
-                                            <label  style={{marginLeft: '35%', marginTop: '-2%'}}id='lab5'onClick={this.setDataTg} className='tgl-btn' data-tg='全部'data-tg-off='全部' data-tg-on='只看自己' htmlFor='cb5'></label>
+                                            <label  id='lab5'onClick={this.setDataTg} className='tgl-btn' data-tg='全部'data-tg-off='全部' data-tg-on='只看自己' htmlFor='cb5'></label>
                                         </span>
                                         :null}
 
