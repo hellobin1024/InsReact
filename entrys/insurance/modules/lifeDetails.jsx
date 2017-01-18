@@ -164,11 +164,21 @@ getInitialState: function() {
             var safeGR=[];
             var stars=[];
             var attachs=[];
+            var ycAttachs=[];
+            var hrf=this;
             attach.map(function(item,i){
                 attachs.push(
                     <p key={"attach"+i}className="bold bzfwp text"><input style={{marginRight:"2em"}} className="fjxbox" type="checkbox"/>{item.productName}</p>
                 )
-
+            });
+            attach.map(function(item,i){
+                ycAttachs.push(
+                    <tr key={"ycAttachs"+i}>
+                        <td>{item.productName}费:</td>
+                        <td>{hrf.state.val*item.pureEndowmentHigh}</td>
+                        <td>（主险保险费+附加险保险费）</td>
+                    </tr>
+                )
             });
             characteristic.map(function(item,i){
                 charact.push(
@@ -303,6 +313,7 @@ getInitialState: function() {
                                 <td>{this.state.val}</td>
                                 <td>（主险保险费+附加险保险费）</td>
                             </tr>
+                            {ycAttachs}
                         </tbody>
                     </table>
 
