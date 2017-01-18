@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Link } from 'react-router'
 import '../../../css/insurancems/components/NewQuestion.css';
 import Consultation from '../modules/Consultation.jsx';
 var ProxyQ = require('../../../components/proxy/ProxyQ');
@@ -116,19 +117,21 @@ var NewQuestion=React.createClass({
                                             <aside className="span4 page-sidebar">
                                                 <section className="widget" style={{position: 'fixed',marginLeft:'20%' ,height: '500px', width: '311px'}}>
                                                     <div className="support-widget">
-                                                        <h3 className="title">业务支持</h3>
+                                                        <h3 className="titleh3">业务支持</h3>
                                                         <p className="intro"> 如果您需要更多的业务支持，请与我们的客服取得联系！</p>
                                                         <hr/>
-                                                        <h3 className="title">客服电话:</h3>
+                                                        <h3 className="titleh3">客服电话:</h3>
                                                         <p className="intro">231231</p>
-                                                        <h3 className="title">客服邮箱:</h3>
+                                                        <h3 className="titleh3">客服邮箱:</h3>
                                                         <p className="intro">44444@163.com</p>
                                                         <hr/>
-                                                        <h3 className="title">跳转支持</h3>
+                                                        <h3 className="titleh3">跳转支持</h3>
                                                         <hr/>
                                                         <a style={{cursor: 'pointer'}} onClick={this.Branch.bind(this,undefined)}>业务咨询</a>
                                                         <hr/>
-                                                        <a style={{cursor: 'pointer'}} href=''>公司首页</a>
+                                                        <Link to={window.App.getAppRoute()+"/mainPage"}>
+                                                            <a style={{cursor: 'pointer'}} href=''>公司首页</a>
+                                                        </Link>
                                                         <hr/>
                                                     </div>
                                                 </section>

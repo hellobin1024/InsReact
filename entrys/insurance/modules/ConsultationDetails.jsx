@@ -197,7 +197,7 @@ var ConsultationDetails=React.createClass({
         <div className="page-container">
             <div className="container">
                 <div className="row">
-                    <div className="span8 page-content">
+                    <div className="span8 page-content" style={{paddingLeft:'13em'}}>
 
                         <article className=" type-post format-standard hentry clearfix">
 

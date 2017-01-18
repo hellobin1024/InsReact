@@ -48,6 +48,10 @@ textarea{
     /*font-weight: bold;*/
     /*margin: 11px 0;*/
 }
+
+.titleh3{
+    color: darksalmon;
+}
 a{
     color: #337ab7;
     text-decoration: none;
